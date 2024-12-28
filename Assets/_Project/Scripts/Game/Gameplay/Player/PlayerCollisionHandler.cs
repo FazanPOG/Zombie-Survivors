@@ -14,7 +14,7 @@ namespace _Project.Gameplay
         private IDisposable _disposable;
 
         public ReadOnlyReactiveProperty<Zombie> ClosestEnemy => _closestEnemy;
-        
+
         private void Awake() => _collider = GetComponent<SphereCollider>();
 
         public void Init(ReadOnlyReactiveProperty<float> attackRange)

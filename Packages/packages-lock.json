@@ -16,6 +16,15 @@
       "dependencies": {},
       "hash": "16d624d3f9425595fd07c762c7af5f431ed4aa9d"
     },
+    "com.unity.ai.navigation": {
+      "version": "1.1.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
       "version": "1.8.17",
       "depth": 1,

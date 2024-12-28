@@ -16,6 +16,7 @@ namespace _Project.Gameplay
         private Vector3 _moveDir;
 
         public float Speed => _moveSpeed;
+        public bool IsEnabled => _isMovementEnabled;
 
         public Vector3 MoveDirection => _moveDir;
         public ReadOnlyReactiveProperty<bool> IsMoving => _isMoving;

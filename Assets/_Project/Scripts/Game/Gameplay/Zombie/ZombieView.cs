@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using R3;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,17 +14,19 @@ namespace _Project.Gameplay
         private const string ATTACK_2_KEY = "Attack 2";
         private const string DIED_1_KEY = "Died";
         private const string DIED_2_KEY = "Died 2";
-        
+
         private Animator _animator;
         private Action _onDiedAnimationEndedCallback;
 
         private void Awake() => _animator = GetComponent<Animator>();
 
-        public void Init(Action onDiedAnimationEndedCallback, float moveSpeed)
+        public void Init(Action onDiedAnimationEndedCallback, float moveSpeed, ReadOnlyReactiveProperty<int> health, ParticleSystem bloodFX)
         {
             _onDiedAnimationEndedCallback = onDiedAnimationEndedCallback;
             
             _animator.SetFloat(MOVE_SPEED_KEY, moveSpeed);
+
+            health.Subscribe(_ => bloodFX.Play());
         }
 
         public void PlayDiedAnimation()

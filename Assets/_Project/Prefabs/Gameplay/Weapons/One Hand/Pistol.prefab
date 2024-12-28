@@ -353,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 2
   _muzzleFlashFX: {fileID: 4397349037388656511}
+  _bulletTrailFX: {fileID: 0}
 --- !u!1 &1823660752924116
 GameObject:
   m_ObjectHideFlags: 0

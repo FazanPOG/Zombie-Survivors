@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 50
   _moveSpeed: 3
+  _damage: 15
   _viewPrefabs:
   - {fileID: 561177871414023526, guid: 2165f6a67f710bc47a7cfc0882e7e964, type: 3}
   - {fileID: 4491868404794476720, guid: 6cb63163261c5a84a8a7410cf0775135, type: 3}

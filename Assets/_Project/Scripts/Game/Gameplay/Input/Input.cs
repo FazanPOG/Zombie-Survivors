@@ -8,16 +8,17 @@ namespace _Project.Gameplay
 {
     public class Input : IInput, ITickable, IDisposable
     {
-        private readonly FloatingJoystick _joystick;
+        private FloatingJoystick _joystick;
         private PlayerInputActions _playerInputActions;
         private bool _isJoystickEnabled;
         private IDisposable _disposable;
 
         public Vector2 MovementInput { get; private set; }
 
-        public Input(FloatingJoystick joystick)
+        public event Action OnAnyKey;
+
+        public Input()
         {
-            _joystick = joystick;
             _playerInputActions = new PlayerInputActions();
             
             _playerInputActions.Enable();
@@ -28,6 +29,13 @@ namespace _Project.Gameplay
             _playerInputActions.Movement.WASD.canceled += MovementPerformed;
             _playerInputActions.Movement.Arrows.canceled += MovementPerformed;
 
+            _playerInputActions.Movement.AnyKey.started += AnyKeyOnStarted;
+        }
+
+        public void AttachJoystick(FloatingJoystick joystick)
+        {
+            _joystick = joystick;
+            
             _disposable = _joystick.OnDrag.Subscribe(isDragging =>
             {
                 _isJoystickEnabled = isDragging;
@@ -35,6 +43,11 @@ namespace _Project.Gameplay
                 if (_isJoystickEnabled == false)
                     MovementInput = Vector2.zero;
             });
+        }
+
+        private void AnyKeyOnStarted(InputAction.CallbackContext _)
+        {
+            OnAnyKey?.Invoke();
         }
 
         public void Tick()
@@ -55,8 +68,9 @@ namespace _Project.Gameplay
             _playerInputActions.Movement.Arrows.performed -= MovementPerformed;
             _playerInputActions.Movement.WASD.canceled -= MovementPerformed;
             _playerInputActions.Movement.Arrows.canceled -= MovementPerformed;
+            _playerInputActions.Movement.AnyKey.started -= AnyKeyOnStarted;
             
-            _disposable.Dispose();
+            _disposable?.Dispose();
             _playerInputActions.Disable();
             _playerInputActions?.Dispose();
         }

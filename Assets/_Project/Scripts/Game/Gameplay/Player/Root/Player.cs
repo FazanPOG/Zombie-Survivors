@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using _Project.Data;
 using _Project.Game;
 using R3;
@@ -25,7 +26,8 @@ namespace _Project.Gameplay
         public bool CanTakeDamage { get; private set; }
 
         public void Init(
-            IInput input, 
+            IInput input,
+            IGameStateProvider gameStateProvider,
             PlayerHealth playerHealth, 
             PlayerMoveSpeed playerMoveSpeed, 
             AudioPlayer audioPlayer)
@@ -38,11 +40,18 @@ namespace _Project.Gameplay
             _collisionHandler.Init(_attackRange);
             _movement = new PlayerMovement(transform, input, playerMoveSpeed.MoveSpeed);
             var weaponHandler = new PlayerWeaponHandler(_testWeapon, _hand, audioPlayer);
-            _movement.EnableMovement();
             _playerAttacker = new PlayerAttacker(this, _currentWeapon, _collisionHandler, weaponHandler);
             _view.Init(_movement, _playerHealth.Health, _collisionHandler.ClosestEnemy);
 
             _currentWeapon.Skip(1).Subscribe(newWeapon => _attackRange.Value = newWeapon.AttackRange);
+            
+            gameStateProvider.GameState.Subscribe(state =>
+            {
+                if (state is GameplayState)
+                {
+                    _movement.EnableMovement();
+                }
+            });
         }
 
         public void TakeDamage(int damage)
@@ -57,8 +66,12 @@ namespace _Project.Gameplay
                 CanTakeDamage = false;
                 _movement.DisableMovement();
             }
+            else
+            {
+                StartCoroutine(InvincibleFrames());
+            }
         }
-        
+
         private void Update()
         {
             UpdateDebugString();
@@ -66,10 +79,18 @@ namespace _Project.Gameplay
             _playerAttacker.Update();
         }
 
+        private IEnumerator InvincibleFrames()
+        {
+            CanTakeDamage = false;
+            yield return new WaitForSeconds(1f);
+            CanTakeDamage = true;
+        }
+
         private void UpdateDebugString()
         {
             DEBUG_STRING = String.Empty;
-            DEBUG_STRING += $"Move speed: {_movement.Speed}";
+            DEBUG_STRING += $"Is Movement Enabled: {_movement.IsEnabled} \n" +
+                            $"Move speed: {_movement.Speed}";
         }
     }
 }

@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fcae0bef97477da5591f938d27be89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bloodFX: {fileID: 198107820186352126, guid: b369efb4abe69e044890b664115fab9e, type: 3}
 --- !u!1 &1128725201895830
 GameObject:
   m_ObjectHideFlags: 0

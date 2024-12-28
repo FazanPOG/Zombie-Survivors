@@ -15,25 +15,19 @@ namespace _Project.Gameplay
         [SerializeField] private Environment _testEnvironmentPrefab; //TODO: change to pick in main menu
         [SerializeField] private CameraSystem _cameraSystemPrefab;
         [SerializeField] private Player _playerPrefab;
-        //TODO: test
         [SerializeField] private Zombie _zombiePrefab;
-        [SerializeField] private Transform _zombieSpawnPoint;
         
         public override void InstallBindings()
         {
             BindPlayerData();
-            BindGameplayUI();
             BindEnvironment();
             BindInput();
+            BindGameStateMachine();
+            BindGameplayUI();
             BindPlayer();
-            
-            //TODO: test
-            InstantiateZombie();
-        }
+            BindFactories();
 
-        private void InstantiateZombie()
-        {
-            Container.InstantiatePrefabForComponent<Zombie>(_zombiePrefab, _zombieSpawnPoint.transform.position, quaternion.identity, _zombieSpawnPoint).Init();
+            Container.Resolve<IGameStateMachine>().EnterIn<BootState>();
         }
 
         private void BindPlayerData()
@@ -65,14 +59,15 @@ namespace _Project.Gameplay
         {
             Container.BindInterfacesTo<Input>().FromNew().AsSingle().NonLazy();
         }
-        
+
         private void BindPlayer()
         {
             var input = Container.Resolve<IInput>();
             var playerHealth = Container.Resolve<PlayerHealth>();
             var playerMoveSpeed = Container.Resolve<PlayerMoveSpeed>();
-            var spawnPoints = Container.Resolve<Environment>().SpawnPoints;
+            var spawnPoints = Container.Resolve<Environment>().PlayerSpawnPoints;
             var audioPlayer = Container.Resolve<AudioPlayer>();
+            var gameStateProvider = Container.Resolve<IGameStateProvider>();
             
             var randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length - 1)];
             
@@ -82,9 +77,26 @@ namespace _Project.Gameplay
             var playerInstance = Container.InstantiatePrefabForComponent<Player>(_playerPrefab, randomSpawnPoint.position, quaternion.identity, null);
             Container.Bind<Player>().FromInstance(playerInstance).AsSingle().NonLazy();
             
-            
-            playerInstance.Init(input, playerHealth, playerMoveSpeed, audioPlayer);
+            playerInstance.Init(input, gameStateProvider, playerHealth, playerMoveSpeed, audioPlayer);
             cameraSystem.Init(playerInstance.transform);
+        }
+
+        private void BindFactories()
+        {
+            var player = Container.Resolve<Player>();
+            
+            ZombieFactory zombieFactory = new ZombieFactory(
+                _zombiePrefab, 
+                _testEnvironmentPrefab.ZombieSpawnPoints, 
+                player);
+
+            Container.Bind<ZombieFactory>().FromInstance(zombieFactory).AsSingle().NonLazy();
+        }
+
+        private void BindGameStateMachine()
+        {
+            var gameStateMachine = new GameStateMachine();
+            Container.BindInterfacesTo<GameStateMachine>().FromInstance(gameStateMachine).AsSingle().NonLazy();
         }
     }
 }

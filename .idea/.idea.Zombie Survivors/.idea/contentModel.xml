@@ -32,6 +32,19 @@
                 <e p="Environment" t="Include">
                   <e p="Environment.cs" t="Include" />
                 </e>
+                <e p="Factories" t="Include">
+                  <e p="ZombieFactory.cs" t="Include" />
+                </e>
+                <e p="GameStateMachine" t="Include">
+                  <e p="GameStateMachine.cs" t="Include" />
+                  <e p="IGameStateMachine.cs" t="Include" />
+                  <e p="IGameStateProvider.cs" t="Include" />
+                  <e p="States" t="Include">
+                    <e p="BootState.cs" t="Include" />
+                    <e p="GameplayState.cs" t="Include" />
+                    <e p="IGameState.cs" t="Include" />
+                  </e>
+                </e>
                 <e p="Input" t="Include">
                   <e p="IInput.cs" t="Include" />
                   <e p="Input.cs" t="Include" />
@@ -58,6 +71,7 @@
                 </e>
                 <e p="Zombie" t="Include">
                   <e p="Zombie.cs" t="Include" />
+                  <e p="ZombieAttacker.cs" t="Include" />
                   <e p="ZombieConfig.cs" t="Include" />
                   <e p="ZombieMovement.cs" t="Include" />
                   <e p="ZombieView.cs" t="Include" />
@@ -77,10 +91,20 @@
               </e>
               <e p="UI" t="Include">
                 <e p="Gameplay" t="Include">
-                  <e p="GameplayUI.cs" t="Include" />
+                  <e p="Presenters" t="Include">
+                    <e p="ClickToStartScreenViewPresenter.cs" t="Include" />
+                  </e>
+                  <e p="Root" t="Include">
+                    <e p="GameplayUI.cs" t="Include" />
+                  </e>
+                  <e p="Views" t="Include">
+                    <e p="ClickToStartView.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="MainMenu" t="Include">
-                  <e p="MainMenuUI.cs" t="Include" />
+                  <e p="Root" t="Include">
+                    <e p="MainMenuUI.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="Root" t="Include">
                   <e p="LoadingScreen.cs" t="Include" />

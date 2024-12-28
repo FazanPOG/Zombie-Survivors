@@ -44,6 +44,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AnyKey"",
+                    ""type"": ""Button"",
+                    ""id"": ""1341e406-711f-4584-afda-ef4522d67187"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -156,6 +165,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""WASD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad7cc9f9-0fc4-4d82-9030-1b1d1dc14a5d"",
+                    ""path"": ""*/{PrimaryAction}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +186,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_WASD = m_Movement.FindAction("WASD", throwIfNotFound: true);
         m_Movement_Arrows = m_Movement.FindAction("Arrows", throwIfNotFound: true);
+        m_Movement_AnyKey = m_Movement.FindAction("AnyKey", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,12 +250,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_WASD;
     private readonly InputAction m_Movement_Arrows;
+    private readonly InputAction m_Movement_AnyKey;
     public struct MovementActions
     {
         private @PlayerInputActions m_Wrapper;
         public MovementActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @WASD => m_Wrapper.m_Movement_WASD;
         public InputAction @Arrows => m_Wrapper.m_Movement_Arrows;
+        public InputAction @AnyKey => m_Wrapper.m_Movement_AnyKey;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,6 +273,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Arrows.started += instance.OnArrows;
             @Arrows.performed += instance.OnArrows;
             @Arrows.canceled += instance.OnArrows;
+            @AnyKey.started += instance.OnAnyKey;
+            @AnyKey.performed += instance.OnAnyKey;
+            @AnyKey.canceled += instance.OnAnyKey;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -260,6 +286,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Arrows.started -= instance.OnArrows;
             @Arrows.performed -= instance.OnArrows;
             @Arrows.canceled -= instance.OnArrows;
+            @AnyKey.started -= instance.OnAnyKey;
+            @AnyKey.performed -= instance.OnAnyKey;
+            @AnyKey.canceled -= instance.OnAnyKey;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -281,5 +310,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnWASD(InputAction.CallbackContext context);
         void OnArrows(InputAction.CallbackContext context);
+        void OnAnyKey(InputAction.CallbackContext context);
     }
 }
