@@ -3,6 +3,7 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
+      <Path>Assets</Path>
       <Path>Library/PackageCache/com.cysharp.r3@9b18209448</Path>
       <Path>Library/PackageCache/com.github-glitchenzo.nugetforunity@16d624d3f9</Path>
       <Path>Library/PackageCache/com.unity.burst@1.8.17</Path>

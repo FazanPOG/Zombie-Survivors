@@ -1,24 +1,32 @@
-using _Project.Gameplay;
+using _Project.Game;
+using _Project.Scripts.Game.Data;
 using _Project.UI;
 using _Project.Utility;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
-using Input = _Project.Gameplay.Input;
 
 namespace _Project.Root
 {
     public class ProjectInstaller : MonoInstaller
     {
         [SerializeField] private UIRoot _uiRootPrefab;
+        [SerializeField] private DefaultDataConfig _defaultData;
         
         public override void InstallBindings()
         {
+            BindData();
             BindUtility();
             BindUIRoot();
             BindServices();
+            BindAudio();
             
             StartGame();
+        }
+
+        private void BindData()
+        {
+            Container.Bind<DefaultDataConfig>().FromInstance(_defaultData).AsSingle().NonLazy();
         }
 
         private void BindUtility()
@@ -38,7 +46,15 @@ namespace _Project.Root
         {
             Container.Bind<ISceneLoaderService>().To<SceneLoaderService>().FromNew().AsSingle().NonLazy();
         }
-        
+
+        private void BindAudio()
+        {
+            var audioSource = new GameObject("[Audio]").AddComponent<AudioSource>();
+            DontDestroyOnLoad(audioSource.gameObject);
+            AudioPlayer audioPlayer = new AudioPlayer(audioSource);
+            Container.Bind<AudioPlayer>().FromInstance(audioPlayer).AsSingle().NonLazy();
+        }
+
         private void StartGame()
         {
             var sceneLoader = Container.Resolve<ISceneLoaderService>();

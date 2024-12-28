@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Game;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -7,12 +8,37 @@ namespace _Project.Gameplay
     public class WeaponView : MonoBehaviour
     {
         [SerializeField] private WeaponType _weaponType;
-        [SerializeField, ShowIf(nameof(_isShootingWeapon))] private ParticleSystem _muzzleFlash;
+        [SerializeField, ShowIf(nameof(_isShootingWeapon))] private ParticleSystem _muzzleFlashFX;
 
+        private WeaponConfig _weaponConfig;
+        private AudioPlayer _audioPlayer;
         private bool _isShootingWeapon;
-        
-        public void Attach(Transform parent)
+
+        private void Awake()
         {
+            switch (_weaponType)
+            {
+                case WeaponType.None:
+                    _isShootingWeapon = false;
+                    break;
+                
+                case WeaponType.Melee:
+                    _isShootingWeapon = false;
+                    break;
+                
+                default:
+                    _isShootingWeapon = true;
+                    break;
+            }
+            
+            _muzzleFlashFX.Stop();
+        }
+
+        public void Init(WeaponConfig weaponConfig, AudioPlayer audioPlayer, Transform parent)
+        {
+            _weaponConfig = weaponConfig;
+            _audioPlayer = audioPlayer;
+            
             transform.SetParent(parent, false);
         }
 
@@ -21,7 +47,8 @@ namespace _Project.Gameplay
             if(_isShootingWeapon == false)
                 throw new ArgumentException($"Attempt to shoot a melee weapon: {gameObject}");
             
-            _muzzleFlash?.Play();
+            _muzzleFlashFX.Play();
+            _audioPlayer.PlaySound(_weaponConfig.ShotSFX);
         }
         
         private void OnValidate()

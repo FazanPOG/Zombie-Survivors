@@ -13,7 +13,22 @@
         <e p="_Project" t="Include">
           <e p="Scripts" t="Include">
             <e p="Game" t="Include">
+              <e p="Audio" t="Include">
+                <e p="AudioPlayer.cs" t="Include" />
+              </e>
+              <e p="Data" t="Include">
+                <e p="DefaultDataConfig.cs" t="Include" />
+                <e p="Player" t="Include">
+                  <e p="PlayerHealth.cs" t="Include" />
+                  <e p="PlayerHealthData.cs" t="Include" />
+                  <e p="PlayerMoveSpeed.cs" t="Include" />
+                  <e p="PlayerMoveSpeedData.cs" t="Include" />
+                </e>
+              </e>
               <e p="Gameplay" t="Include">
+                <e p="Common" t="Include">
+                  <e p="IDamageable.cs" t="Include" />
+                </e>
                 <e p="Environment" t="Include">
                   <e p="Environment.cs" t="Include" />
                 </e>
@@ -24,6 +39,8 @@
                 </e>
                 <e p="Player" t="Include">
                   <e p="CameraSystem.cs" t="Include" />
+                  <e p="PlayerAttacker.cs" t="Include" />
+                  <e p="PlayerCollisionHandler.cs" t="Include" />
                   <e p="PlayerMovement.cs" t="Include" />
                   <e p="PlayerView.cs" t="Include" />
                   <e p="PlayerWeaponHandler.cs" t="Include" />
@@ -38,6 +55,12 @@
                   <e p="WeaponConfig.cs" t="Include" />
                   <e p="WeaponType.cs" t="Include" />
                   <e p="WeaponView.cs" t="Include" />
+                </e>
+                <e p="Zombie" t="Include">
+                  <e p="Zombie.cs" t="Include" />
+                  <e p="ZombieConfig.cs" t="Include" />
+                  <e p="ZombieMovement.cs" t="Include" />
+                  <e p="ZombieView.cs" t="Include" />
                 </e>
               </e>
               <e p="MainMenu" t="Include">
@@ -136,6 +159,65 @@
           </e>
         </e>
         <e p="Plugins" t="Include">
+          <e p="JMO Assets" t="Include">
+            <e p="Cartoon FX Easy Editor" t="Include">
+              <e p="CartoonFX Easy Editor Readme.txt" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="CFXEasyEditor.cs" t="Include" />
+              </e>
+            </e>
+            <e p="WarFX" t="Include">
+              <e p="!WarFX Readme.txt" t="Include" />
+              <e p="_Effects" t="Include">
+                <e p="MuzzleFlashes" t="Include">
+                  <e p="!MuzzleFlash Differences.txt" t="Include" />
+                </e>
+              </e>
+              <e p="_Effects (Mobile)" t="Include">
+                <e p="MuzzleFlashes" t="Include">
+                  <e p="!MuzzleFlash Differences.txt" t="Include" />
+                </e>
+              </e>
+              <e p="Demo" t="Include">
+                <e p="Assets" t="Include">
+                  <e p="CFX_AutoStopLoopedEffect.cs" t="Include" />
+                  <e p="CFX_Demo_RandomDir.cs" t="Include" />
+                  <e p="CFX_Demo_RotateCamera.cs" t="Include" />
+                  <e p="CFX_Demo_Translate.cs" t="Include" />
+                  <e p="WFX_Demo.cs" t="Include" />
+                  <e p="WFX_Demo_DeleteAfterDelay.cs" t="Include" />
+                  <e p="WFX_Demo_New.cs" t="Include" />
+                  <e p="WFX_Demo_RandomDir.cs" t="Include" />
+                  <e p="WFX_Demo_Wall.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Editor" t="Include">
+                <e p="CFX_SpawnSystemEditor.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="CFX_AutoDestructShuriken.cs" t="Include" />
+                <e p="CFX_LightIntensityFade.cs" t="Include" />
+                <e p="WFX_BulletHoleDecal.cs" t="Include" />
+                <e p="WFX_LightFlicker.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="WFX_S Add Scroll.shader" t="Include" />
+                <e p="WFX_S Alpha-Diffuse TintColor.shader" t="Include" />
+                <e p="WFX_S Alpha-Specular TintColor.shader" t="Include" />
+                <e p="WFX_S AlphaBlend NoSoftParticles.shader" t="Include" />
+                <e p="WFX_S AlphaBlend Scroll.shader" t="Include" />
+                <e p="WFX_S Multiply Soft Scroll.shader" t="Include" />
+                <e p="WFX_S Multiply Soft.shader" t="Include" />
+                <e p="WFX_S Particle Add A8.shader" t="Include" />
+                <e p="WFX_S Particle AddSoft A8.shader" t="Include" />
+                <e p="WFX_S Particle Multiply A8.shader" t="Include" />
+                <e p="WFX_S Smoke Scroll.shader" t="Include" />
+              </e>
+              <e p="Spawn System" t="Include">
+                <e p="CFX_SpawnSystem.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Joystick Pack" t="Include">
             <e p="Examples" t="Include">
               <e p="JoystickPlayerExample.cs" t="Include" />

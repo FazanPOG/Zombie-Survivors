@@ -22,6 +22,7 @@ MonoBehaviour:
     - 503f0b044b905d544bb403bda3a7050c
     - b2836f6f479623249adc89676c727d22
     - 53ecc5863d4c48cb9c3c4c104dd58f61
+    - 7bb363f09f871d3458b803108136e5eb
     values:
     - colorIndex: 1
       iconNameOrGuid: 
@@ -39,3 +40,5 @@ MonoBehaviour:
       iconNameOrGuid: Prefab Icon
     - colorIndex: 0
       iconNameOrGuid: ScriptableObject Icon
+    - colorIndex: 0
+      iconNameOrGuid: AudioClip Icon

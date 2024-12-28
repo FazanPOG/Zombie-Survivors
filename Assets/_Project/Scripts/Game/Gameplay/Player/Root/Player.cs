@@ -1,34 +1,75 @@
 ﻿using System;
+using _Project.Data;
+using _Project.Game;
+using R3;
 using UnityEngine;
 
 namespace _Project.Gameplay
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IDamageable
     {
+        [SerializeField] private PlayerCollisionHandler _collisionHandler;
         [SerializeField] private PlayerView _view;
         [SerializeField] private Transform _hand;
         [SerializeField] private WeaponConfig _testWeapon; //TODO
         [SerializeField, TextArea(0, 10)] private string DEBUG_STRING; 
         
-        private PlayerMovement _movement;
+        private readonly ReactiveProperty<WeaponConfig> _currentWeapon = new ReactiveProperty<WeaponConfig>();
+        private readonly ReactiveProperty<float> _attackRange = new ReactiveProperty<float>();
         
-        public void Init(IInput input)
+        private PlayerHealth _playerHealth;
+        private PlayerMovement _movement;
+        private PlayerAttacker _playerAttacker;
+        private int _maxHealth;
+
+        public bool CanTakeDamage { get; private set; }
+
+        public void Init(
+            IInput input, 
+            PlayerHealth playerHealth, 
+            PlayerMoveSpeed playerMoveSpeed, 
+            AudioPlayer audioPlayer)
         {
-            _movement = new PlayerMovement(transform, input);
-            new PlayerWeaponHandler(_testWeapon, _hand);
-            _view.Init(_movement);
+            _playerHealth = playerHealth;
+            _currentWeapon.Value = _testWeapon;
+            _attackRange.Value = _testWeapon.AttackRange;
+            CanTakeDamage = true;
+
+            _collisionHandler.Init(_attackRange);
+            _movement = new PlayerMovement(transform, input, playerMoveSpeed.MoveSpeed);
+            var weaponHandler = new PlayerWeaponHandler(_testWeapon, _hand, audioPlayer);
+            _movement.EnableMovement();
+            _playerAttacker = new PlayerAttacker(this, _currentWeapon, _collisionHandler, weaponHandler);
+            _view.Init(_movement, _playerHealth.Health, _collisionHandler.ClosestEnemy);
+
+            _currentWeapon.Skip(1).Subscribe(newWeapon => _attackRange.Value = newWeapon.AttackRange);
         }
 
+        public void TakeDamage(int damage)
+        {
+            if (damage < 0)
+                throw new Exception();
+
+            _playerHealth.Health.Value -= damage;
+
+            if (_playerHealth.Health.Value <= 0)
+            {
+                CanTakeDamage = false;
+                _movement.DisableMovement();
+            }
+        }
+        
         private void Update()
         {
             UpdateDebugString();
             _movement.Update();
+            _playerAttacker.Update();
         }
 
         private void UpdateDebugString()
         {
             DEBUG_STRING = String.Empty;
-            DEBUG_STRING += $"Speed: {_movement.Speed}";
+            DEBUG_STRING += $"Move speed: {_movement.Speed}";
         }
     }
 }
