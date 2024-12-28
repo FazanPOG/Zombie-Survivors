@@ -18,6 +18,10 @@ MonoBehaviour:
     - 1ebb81d36f751fa4da7b37ce1896625f
     - 28376c1aa64eee842a26de4b810ca65f
     - 404abb00f1c973842a62fa70b75c008e
+    - e5de6bcd7310dff499080683d8c5063f
+    - 503f0b044b905d544bb403bda3a7050c
+    - b2836f6f479623249adc89676c727d22
+    - 53ecc5863d4c48cb9c3c4c104dd58f61
     values:
     - colorIndex: 1
       iconNameOrGuid: 
@@ -27,3 +31,11 @@ MonoBehaviour:
       iconNameOrGuid: SceneAsset Icon
     - colorIndex: 0
       iconNameOrGuid: cs Script Icon
+    - colorIndex: 0
+      iconNameOrGuid: AnimationClip Icon
+    - colorIndex: 0
+      iconNameOrGuid: Light Icon
+    - colorIndex: 0
+      iconNameOrGuid: Prefab Icon
+    - colorIndex: 0
+      iconNameOrGuid: ScriptableObject Icon

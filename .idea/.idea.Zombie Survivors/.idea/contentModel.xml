@@ -18,13 +18,26 @@
                   <e p="Environment.cs" t="Include" />
                 </e>
                 <e p="Input" t="Include">
+                  <e p="IInput.cs" t="Include" />
+                  <e p="Input.cs" t="Include" />
                   <e p="PlayerInputActions.cs" t="Include" />
                 </e>
                 <e p="Player" t="Include">
                   <e p="CameraSystem.cs" t="Include" />
+                  <e p="PlayerMovement.cs" t="Include" />
+                  <e p="PlayerView.cs" t="Include" />
+                  <e p="PlayerWeaponHandler.cs" t="Include" />
+                  <e p="Root" t="Include">
+                    <e p="Player.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="Root" t="Include">
                   <e p="GameplayInstaller.cs" t="Include" />
+                </e>
+                <e p="Weapon" t="Include">
+                  <e p="WeaponConfig.cs" t="Include" />
+                  <e p="WeaponType.cs" t="Include" />
+                  <e p="WeaponView.cs" t="Include" />
                 </e>
               </e>
               <e p="MainMenu" t="Include">
@@ -123,6 +136,29 @@
           </e>
         </e>
         <e p="Plugins" t="Include">
+          <e p="Joystick Pack" t="Include">
+            <e p="Examples" t="Include">
+              <e p="JoystickPlayerExample.cs" t="Include" />
+              <e p="JoystickSetterExample.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Base" t="Include">
+                <e p="Joystick.cs" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="DynamicJoystickEditor.cs" t="Include" />
+                <e p="FloatingJoystickEditor.cs" t="Include" />
+                <e p="JoystickEditor.cs" t="Include" />
+                <e p="VariableJoystickEditor.cs" t="Include" />
+              </e>
+              <e p="Joysticks" t="Include">
+                <e p="DynamicJoystick.cs" t="Include" />
+                <e p="FixedJoystick.cs" t="Include" />
+                <e p="FloatingJoystick.cs" t="Include" />
+                <e p="VariableJoystick.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="PolygonApocalypse" t="Include">
             <e p="Materials" t="Include">
               <e p="Misc" t="Include">

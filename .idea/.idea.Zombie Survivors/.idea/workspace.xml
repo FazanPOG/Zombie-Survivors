@@ -20,113 +20,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e679098d-e8d5-4d2d-8d7b-21bcaba81721" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic/URP.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic/URP/Universal Render Pipeline Asset.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic/URP/Universal Render Pipeline Asset.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic/URP/Universal Render Pipeline Asset_Renderer.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic/URP/Universal Render Pipeline Asset_Renderer.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic/URP/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphic/URP/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Materials/PolygonZombie_Texture_01_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Materials/PolygonZombie_Texture_01_A.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Axe_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Axe_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Bar_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Bar_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Bar_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Bar_02.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Cleaver_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Cleaver_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Knife_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Knife_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Scissors_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/SM_Chr_Attach_Scissors_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Bellboy_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Bellboy_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Biker_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Biker_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_BioHazardSuit_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_BioHazardSuit_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Bride_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Bride_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_BusinessShirt_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_BusinessShirt_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Business_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Business_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Businessman_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Businessman_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Cheerleader_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Cheerleader_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Clown_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Clown_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Coat_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Coat_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Daughter_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Daughter_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Diver_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Diver_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_FastfoodWorker_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_FastfoodWorker_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Father_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Father_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Father_Male_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Father_Male_02.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Firefighter_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Firefighter_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Footballer_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Footballer_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_GamerGirl_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_GamerGirl_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Gangster_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Gangster_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Grandma_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Grandma_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Grandpa_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Grandpa_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hipster_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hipster_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hipster_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hipster_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hobo_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hobo_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hoodie_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Hoodie_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_HotDogSuit_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_HotDogSuit_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Jacket_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Jacket_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Jacket_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Jacket_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Jock_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Jock_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Military_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Military_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Mother_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Mother_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Mother_Female_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Mother_Female_02.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Paramedic_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Paramedic_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Patient_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Patient_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Police_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Police_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Police_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Police_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Prisoner_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Prisoner_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Punk_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Punk_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Punk_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Punk_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_RiotCop_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_RiotCop_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Roadworker_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Roadworker_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_SchoolBoy_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_SchoolBoy_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_SchoolGirl_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_SchoolGirl_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_ShopKeeper_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_ShopKeeper_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_ShopKeeper_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_ShopKeeper_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Son_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Son_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_SummerGirl_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_SummerGirl_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Tourist_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Tourist_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Underwear_Female_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Underwear_Female_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Underwear_Male_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Prefabs/Zombie_Underwear_Male_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Scenes/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Scenes/Ground.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Shaders/POLYGON_Zombies.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Shaders/POLYGON_Zombies.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Shaders/POLYGON_Zombies.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Shaders/POLYGON_Zombies.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Textures/PolygonZombie_Texture_01_A.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Textures/PolygonZombie_Texture_01_A.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Textures/PolygonZombie_Texture_01_B.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonZombies/Textures/PolygonZombie_Texture_01_B.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/IntegrationTests/Factories/Resources/TestGameObjectFactoryZero/Cube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/IntegrationTests/Factories/Resources/TestGameObjectFactoryZero/Cube.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/IntegrationTests/Misc/TestAnimationStateBehaviourInject/Resources/TestAnimationStateBehaviourInject/Foo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/IntegrationTests/Misc/TestAnimationStateBehaviourInject/Resources/TestAnimationStateBehaviourInject/Foo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/IntegrationTests/Resources/TestBindGameObject/Cube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/IntegrationTests/Resources/TestBindGameObject/Cube.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Rocks/meshes/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Rocks/meshes/Materials/No Name.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Rocks/meshes/Materials/rock_01Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Rocks/meshes/Materials/rock_01Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Materials/1K_Body-TXTR.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Materials/1K_Body-TXTR.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Materials/Space_Shooter_Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Materials/Space_Shooter_Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Materials/stars.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Materials/stars.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Materials/target.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Materials/target.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Meshes/Materials/Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Meshes/Materials/Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Meshes/Materials/shipdoor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Meshes/Materials/shipdoor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/Background/Materials/Free_Shmup_Sprites_Starfield 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/Background/Materials/Free_Shmup_Sprites_Starfield 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/Background/Materials/Free_Shmup_Sprites_Starfield.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/Background/Materials/Free_Shmup_Sprites_Starfield.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Models/Materials/Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Models/Materials/Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Prefabs/Bullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/DebuggingMode/Prefabs/DebuggingModeYG.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/DebuggingMode/Prefabs/DebuggingModeYG.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Example/Content/Materials/DebugViewing.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Example/Content/Materials/DebugViewing.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Example/Scenes/ExampleYG.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Example/Scenes/ExampleYG.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Example/Scenes/ExampleYG_Two.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Example/Scenes/ExampleYG_Two.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Ads/Ad Notification.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Ads/Ad Notification.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Ads/Timer Before Ads.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Ads/Timer Before Ads.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Leaderboards/LBPlayerData.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Leaderboards/LBPlayerData.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Leaderboards/Simple LB Example.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Leaderboards/Simple LB Example.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Payments/Payments Catalog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Payments/Payments Catalog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Payments/Purchase.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/Prefabs/Payments/Purchase.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Boot.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Boot.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Game.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Game.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MainMenu.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/MainMenu.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Root.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_AssaultRifle_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_AssaultRifle_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_HuntingRifle_Clean_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_HuntingRifle_Clean_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Hybrid_03.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Hybrid_03.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_MachineGun_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_MachineGun_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Minigun_Clean_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Minigun_Clean_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Nailgun_Clean_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Nailgun_Clean_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Pistol_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Pistol_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Revolver_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_Revolver_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_RocketLauncher_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_RocketLauncher_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SniperRifle_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SniperRifle_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SubMGun_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SubMGun_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SubMGun_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SubMGun_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SubMGun_03.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Guns/SM_Wep_SubMGun_03.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Bat_Metal_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Bat_Metal_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Bat_Wood_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Bat_Wood_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Bat_Wood_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Bat_Wood_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Baton_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Baton_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Baton_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Baton_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Butcher_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Butcher_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Cross_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Cross_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Crowbar_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Crowbar_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Crutch_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Crutch_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_FireAxe_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_FireAxe_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Hammer_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Hammer_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Katana_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Katana_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_GolfClub_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_GolfClub_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_HuntingKnife_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_HuntingKnife_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_Machete_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_Machete_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_Spear_Wood_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Melee_Spear_Wood_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_PipeWrench_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_PipeWrench_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Pipe_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Pipe_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Plank_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Plank_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_RebarClub_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_RebarClub_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Spade_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Spade_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_WoodAxe_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_WoodAxe_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Wrench_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonApocalypse/Prefabs/Weapons/Melee/SM_Wep_Wrench_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/vFolders/vFolders Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/vFolders/vFolders Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Environmets/Environment City.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Environmets/Environment City.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/CameraSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/CameraSystem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Gameplay/GameplayUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Gameplay/GameplayUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Input/PlayerInputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Input/PlayerInputActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Input/PlayerInputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Input/PlayerInputActions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/CameraSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/CameraSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/GameplayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/GameplayUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +116,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Magic Farm Adventure/Assets/Modules/Player/Scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/UIRoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Magic Farm Adventure/Assets/Modules/Player/Scripts/PlayerInputHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Environment/Environment.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -156,13 +138,26 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Root/Services/SceneLoaderService.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/UI/MainMenu/MainMenuUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/MainMenu/Root/MainMenuInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/GameplayUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/MainMenu/Root/MainMenuInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/LoadingScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/UIRoot.cs" />
+        <option value="$PROJECT_DIR$/../Magic Farm Adventure/Assets/Modules/Player/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Input/IInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Root/PlayerRoot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/CameraSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Weapon/WeaponType.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Weapon/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Weapon/WeaponConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Root/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerWeaponHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Weapon/WeaponView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/GameplayUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Input/Input.cs" />
       </list>
     </option>
   </component>
@@ -178,6 +173,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -211,6 +207,7 @@
       <workItem from="1735314644685" duration="1346000" />
       <workItem from="1735324772429" duration="1344000" />
       <workItem from="1735334803596" duration="4325000" />
+      <workItem from="1735362398413" duration="11182000" />
     </task>
     <servers />
   </component>
@@ -233,5 +230,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="803" y="213" key="RiderGenerateDialog" timestamp="1735363276339">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="803" y="213" key="RiderGenerateDialog/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735363276339" />
+    <state x="643" y="318" key="run.anything.popup" timestamp="1735369101852">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="643" y="318" key="run.anything.popup/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735369101852" />
   </component>
 </project>

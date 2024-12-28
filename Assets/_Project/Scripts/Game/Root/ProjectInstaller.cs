@@ -1,8 +1,10 @@
+using _Project.Gameplay;
 using _Project.UI;
 using _Project.Utility;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
+using Input = _Project.Gameplay.Input;
 
 namespace _Project.Root
 {
@@ -15,7 +17,7 @@ namespace _Project.Root
             BindUtility();
             BindUIRoot();
             BindServices();
-
+            
             StartGame();
         }
 

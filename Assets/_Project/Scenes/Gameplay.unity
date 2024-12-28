@@ -202,6 +202,7 @@ MonoBehaviour:
   _gameplayUIPrefab: {fileID: -9022566191499183542, guid: b093905d888bf644bb2a1b5356a557bf, type: 3}
   _testEnvironmentPrefab: {fileID: 1687030902369259474, guid: fec6c50e59537ce4c92580b01350b5f9, type: 3}
   _cameraSystemPrefab: {fileID: 7729502491441824242, guid: d18046d77aecb6b4db975d4e95e887fc, type: 3}
+  _playerPrefab: {fileID: 2012218117605606971, guid: 2ea3e67dadb34484db179fedb6dd27b6, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
