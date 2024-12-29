@@ -26,7 +26,7 @@ namespace _Project.Gameplay
             
             _animator.SetFloat(MOVE_SPEED_KEY, moveSpeed);
 
-            health.Subscribe(_ => bloodFX.Play());
+            health.Skip(1).Subscribe(_ => bloodFX.Play());
         }
 
         public void PlayDiedAnimation()

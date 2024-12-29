@@ -10,15 +10,17 @@ namespace _Project.Gameplay
     [RequireComponent(typeof(NavMeshAgent))]
     public class Zombie : MonoBehaviour, IDamageable
     {
-        [SerializeField] private ZombieConfig _config;
         [SerializeField] private ParticleSystem _bloodFX;
+
+        private readonly ReactiveProperty<int> _currentHealth = new ReactiveProperty<int>();
         
         private NavMeshAgent _navMeshAgent;
         private BoxCollider _collider;
+        private ZombieType _zombieType;
         private ZombieMovement _movement;
         private ZombieAttacker _attacker;
         private ZombieView _view;
-        private ReactiveProperty<int> _currentHealth = new ReactiveProperty<int>();
+        private ILevelProgressService _levelProgressService;
 
         public bool CanTakeDamage { get; private set; }
 
@@ -28,22 +30,30 @@ namespace _Project.Gameplay
             _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
-        public void Init(Player player)
+        public void Init(ZombieConfig config, ILevelProgressService levelProgressService)
         {
-            _currentHealth.Value = _config.Health;
+            _zombieType = config.ZombieType;
+            _levelProgressService = levelProgressService;
+            _currentHealth.Value = config.Health;
             CanTakeDamage = true;
             
-            _movement = new ZombieMovement(_navMeshAgent, player, _config.MoveSpeed);
-            _attacker = new ZombieAttacker(transform, player, _config.Damage);
-            ZombieView randomViewPrefab = _config.ViewPrefabs[Random.Range(0, _config.ViewPrefabs.Length - 1)];
+            _movement = new ZombieMovement(_navMeshAgent, config.MoveSpeed);
+            _attacker = new ZombieAttacker(transform, config.Damage);
+            ZombieView randomViewPrefab = config.ViewPrefabs[Random.Range(0, config.ViewPrefabs.Length - 1)];
             _view = Instantiate(randomViewPrefab, transform);
-            _view.Init(Died, _config.MoveSpeed, _currentHealth, _bloodFX);
+            _view.Init(DestroySelf, config.MoveSpeed, _currentHealth, _bloodFX);
         }
 
         private void Update()
         {
             _movement.Update();
             _attacker.Update();
+        }
+
+        public void SetTarget(Player target)
+        {
+            _movement.SetMoveTarget(target.transform);
+            _attacker.SetAttackTarget(target);
         }
 
         public void TakeDamage(int damage)
@@ -56,23 +66,29 @@ namespace _Project.Gameplay
             if (_currentHealth.Value <= 0)
             {
                 _currentHealth.Value = 0;
-                DisableZombie();
+                Kill();
             }
         }
 
-        private void DisableZombie()
+        public void Kill()
         {
+            _levelProgressService.ZombieKilled(_zombieType);
+            DisableZombieLogic();
             _view.PlayDiedAnimation();
+        }
+        
+        private void DestroySelf()
+        {
+            //TODO: pool.Release
+            Destroy(gameObject);
+        }
+
+        private void DisableZombieLogic()
+        {
             _movement.StopMove();
             _attacker.StopAttack();
             CanTakeDamage = false;
             _collider.enabled = false;
-        }
-        
-        private void Died()
-        {
-            //TODO: pool.Release
-            Destroy(gameObject);
         }
     }
 }

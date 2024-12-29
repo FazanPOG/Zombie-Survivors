@@ -27,7 +27,6 @@ namespace _Project.Gameplay
 
         public void Init(
             IInput input,
-            IGameStateProvider gameStateProvider,
             PlayerHealth playerHealth, 
             PlayerMoveSpeed playerMoveSpeed, 
             AudioPlayer audioPlayer)
@@ -39,21 +38,14 @@ namespace _Project.Gameplay
 
             _collisionHandler.Init(_attackRange);
             _movement = new PlayerMovement(transform, input, playerMoveSpeed.MoveSpeed);
+            _movement.EnableMovement();
             var weaponHandler = new PlayerWeaponHandler(_testWeapon, _hand, audioPlayer);
-            _playerAttacker = new PlayerAttacker(this, _currentWeapon, _collisionHandler, weaponHandler);
             _view.Init(_movement, _playerHealth.Health, _collisionHandler.ClosestEnemy);
+            _playerAttacker = new PlayerAttacker(this, _currentWeapon, _collisionHandler, weaponHandler, _view);
 
             _currentWeapon.Skip(1).Subscribe(newWeapon => _attackRange.Value = newWeapon.AttackRange);
-            
-            gameStateProvider.GameState.Subscribe(state =>
-            {
-                if (state is GameplayState)
-                {
-                    _movement.EnableMovement();
-                }
-            });
         }
-
+        
         public void TakeDamage(int damage)
         {
             if (damage < 0)

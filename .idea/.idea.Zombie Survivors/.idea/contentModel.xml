@@ -70,6 +70,12 @@
                 <e p="Root" t="Include">
                   <e p="GameplayInstaller.cs" t="Include" />
                 </e>
+                <e p="Services" t="Include">
+                  <e p="ILevelProgressService.cs" t="Include" />
+                  <e p="IZombieSpawnerService.cs" t="Include" />
+                  <e p="LevelProgressService.cs" t="Include" />
+                  <e p="ZombieSpawnerService.cs" t="Include" />
+                </e>
                 <e p="Weapon" t="Include">
                   <e p="WeaponConfig.cs" t="Include" />
                   <e p="WeaponType.cs" t="Include" />
@@ -80,6 +86,7 @@
                   <e p="ZombieAttacker.cs" t="Include" />
                   <e p="ZombieConfig.cs" t="Include" />
                   <e p="ZombieMovement.cs" t="Include" />
+                  <e p="ZombieType.cs" t="Include" />
                   <e p="ZombieView.cs" t="Include" />
                 </e>
               </e>
@@ -100,6 +107,10 @@
                   <e p="Presenters" t="Include">
                     <e p="HUD" t="Include">
                       <e p="HealthBarViewPresenter.cs" t="Include" />
+                      <e p="LevelProgressViewPresenter.cs" t="Include" />
+                    </e>
+                    <e p="Popups" t="Include">
+                      <e p="PausePopupViewPresenter.cs" t="Include" />
                     </e>
                     <e p="Screens" t="Include">
                       <e p="ClickToStartScreenViewPresenter.cs" t="Include" />
@@ -111,6 +122,10 @@
                   <e p="Views" t="Include">
                     <e p="HUD" t="Include">
                       <e p="HealthBarView.cs" t="Include" />
+                      <e p="LevelProgressView.cs" t="Include" />
+                    </e>
+                    <e p="Popups" t="Include">
+                      <e p="PausePopupView.cs" t="Include" />
                     </e>
                     <e p="Screens" t="Include">
                       <e p="ClickToStartView.cs" t="Include" />
@@ -118,8 +133,18 @@
                   </e>
                 </e>
                 <e p="MainMenu" t="Include">
+                  <e p="Presenters" t="Include">
+                    <e p="HUD" t="Include">
+                      <e p="PlayButtonViewPresenter.cs" t="Include" />
+                    </e>
+                  </e>
                   <e p="Root" t="Include">
                     <e p="MainMenuUI.cs" t="Include" />
+                  </e>
+                  <e p="Views" t="Include">
+                    <e p="HUD" t="Include">
+                      <e p="PlayButtonView.cs" t="Include" />
+                    </e>
                   </e>
                 </e>
                 <e p="Root" t="Include">

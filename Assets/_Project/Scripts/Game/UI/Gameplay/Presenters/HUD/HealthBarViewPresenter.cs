@@ -1,6 +1,7 @@
 ﻿using System;
 using _Project.Data;
 using R3;
+using UnityEngine;
 
 namespace _Project.UI
 {
@@ -8,7 +9,7 @@ namespace _Project.UI
     {
         private readonly HealthBarView _view;
         private readonly IDisposable _disposable;
-        private readonly int _maxHP;
+        private readonly float _maxHP;
         
         public HealthBarViewPresenter(HealthBarView view, PlayerHealth playerHealth)
         {
@@ -20,7 +21,7 @@ namespace _Project.UI
 
         private void UpdateView(int hp)
         {
-            _view.SetFilledImageFill(Math.Clamp(hp / _maxHP, 0, 1));
+            _view.SetFilledImageFill(Mathf.Clamp(hp / _maxHP, 0, 1));
             _view.SetHealthValueText($"{hp}/{_maxHP}");
         }
 

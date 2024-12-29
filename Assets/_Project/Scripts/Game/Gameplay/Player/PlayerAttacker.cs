@@ -8,6 +8,7 @@ namespace _Project.Gameplay
     {
         private MonoBehaviour _context;
         private readonly PlayerWeaponHandler _playerWeaponHandler;
+        private readonly PlayerView _playerView;
         private float _attackDelay;
         private int _damage;
         private IDamageable _enemy;
@@ -17,10 +18,12 @@ namespace _Project.Gameplay
             MonoBehaviour context, 
             ReadOnlyReactiveProperty<WeaponConfig> weapon, 
             PlayerCollisionHandler playerCollisionHandler,
-            PlayerWeaponHandler playerWeaponHandler)
+            PlayerWeaponHandler playerWeaponHandler,
+            PlayerView playerView)
         {
             _context = context;
             _playerWeaponHandler = playerWeaponHandler;
+            _playerView = playerView;
             _canAttack = true;
             
             weapon.Subscribe(newWeapon =>
@@ -43,14 +46,17 @@ namespace _Project.Gameplay
 
         public void Update()
         {
-            if (_enemy != null && _enemy.CanTakeDamage && _canAttack)
+            if(_enemy == null)
+                return;
+            
+            if (_enemy.CanTakeDamage && _canAttack && _playerView.IsLookingToTarget)
             {
                 _enemy.TakeDamage(_damage);
                 _playerWeaponHandler.WeaponView.Shoot();
                 _context.StartCoroutine(AttackCooldown());
             }
         }
-        
+
         private IEnumerator AttackCooldown()
         {
             _canAttack = false;

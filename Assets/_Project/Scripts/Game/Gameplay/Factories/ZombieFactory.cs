@@ -1,5 +1,10 @@
-﻿using Unity.Mathematics;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ModestTree;
+using Unity.Mathematics;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace _Project.Gameplay
@@ -7,28 +12,51 @@ namespace _Project.Gameplay
     public class ZombieFactory
     {
         private readonly Zombie _zombiePrefab;
-        private readonly Transform[] _zombieSpawnPoints;
-        private readonly Player _player;
+        private readonly ZombieConfig[] _zombieConfigs;
+        private readonly ILevelProgressService _levelProgressService;
 
-        public ZombieFactory(Zombie zombiePrefab, Transform[] zombieSpawnPoints, Player player)
+        private List<Zombie> _zombies = new List<Zombie>();
+        
+        public ZombieFactory(
+            Zombie zombiePrefab, 
+            ZombieConfig[] zombieConfigs, 
+            ILevelProgressService levelProgressService)
         {
             _zombiePrefab = zombiePrefab;
-            _zombieSpawnPoints = zombieSpawnPoints;
-            _player = player;
+            _zombieConfigs = zombieConfigs;
+            _levelProgressService = levelProgressService;
         }
 
-        public Zombie Create()
+        public Zombie Create(ZombieType zombieType, Vector3 spawnPosition)
         {
-            Transform randomSpawnPoint = GetRandomZombieSpawnPoint();
-            var instance = Object.Instantiate(_zombiePrefab, randomSpawnPoint.transform.position, quaternion.identity);
-            instance.Init(_player);
+            var zombieConfig = GetZombieConfig(zombieType);
+            
+            var instance = Object.Instantiate(_zombiePrefab, spawnPosition, quaternion.identity);
+            instance.Init(zombieConfig, _levelProgressService);
+
+            _zombies.Add(instance);
+            
             return instance;
         }
 
-        private Transform GetRandomZombieSpawnPoint()
+        public void KillAll()
         {
-            int randomIndex = Random.Range(0, _zombieSpawnPoints.Length - 1);
-            return _zombieSpawnPoints[randomIndex].transform;
+            foreach (var zombie in _zombies)
+            {
+                if(zombie != null)
+                    zombie.Kill();
+            }
+        }
+        
+        private ZombieConfig GetZombieConfig(ZombieType zombieType)
+        {
+            ZombieConfig[] configs = _zombieConfigs.Where(x => x.ZombieType == zombieType).ToArray();
+            
+            if(configs.IsEmpty())
+                throw new Exception();
+
+            int randomIndex = Random.Range(0, configs.Length - 1);
+            return configs[randomIndex];
         }
     }
 }

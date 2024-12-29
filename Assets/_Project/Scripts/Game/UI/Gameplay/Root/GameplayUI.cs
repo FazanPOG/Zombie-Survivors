@@ -18,12 +18,16 @@ namespace _Project.UI
         [Header("HUD")]
         [SerializeField] private FloatingJoystick _joystick;
         [SerializeField] private HealthBarView _healthBarViewPrefab;
+        [SerializeField] private LevelProgressView _levelProgressViewPrefab;
+        [Header("Popups")]
+        [SerializeField] private PausePopupView _pausePopupView;
 
         private readonly List<IDisposable> _disposables = new List<IDisposable>();
 
         private DiContainer _container;
         private ClickToStartView _clickToStartViewInstance;
         private HealthBarView _healthBarViewInstance;
+        private LevelProgressView _levelProgressViewInstance;
         
         public void Bind(DiContainer diContainer)
         {
@@ -38,6 +42,7 @@ namespace _Project.UI
         {
             _clickToStartViewInstance = _container.InstantiatePrefabForComponent<ClickToStartView>(_clickToStartViewPrefab, _screensParent);
             _healthBarViewInstance = _container.InstantiatePrefabForComponent<HealthBarView>(_healthBarViewPrefab, _HUDParent);
+            _levelProgressViewInstance = _container.InstantiatePrefabForComponent<LevelProgressView>(_levelProgressViewPrefab, _HUDParent);
         }
 
         private void AttachJoystick()
@@ -51,12 +56,19 @@ namespace _Project.UI
             var input = _container.Resolve<IInput>();
             var gameStateMachine = _container.Resolve<IGameStateMachine>();
             var playerHealth = _container.Resolve<PlayerHealth>();
+            var levelProgress = _container.Resolve<LevelProgress>();
 
             var clickToStartScreenViewPresenter = new ClickToStartScreenViewPresenter(_clickToStartViewInstance, input, gameStateMachine);
             _disposables.Add(clickToStartScreenViewPresenter);
             
             var healthBarPresenter = new HealthBarViewPresenter(_healthBarViewInstance, playerHealth);
             _disposables.Add(healthBarPresenter);
+            
+            var levelProgressViewPresenter = new LevelProgressViewPresenter(levelProgress, _levelProgressViewInstance);
+            _disposables.Add(levelProgressViewPresenter);
+
+            var pausePopupViewPresenter = new PausePopupViewPresenter(_pausePopupView);
+            _disposables.Add(pausePopupViewPresenter);
         }
 
         private void OnDestroy()

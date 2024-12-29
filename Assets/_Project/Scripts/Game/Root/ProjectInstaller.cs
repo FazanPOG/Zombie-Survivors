@@ -63,6 +63,10 @@ namespace _Project.Root
             
             switch (currentScene)
             {
+                case Scenes.Boot:
+                    sceneLoader.LoadSceneAsync(Scenes.MainMenu);
+                    break;
+                
                 case Scenes.MainMenu:
                     sceneLoader.LoadSceneAsync(Scenes.MainMenu);
                     break;

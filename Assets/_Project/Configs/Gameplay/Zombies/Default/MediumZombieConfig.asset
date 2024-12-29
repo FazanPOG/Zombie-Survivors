@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ab4b6445c442c793e29f84ef92557b, type: 3}
+  m_Name: MediumZombieConfig
+  m_EditorClassIdentifier: 
+  _type: 2
+  _health: 10
+  _moveSpeed: 2
+  _damage: 10
+  _viewPrefabs:
+  - {fileID: -5371593822764617872, guid: 478b9cfcbcdb7284bbea515d7f42ea18, type: 3}
+  - {fileID: -5163003902897148580, guid: ea757c1578e17134b85ac65be02c4b19, type: 3}
+  - {fileID: -9205512139098195122, guid: 3ba6740ea34059446b2030cb1cee74bc, type: 3}
+  - {fileID: 7448638752055137203, guid: 7cb0205c5f7aeba45b91883f9425fcab, type: 3}
