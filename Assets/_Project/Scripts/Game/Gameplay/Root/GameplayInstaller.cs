@@ -19,7 +19,7 @@ namespace _Project.Gameplay
         
         public override void InstallBindings()
         {
-            BindPlayerData();
+            BindData();
             BindEnvironment();
             BindInput();
             BindGameStateMachine();
@@ -30,14 +30,16 @@ namespace _Project.Gameplay
             Container.Resolve<IGameStateMachine>().EnterIn<BootState>();
         }
 
-        private void BindPlayerData()
+        private void BindData()
         {
             var config = Container.Resolve<DefaultDataConfig>();
             PlayerHealth playerHealth = new PlayerHealth(new PlayerHealthData(config.Health));
             PlayerMoveSpeed moveSpeed = new PlayerMoveSpeed(new PlayerMoveSpeedData(config.PlayerMoveSpeed));
-
+            LevelProgress levelProgress = new LevelProgress(new LevelProgressData(0, 100));
+            
             Container.Bind<PlayerHealth>().FromInstance(playerHealth).AsSingle().NonLazy();
             Container.Bind<PlayerMoveSpeed>().FromInstance(moveSpeed).AsSingle().NonLazy();
+            Container.Bind<LevelProgress>().FromInstance(levelProgress).AsSingle().NonLazy();
         }
 
         private void BindGameplayUI()
@@ -95,7 +97,10 @@ namespace _Project.Gameplay
 
         private void BindGameStateMachine()
         {
-            var gameStateMachine = new GameStateMachine();
+            var playerHealth = Container.Resolve<PlayerHealth>();
+            var levelProgress = Container.Resolve<LevelProgress>();
+            
+            var gameStateMachine = new GameStateMachine(playerHealth, levelProgress);
             Container.BindInterfacesTo<GameStateMachine>().FromInstance(gameStateMachine).AsSingle().NonLazy();
         }
     }

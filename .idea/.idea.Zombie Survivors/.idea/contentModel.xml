@@ -18,6 +18,10 @@
               </e>
               <e p="Data" t="Include">
                 <e p="DefaultDataConfig.cs" t="Include" />
+                <e p="Gameplay" t="Include">
+                  <e p="LevelProgress.cs" t="Include" />
+                  <e p="LevelProgressData.cs" t="Include" />
+                </e>
                 <e p="Player" t="Include">
                   <e p="PlayerHealth.cs" t="Include" />
                   <e p="PlayerHealthData.cs" t="Include" />
@@ -43,6 +47,8 @@
                     <e p="BootState.cs" t="Include" />
                     <e p="GameplayState.cs" t="Include" />
                     <e p="IGameState.cs" t="Include" />
+                    <e p="LoseState.cs" t="Include" />
+                    <e p="WinState.cs" t="Include" />
                   </e>
                 </e>
                 <e p="Input" t="Include">
@@ -92,13 +98,23 @@
               <e p="UI" t="Include">
                 <e p="Gameplay" t="Include">
                   <e p="Presenters" t="Include">
-                    <e p="ClickToStartScreenViewPresenter.cs" t="Include" />
+                    <e p="HUD" t="Include">
+                      <e p="HealthBarViewPresenter.cs" t="Include" />
+                    </e>
+                    <e p="Screens" t="Include">
+                      <e p="ClickToStartScreenViewPresenter.cs" t="Include" />
+                    </e>
                   </e>
                   <e p="Root" t="Include">
                     <e p="GameplayUI.cs" t="Include" />
                   </e>
                   <e p="Views" t="Include">
-                    <e p="ClickToStartView.cs" t="Include" />
+                    <e p="HUD" t="Include">
+                      <e p="HealthBarView.cs" t="Include" />
+                    </e>
+                    <e p="Screens" t="Include">
+                      <e p="ClickToStartView.cs" t="Include" />
+                    </e>
                   </e>
                 </e>
                 <e p="MainMenu" t="Include">
@@ -262,6 +278,13 @@
                 <e p="FixedJoystick.cs" t="Include" />
                 <e p="FloatingJoystick.cs" t="Include" />
                 <e p="VariableJoystick.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Layer Lab" t="Include">
+            <e p="GUI Pro-SurvivalClean" t="Include">
+              <e p="+README+" t="Include">
+                <e p="LayerLab_UserAssetGuide.txt" t="Include" />
               </e>
             </e>
           </e>

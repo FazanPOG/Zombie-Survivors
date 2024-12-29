@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.Data;
 using R3;
 
 namespace _Project.Gameplay
@@ -11,12 +12,14 @@ namespace _Project.Gameplay
 
         public ReadOnlyReactiveProperty<IGameState> GameState => _currentState;
 
-        public GameStateMachine()
+        public GameStateMachine(PlayerHealth playerHealth, LevelProgress levelProgress)
         {
             _gameStates = new Dictionary<Type, IGameState>()
             {
                 [typeof(BootState)] = new BootState(),
-                [typeof(GameplayState)] = new GameplayState(),
+                [typeof(GameplayState)] = new GameplayState(this, playerHealth, levelProgress),
+                [typeof(WinState)] = new WinState(),
+                [typeof(LoseState)] = new LoseState(),
             };
         }
         

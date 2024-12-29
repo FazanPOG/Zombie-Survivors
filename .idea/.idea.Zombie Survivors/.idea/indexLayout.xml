@@ -5,10 +5,18 @@
     <explicitIncludes>
       <Path>Library/PackageCache/com.cysharp.r3@9b18209448</Path>
       <Path>Library/PackageCache/com.github-glitchenzo.nugetforunity@16d624d3f9</Path>
+      <Path>Library/PackageCache/com.unity.2d.animation@9.1.1</Path>
+      <Path>Library/PackageCache/com.unity.2d.aseprite@1.1.5</Path>
+      <Path>Library/PackageCache/com.unity.2d.common@8.0.3</Path>
+      <Path>Library/PackageCache/com.unity.2d.pixel-perfect@5.0.3</Path>
+      <Path>Library/PackageCache/com.unity.2d.psdimporter@8.0.5</Path>
+      <Path>Library/PackageCache/com.unity.2d.spriteshape@9.0.4</Path>
+      <Path>Library/PackageCache/com.unity.2d.tilemap.extras@3.1.2</Path>
       <Path>Library/PackageCache/com.unity.ai.navigation@1.1.5</Path>
       <Path>Library/PackageCache/com.unity.burst@1.8.17</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.10.3</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@2.6.0</Path>
+      <Path>Library/PackageCache/com.unity.collections@1.2.4</Path>
       <Path>Library/PackageCache/com.unity.editorcoroutines@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.6</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@3.0.31</Path>
