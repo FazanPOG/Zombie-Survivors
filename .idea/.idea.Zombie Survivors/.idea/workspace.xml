@@ -22,27 +22,67 @@
     <list default="true" id="e679098d-e8d5-4d2d-8d7b-21bcaba81721" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/Root/DefaultDataConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Configs/Root/DefaultDataConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Gameplay/Player/PlayerController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Animations/Gameplay/Player/PlayerController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Gameplay/Player/Rifle Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Animations/Gameplay/Player/Rifle Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Gameplay/Player/Rifle Run Forward.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Gameplay/Player/Rifle Run Forward.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/Gameplay/Weapons/PistolConfig.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/Gameplay/Weapons/PistolConfig.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphic/Models/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphic/Models/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Environmets/City/Environment City.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Environmets/City/Environment City.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/One Hand/Nailgun.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/One Hand/Nailgun.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/One Hand/SubMGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/One Hand/SubMGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/AssaultRifle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/AssaultRifle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/HuntingRifle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/HuntingRifle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/Hybrid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/Hybrid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/MachineGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/MachineGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/Minigun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/Minigun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/RocketLauncher.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/RocketLauncher.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/SniperRifle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/SniperRifle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/SubMGun 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/SubMGun 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/SubMGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Weapons/Two Hand/SubMGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Blobber_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Blobber_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Brute_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Brute_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Slobber_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Slobber_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Wretch_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Zombies/Views/Boss/SM_Chr_ZombieBoss_Wretch_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Gameplay/HUD/LevelProgressView.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Gameplay/HUD/LevelProgressView.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Gameplay/Root/GameplayUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Gameplay/Root/GameplayUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/MainMenu/Root/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/MainMenu/Root/MainMenuUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Audio/AudioPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Audio/AudioPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/DefaultDataConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/DefaultDataConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/SFX/Gameplay/Weapon/Pistol.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/SFX/Gameplay/Weapon/Pistol.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelScore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelProgress.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelScore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelProgressData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelScoreData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelProgressData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelScoreData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Player/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Environment/Environment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Environment/Environment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Factories/ZombieFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Factories/ZombieFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/BootState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/BootState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/GameplayState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/GameplayState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerWeaponHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerWeaponHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Root/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Root/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ILevelProgressService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IScoreService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ILevelProgressService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IScoreService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/LevelProgressService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ScoreService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/LevelProgressService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ScoreService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ZombieSpawnerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ZombieSpawnerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Weapon/WeaponView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Weapon/WeaponView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/Zombie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/Zombie.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieAttacker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieAttacker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Popups/PausePopupViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Popups/PausePopupViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/LevelProgressViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/LevelScoreViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/LevelProgressViewPresenter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/LevelScoreViewPresenter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Screens/ClickToStartScreenViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Screens/ClickToStartScreenViewPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Root/GameplayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Root/GameplayUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/Popups/PausePopupView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/Popups/PausePopupView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Root/MainMenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Root/MainMenuUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/LevelProgressView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/LevelScoreView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/LevelProgressView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/LevelScoreView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/HUD/PlayButtonViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/HUD/PlayButtonViewPresenter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,57 +104,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/HealthBarView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/LoseState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/WinState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelProgressData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelProgress.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieType.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ILevelProgressService.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ZombieProgressService.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/LevelProgressView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/HealthBarViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/LevelProgressService.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IZombieSpawnerService.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/LevelProgressViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerAttacker.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Views/HUD/PlayButtonView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/HUD/PlayButtonViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IPauseHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IPauseService.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieAttacker.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/PauseButtonView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/PopupButtonView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/PopupButtonTextView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/Zombie.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Factories/ZombieFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/PauseService.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Root/GameplayUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Popups/PausePopupViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/Popups/PausePopupView.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/GameData.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/GameDataProxy.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Provider/IGameDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Provider/PlayerPrefsGameDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Root/MainMenuUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Root/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerWeaponHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Weapon/WeaponView.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Audio/BackgroundMusic.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Audio/AudioPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Views/Popups/SettingsPopupView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Popups/SettingsPopupViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/GameplayState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/BootState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/GameStateMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ZombieSpawnerService.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/DefaultDataConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Popups/SettingsPopupViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Boost/BoostType.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Player/PlayerHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Boost/IBoost.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Boost/SpeedBoost.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Boost/HealBoost.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IBoostSpawnerService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/GameStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Environment/Environment.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/HUD/PlayButtonViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Screens/ClickToStartScreenViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/GameplayState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerWeaponHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/Screens/LoseScreenView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Screens/LoseScreenViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Root/GameplayUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/LevelProgressService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ScoreService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/Gameplay/LevelScore.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieType.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/LevelProgressViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Views/HUD/LevelScoreView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/HUD/LevelScoreViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/ZombieAttacker.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IZombieCounterService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ZombieCounterService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Zombie/Zombie.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Factories/ZombieFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ZombieSpawnerService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IBoostCounterService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/BoostCounterService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Boost/BaseBoost.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Root/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/IScoreService.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Boost/WeaponBoost.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/BoostSpawningService.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Factories/BoostFactory.cs" />
       </list>
     </option>
   </component>
@@ -167,7 +207,7 @@
       <workItem from="1735362398413" duration="11369000" />
       <workItem from="1735380450289" duration="27539000" />
       <workItem from="1735460246013" duration="23062000" />
-      <workItem from="1735544773389" duration="8733000" />
+      <workItem from="1735544773389" duration="29087000" />
     </task>
     <servers />
   </component>
@@ -192,10 +232,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="803" y="213" key="RiderGenerateDialog" timestamp="1735551277331">
+    <state x="803" y="213" key="RiderGenerateDialog" timestamp="1735570616625">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state x="803" y="213" key="RiderGenerateDialog/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735551277331" />
+    <state x="803" y="213" key="RiderGenerateDialog/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735570616625" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1735563260782">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735563260782" />
     <state x="566" y="272" key="Vcs.Push.Dialog.v2" timestamp="1735391371421">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
@@ -212,5 +256,9 @@
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
     <state x="643" y="318" key="run.anything.popup/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735369101852" />
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1735560874663">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735560874663" />
   </component>
 </project>

@@ -22,8 +22,8 @@
                 <e p="GameData.cs" t="Include" />
                 <e p="GameDataProxy.cs" t="Include" />
                 <e p="Gameplay" t="Include">
-                  <e p="LevelProgress.cs" t="Include" />
-                  <e p="LevelProgressData.cs" t="Include" />
+                  <e p="LevelScore.cs" t="Include" />
+                  <e p="LevelScoreData.cs" t="Include" />
                 </e>
                 <e p="Player" t="Include">
                   <e p="PlayerHealth.cs" t="Include" />
@@ -37,6 +37,12 @@
                 </e>
               </e>
               <e p="Gameplay" t="Include">
+                <e p="Boost" t="Include">
+                  <e p="BaseBoost.cs" t="Include" />
+                  <e p="HealBoost.cs" t="Include" />
+                  <e p="SpeedBoost.cs" t="Include" />
+                  <e p="WeaponBoost.cs" t="Include" />
+                </e>
                 <e p="Common" t="Include">
                   <e p="IDamageable.cs" t="Include" />
                 </e>
@@ -44,6 +50,7 @@
                   <e p="Environment.cs" t="Include" />
                 </e>
                 <e p="Factories" t="Include">
+                  <e p="BoostFactory.cs" t="Include" />
                   <e p="ZombieFactory.cs" t="Include" />
                 </e>
                 <e p="GameStateMachine" t="Include">
@@ -78,12 +85,18 @@
                   <e p="GameplayInstaller.cs" t="Include" />
                 </e>
                 <e p="Services" t="Include">
-                  <e p="ILevelProgressService.cs" t="Include" />
+                  <e p="BoostCounterService.cs" t="Include" />
+                  <e p="BoostSpawningService.cs" t="Include" />
+                  <e p="IBoostCounterService.cs" t="Include" />
+                  <e p="IBoostSpawnerService.cs" t="Include" />
                   <e p="IPauseHandler.cs" t="Include" />
                   <e p="IPauseService.cs" t="Include" />
+                  <e p="IScoreService.cs" t="Include" />
+                  <e p="IZombieCounterService.cs" t="Include" />
                   <e p="IZombieSpawnerService.cs" t="Include" />
-                  <e p="LevelProgressService.cs" t="Include" />
                   <e p="PauseService.cs" t="Include" />
+                  <e p="ScoreService.cs" t="Include" />
+                  <e p="ZombieCounterService.cs" t="Include" />
                   <e p="ZombieSpawnerService.cs" t="Include" />
                 </e>
                 <e p="Weapon" t="Include">
@@ -117,13 +130,14 @@
                   <e p="Presenters" t="Include">
                     <e p="HUD" t="Include">
                       <e p="HealthBarViewPresenter.cs" t="Include" />
-                      <e p="LevelProgressViewPresenter.cs" t="Include" />
+                      <e p="LevelScoreViewPresenter.cs" t="Include" />
                     </e>
                     <e p="Popups" t="Include">
                       <e p="PausePopupViewPresenter.cs" t="Include" />
                     </e>
                     <e p="Screens" t="Include">
                       <e p="ClickToStartScreenViewPresenter.cs" t="Include" />
+                      <e p="LoseScreenViewPresenter.cs" t="Include" />
                     </e>
                   </e>
                   <e p="Root" t="Include">
@@ -132,7 +146,7 @@
                   <e p="Views" t="Include">
                     <e p="HUD" t="Include">
                       <e p="HealthBarView.cs" t="Include" />
-                      <e p="LevelProgressView.cs" t="Include" />
+                      <e p="LevelScoreView.cs" t="Include" />
                       <e p="PopupButtonTextView.cs" t="Include" />
                       <e p="PopupButtonView.cs" t="Include" />
                     </e>
@@ -141,6 +155,7 @@
                     </e>
                     <e p="Screens" t="Include">
                       <e p="ClickToStartView.cs" t="Include" />
+                      <e p="LoseScreenView.cs" t="Include" />
                     </e>
                   </e>
                 </e>
@@ -242,6 +257,75 @@
           </e>
         </e>
         <e p="Plugins" t="Include">
+          <e p="Cartoon FX (legacy)" t="Include">
+            <e p="CartoonFX Free.txt" t="Include" />
+            <e p="Demo" t="Include">
+              <e p="Assets" t="Include">
+                <e p="CFX_Demo_New.cs" t="Include" />
+                <e p="CFX_Demo_RandomDirectionTranslate.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CFX_AutoRotate.cs" t="Include" />
+              <e p="CFX_LightFlicker.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="CFX3 Multiply Color.shader" t="Include" />
+              <e p="CFXM_MobileParticleAdd_Alpha8.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Cartoon FX Remaster" t="Include">
+            <e p="CFXR Assets" t="Include">
+              <e p="Editor" t="Include">
+                <e p="CFXR Editor.asmdef" t="Include" />
+                <e p="CFXR_ExpressionParser.cs" t="Include" />
+                <e p="CFXR_MaterialInspector.cs" t="Include" />
+                <e p="CFXR_ShaderImporter.cs" t="Include" />
+                <e p="CFXR_ShaderPostProcessor.cs" t="Include" />
+                <e p="CFXR_Styles.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="CFXR Runtime.asmdef" t="Include" />
+                <e p="CFXR_Effect.CameraShake.cs" t="Include" />
+                <e p="CFXR_Effect.cs" t="Include" />
+                <e p="CFXR_EmissionBySurface.cs" t="Include" />
+                <e p="CFXR_ParticleText.cs" t="Include" />
+                <e p="CFXR_ParticleTextFontAsset.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="CFXR.cginc" t="Include" />
+                <e p="CFXR_PASSES.cginc" t="Include" />
+                <e p="CFXR_SETTINGS.cginc" t="Include" />
+                <e p="CFXR_URP.cginc" t="Include" />
+              </e>
+            </e>
+            <e p="CFXR Prefabs" t="Include">
+              <e p="Texts" t="Include">
+                <e p="_Make your own text effect.txt" t="Include" />
+              </e>
+            </e>
+            <e p="Demo Assets" t="Include">
+              <e p="CFXR Demo.asmdef" t="Include" />
+              <e p="CFXR_Demo.cs" t="Include" />
+              <e p="CFXR_Demo_Rotate.cs" t="Include" />
+              <e p="CFXR_Demo_Translate.cs" t="Include" />
+              <e p="Kino Bloom" t="Include">
+                <e p="Bloom.cs" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="BloomEditor.cs" t="Include" />
+                  <e p="BloomGraphDrawer.cs" t="Include" />
+                  <e p="KinoBloom.Editor.asmdef" t="Include" />
+                </e>
+                <e p="Kino Bloom License.txt" t="Include" />
+                <e p="KinoBloom.Runtime.asmdef" t="Include" />
+                <e p="Shader" t="Include">
+                  <e p="Bloom.cginc" t="Include" />
+                  <e p="Bloom.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Readme Cartoon FX Remaster FREE.txt" t="Include" />
+          </e>
           <e p="JMO Assets" t="Include">
             <e p="Cartoon FX Easy Editor" t="Include">
               <e p="CartoonFX Easy Editor Readme.txt" t="Include" />
@@ -1510,10 +1594,15 @@
           </e>
         </e>
       </e>
+      <e p="CFXRDemo.csproj" t="IncludeRecursive" />
+      <e p="CFXREditor.csproj" t="IncludeRecursive" />
+      <e p="CFXRRuntime.csproj" t="IncludeRecursive" />
+      <e p="KinoBloom.Runtime.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="ToonyColorsPro.Demo.Editor.csproj" t="IncludeRecursive" />
       <e p="VFolders.csproj" t="IncludeRecursive" />
       <e p="Zenject-Editor.csproj" t="IncludeRecursive" />
       <e p="Zenject-IntegrationTests-Editor.csproj" t="IncludeRecursive" />

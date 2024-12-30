@@ -3,7 +3,7 @@ using _Project.Gameplay;
 
 namespace _Project.UI
 {
-    public class ClickToStartScreenViewPresenter : IDisposable
+    public class ClickToStartScreenViewPresenter
     {
         private readonly ClickToStartView _view;
         private readonly IInput _input;
@@ -21,13 +21,9 @@ namespace _Project.UI
 
         private void OnAnyKeyClicked()
         {
+            _input.OnAnyKey -= OnAnyKeyClicked;
             _view.Hide();
             _gameStateMachine.EnterIn<GameplayState>();
-        }
-
-        public void Dispose()
-        {
-            _input.OnAnyKey -= OnAnyKeyClicked;
         }
     }
 }

@@ -15,14 +15,16 @@ namespace _Project.Gameplay
         public GameStateMachine(
             Player player, 
             PlayerHealth playerHealth, 
-            LevelProgress levelProgress, 
+            LevelScore levelScore, 
             IZombieSpawnerService spawnerService,
-            IPauseService pauseService)
+            IBoostSpawnerService boostSpawnerService,
+            IPauseService pauseService,
+            Environment environment)
         {
             _gameStates = new Dictionary<Type, IGameState>()
             {
                 [typeof(BootState)] = new BootState(pauseService),
-                [typeof(GameplayState)] = new GameplayState(this, player, playerHealth, levelProgress, spawnerService),
+                [typeof(GameplayState)] = new GameplayState(this, player, playerHealth, levelScore, spawnerService, boostSpawnerService, environment),
                 [typeof(WinState)] = new WinState(),
                 [typeof(LoseState)] = new LoseState(),
             };

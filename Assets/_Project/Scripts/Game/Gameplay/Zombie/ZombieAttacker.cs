@@ -26,7 +26,7 @@ namespace _Project.Gameplay
             if(_player == null)
                 return;
             
-            if (Vector3.Distance(_zombieTransform.position, _player.transform.position) < 1.35f)
+            if (Vector3.Distance(_zombieTransform.position, _player.transform.position) < 1.25f)
             {
                 if (_player.CanTakeDamage && _canAttack)
                     _player.TakeDamage(_damage);

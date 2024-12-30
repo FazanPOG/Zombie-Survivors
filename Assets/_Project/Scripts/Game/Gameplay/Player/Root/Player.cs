@@ -12,37 +12,41 @@ namespace _Project.Gameplay
         [SerializeField] private PlayerCollisionHandler _collisionHandler;
         [SerializeField] private PlayerView _view;
         [SerializeField] private Transform _hand;
-        [SerializeField] private WeaponConfig _testWeapon; //TODO
         [SerializeField, TextArea(0, 10)] private string DEBUG_STRING; 
         
         private readonly ReactiveProperty<WeaponConfig> _currentWeapon = new ReactiveProperty<WeaponConfig>();
         private readonly ReactiveProperty<float> _attackRange = new ReactiveProperty<float>();
         
         private PlayerHealth _playerHealth;
+        private PlayerMoveSpeed _playerMoveSpeed;
         private PlayerMovement _movement;
         private PlayerAttacker _playerAttacker;
-        private int _maxHealth;
+        private PlayerWeaponHandler _playerWeaponHandler;
 
         public bool CanTakeDamage { get; private set; }
 
         public void Init(
             IInput input,
             PlayerHealth playerHealth, 
-            PlayerMoveSpeed playerMoveSpeed, 
+            PlayerMoveSpeed playerMoveSpeed,
+            WeaponConfig startWeapon,
             AudioPlayer audioPlayer)
         {
+            _playerMoveSpeed = playerMoveSpeed;
             _playerHealth = playerHealth;
-            _currentWeapon.Value = _testWeapon;
-            _attackRange.Value = _testWeapon.AttackRange;
+            _currentWeapon.Value = startWeapon;
+            _attackRange.Value = startWeapon.AttackRange;
             CanTakeDamage = true;
+            
+            _movement = new PlayerMovement(transform, input, _playerMoveSpeed.MoveSpeed);
+            _playerWeaponHandler = new PlayerWeaponHandler(_hand, audioPlayer);
+            _playerAttacker = new PlayerAttacker(this, _currentWeapon, _collisionHandler, _playerWeaponHandler, _view);
 
             _collisionHandler.Init(_attackRange);
-            _movement = new PlayerMovement(transform, input, playerMoveSpeed.MoveSpeed);
+            _view.Init(_movement, _playerWeaponHandler, _playerHealth.Health, _collisionHandler.ClosestEnemy);
             _movement.EnableMovement();
-            var weaponHandler = new PlayerWeaponHandler(_testWeapon, _hand, audioPlayer);
-            _view.Init(_movement, _playerHealth.Health, _collisionHandler.ClosestEnemy);
-            _playerAttacker = new PlayerAttacker(this, _currentWeapon, _collisionHandler, weaponHandler, _view);
-
+            _playerWeaponHandler.EquipWeapon(startWeapon);
+            
             _currentWeapon.Skip(1).Subscribe(newWeapon => _attackRange.Value = newWeapon.AttackRange);
         }
         
@@ -64,6 +68,36 @@ namespace _Project.Gameplay
             }
         }
 
+        private void Heal(int heal)
+        {
+            if (heal < 0)
+                throw new Exception();
+
+            _playerHealth.Health.Value += heal;
+
+            if (_playerHealth.Health.Value > _playerHealth.MaxHealth)
+                _playerHealth.Health.Value = _playerHealth.MaxHealth;
+        }
+
+        public void TakeBoost(BaseBoost boost)
+        {
+            switch (boost)
+            {
+                case SpeedBoost speedBoost:
+                    _playerMoveSpeed.MoveSpeed.Value += speedBoost.Speed;
+                    break;
+                case HealBoost healBoost:
+                    Heal(healBoost.HealAmount);
+                    break;
+                case WeaponBoost weaponBoost:
+                    _playerWeaponHandler.EquipWeapon(weaponBoost.WeaponConfig);
+                    break;
+                
+                default:
+                    throw new NotImplementedException($"Boost does not implemented: {boost}");
+            }
+        }
+        
         private void Update()
         {
             UpdateDebugString();

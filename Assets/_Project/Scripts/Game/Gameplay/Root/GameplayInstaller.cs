@@ -17,6 +17,10 @@ namespace _Project.Gameplay
         [SerializeField] private Player _playerPrefab;
         [SerializeField] private Zombie _zombiePrefab;
         [SerializeField] private ZombieConfig[] _zombieConfigs;
+        [SerializeField] private BaseBoost[] _boostPrefabs;
+        [SerializeField] private WeaponBoost _weaponBoostPrefab;
+        [SerializeField] private WeaponConfig[] _weaponBoostConfigs;
+        [SerializeField] private WeaponConfig _testWeapon;
 
         private Player _playerInstance;
         private CameraSystem _cameraSystemInstance;
@@ -30,7 +34,7 @@ namespace _Project.Gameplay
             InstantiatePlayer();
             BindServices();
             BindFactories();
-            BindZombieSpawnerService();
+            BindSpawnerServices();
             InitPlayer();
             BindGameStateMachine();
             BindGameplayUI();
@@ -43,11 +47,11 @@ namespace _Project.Gameplay
             var config = Container.Resolve<DefaultDataConfig>();
             PlayerHealth playerHealth = new PlayerHealth(new PlayerHealthData(config.Health));
             PlayerMoveSpeed moveSpeed = new PlayerMoveSpeed(new PlayerMoveSpeedData(config.PlayerMoveSpeed));
-            LevelProgress levelProgress = new LevelProgress(new LevelProgressData(0, 100));
+            LevelScore levelScore = new LevelScore(new LevelScoreData(0, 100));
             
             Container.Bind<PlayerHealth>().FromInstance(playerHealth).AsSingle().NonLazy();
             Container.Bind<PlayerMoveSpeed>().FromInstance(moveSpeed).AsSingle().NonLazy();
-            Container.Bind<LevelProgress>().FromInstance(levelProgress).AsSingle().NonLazy();
+            Container.Bind<LevelScore>().FromInstance(levelScore).AsSingle().NonLazy();
         }
 
         private void BindGameplayUI()
@@ -91,57 +95,89 @@ namespace _Project.Gameplay
             var playerMoveSpeed = Container.Resolve<PlayerMoveSpeed>();
             var audioPlayer = Container.Resolve<AudioPlayer>();
             
-            _playerInstance.Init(input, playerHealth, playerMoveSpeed, audioPlayer);
+            _playerInstance.Init(input, playerHealth, playerMoveSpeed, _testWeapon, audioPlayer);
             _cameraSystemInstance.Init(_playerInstance.transform);
         }
 
         private void BindFactories()
         {
-            var levelProgressService = Container.Resolve<ILevelProgressService>();
+            var levelProgressService = Container.Resolve<IScoreService>();
             var pauseService = Container.Resolve<IPauseService>();
+            var zombieCounter = Container.Resolve<IZombieCounterService>();
+            var boostCounter = Container.Resolve<IBoostCounterService>();
+            var audioPlayer = Container.Resolve<AudioPlayer>();
             
             ZombieFactory zombieFactory = new ZombieFactory(
                 _zombiePrefab,
                 _zombieConfigs,
                 levelProgressService,
-                pauseService);
+                pauseService,
+                zombieCounter);
 
+            BoostFactory boostFactory = new BoostFactory(
+                Container,
+                _boostPrefabs,
+                _weaponBoostPrefab,
+                _weaponBoostConfigs,
+                audioPlayer,
+                boostCounter
+                );
+            
             Container.Bind<ZombieFactory>().FromInstance(zombieFactory).AsSingle().NonLazy();
+            Container.Bind<BoostFactory>().FromInstance(boostFactory).AsSingle().NonLazy();
         }
 
-        private void BindZombieSpawnerService()
+        private void BindSpawnerServices()
         {
             var context = Container.Resolve<MonoBehaviourContext>();
-            var levelProgress = Container.Resolve<LevelProgress>();
+            var levelScore = Container.Resolve<LevelScore>();
             var zombieFactory = Container.Resolve<ZombieFactory>();
+            var boostFactory = Container.Resolve<BoostFactory>();
             var environment = Container.Resolve<Environment>();
-            
+            var zombieCounter = Container.Resolve<IZombieCounterService>();
+            var boostCounterService = Container.Resolve<IBoostCounterService>();
+
             ZombieSpawnerService zombieSpawnerService = new ZombieSpawnerService(
                 context,
-                levelProgress,
+                levelScore,
                 zombieFactory,
                 environment.ZombieSpawnPoints,
-                _playerInstance.transform
+                _playerInstance.transform,
+                zombieCounter
             );
             
+            BoostSpawningService boostSpawningService = new BoostSpawningService(
+                context,
+                environment.BoostSpawnPoints,
+                _playerInstance.transform,
+                boostFactory,
+                boostCounterService,
+                levelScore
+                );
+            
             Container.Bind<IZombieSpawnerService>().To<ZombieSpawnerService>().FromInstance(zombieSpawnerService).AsSingle().NonLazy();
+            Container.Bind<IBoostSpawnerService>().To<BoostSpawningService>().FromInstance(boostSpawningService).AsSingle().NonLazy();
         }
         
         private void BindServices()
         {
-            Container.Bind<ILevelProgressService>().To<LevelProgressService>().FromNew().AsSingle().NonLazy();
+            Container.Bind<IScoreService>().To<ScoreService>().FromNew().AsSingle().NonLazy();
             Container.Bind<IPauseService>().To<PauseService>().FromNew().AsSingle().NonLazy();
+            Container.Bind<IZombieCounterService>().To<ZombieCounterService>().FromNew().AsSingle().NonLazy();
+            Container.Bind<IBoostCounterService>().To<BoostCounterService>().FromNew().AsSingle().NonLazy();
         }
 
         private void BindGameStateMachine()
         {
             var player = Container.Resolve<Player>();
             var playerHealth = Container.Resolve<PlayerHealth>();
-            var levelProgress = Container.Resolve<LevelProgress>();
+            var levelProgress = Container.Resolve<LevelScore>();
             var zombieSpawnerService = Container.Resolve<IZombieSpawnerService>();
+            var boostSpawnerService = Container.Resolve<IBoostSpawnerService>();
             var pauseService = Container.Resolve<IPauseService>();
-            
-            _gameStateMachine = new GameStateMachine(player, playerHealth, levelProgress, zombieSpawnerService, pauseService);
+            var environment = Container.Resolve<Environment>();
+
+            _gameStateMachine = new GameStateMachine(player, playerHealth, levelProgress, zombieSpawnerService, boostSpawnerService, pauseService, environment);
 
             Container.Bind<IGameStateMachine>().To<GameStateMachine>().FromInstance(_gameStateMachine).AsCached().NonLazy();
             Container.Bind<IGameStateProvider>().To<GameStateMachine>().FromInstance(_gameStateMachine).AsCached().NonLazy();

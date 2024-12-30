@@ -200,7 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameplayUIPrefab: {fileID: -9022566191499183542, guid: b093905d888bf644bb2a1b5356a557bf, type: 3}
-  _testEnvironmentPrefab: {fileID: 1687030902369259474, guid: fec6c50e59537ce4c92580b01350b5f9, type: 3}
   _cameraSystemPrefab: {fileID: 7729502491441824242, guid: d18046d77aecb6b4db975d4e95e887fc, type: 3}
   _playerPrefab: {fileID: 2012218117605606971, guid: 2ea3e67dadb34484db179fedb6dd27b6, type: 3}
   _zombiePrefab: {fileID: 430752130062416462, guid: fe0fc6d2c763f12499ae41d5d08c9da7, type: 3}
@@ -208,6 +207,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5a2b54d5159a3247add549b1e03fc78, type: 2}
   - {fileID: 11400000, guid: ee517a87aa1bcd54a9a40a6a35703765, type: 2}
   - {fileID: 11400000, guid: 4eae6d5bb8adeb04e864ae8986ae3220, type: 2}
+  - {fileID: 11400000, guid: 0274e7aa8fc8ebe43b9a726f37c3cf06, type: 2}
+  _boostPrefabs:
+  - {fileID: 7013378836201424178, guid: 4241832ecb9a03b459d4e9d91822ac99, type: 3}
+  - {fileID: 2573791435259495, guid: 1c3d07989f5d6b440b1026c0c388b8c2, type: 3}
+  _weaponBoostPrefab: {fileID: 7984472712752359440, guid: f08a75080b921264585283c68a48bca2, type: 3}
+  _weaponBoostConfigs:
+  - {fileID: 11400000, guid: f06af193d9bd64349bd3676b8661c4d7, type: 2}
+  - {fileID: 11400000, guid: 6d01742e40c4b314a8b5abb4748be4df, type: 2}
+  - {fileID: 11400000, guid: 8f6400b509de5474ba0c38e808161fa6, type: 2}
+  - {fileID: 11400000, guid: 44a668c3d57ace14a86efe6a353f9db2, type: 2}
+  - {fileID: 11400000, guid: c83835a11595fec48aa781e6b42e9684, type: 2}
+  - {fileID: 11400000, guid: 6dc7df15ede7fc04fa97eb9d0628aacf, type: 2}
+  - {fileID: 11400000, guid: c7278c6484911f542b7733b852266957, type: 2}
+  - {fileID: 11400000, guid: 5a5cfabacd5e712438f4b2334ff8e2b5, type: 2}
+  - {fileID: 11400000, guid: cfb49950ae2aa6848b8ad2800ba471a7, type: 2}
+  - {fileID: 11400000, guid: 56973a56dce04d24eb08dde40d7bb6cd, type: 2}
+  _testWeapon: {fileID: 11400000, guid: 8f6400b509de5474ba0c38e808161fa6, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

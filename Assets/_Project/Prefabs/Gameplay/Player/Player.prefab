@@ -51,7 +51,7 @@ MonoBehaviour:
   _collisionHandler: {fileID: 5038954545887339800}
   _view: {fileID: 8380442117538417679}
   _hand: {fileID: 666747519403552865}
-  _testWeapon: {fileID: 11400000, guid: b2c76dce20f9d1d40bbf9b608c5ae6b8, type: 2}
+  _testWeapon: {fileID: 11400000, guid: 8f6400b509de5474ba0c38e808161fa6, type: 2}
   DEBUG_STRING: 
 --- !u!114 &5038954545887339800
 MonoBehaviour:

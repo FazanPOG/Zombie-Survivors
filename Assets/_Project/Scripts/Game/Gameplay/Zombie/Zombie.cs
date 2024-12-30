@@ -20,8 +20,9 @@ namespace _Project.Gameplay
         private ZombieMovement _movement;
         private ZombieAttacker _attacker;
         private ZombieView _view;
-        private ILevelProgressService _levelProgressService;
+        private IScoreService _scoreService;
         private Action<IPauseHandler> _unregisterAction;
+        private IZombieCounterService _zombieCounterService;
 
         public bool CanTakeDamage { get; private set; }
 
@@ -31,11 +32,12 @@ namespace _Project.Gameplay
             _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
-        public void Init(ZombieConfig config, ILevelProgressService levelProgressService, Action<IPauseHandler> unregisterAction)
+        public void Init(ZombieConfig config, IScoreService scoreService, Action<IPauseHandler> unregisterAction, IZombieCounterService zombieCounterService)
         {
+            _zombieCounterService = zombieCounterService;
             _unregisterAction = unregisterAction;
             _zombieType = config.ZombieType;
-            _levelProgressService = levelProgressService;
+            _scoreService = scoreService;
             _currentHealth.Value = config.Health;
             CanTakeDamage = true;
             
@@ -76,7 +78,8 @@ namespace _Project.Gameplay
 
         public void Kill()
         {
-            _levelProgressService.ZombieKilled(_zombieType);
+            _scoreService.ZombieKilled(_zombieType);
+            _zombieCounterService.Remove();
             _unregisterAction?.Invoke(this);
             DisableZombieLogic();
             _view.PlayDiedAnimation();

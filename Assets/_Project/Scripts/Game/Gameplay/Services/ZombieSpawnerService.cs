@@ -12,25 +12,28 @@ namespace _Project.Gameplay
     public class ZombieSpawnerService : IZombieSpawnerService
     {
         private readonly MonoBehaviourContext _context;
-        private readonly LevelProgress _levelProgress;
+        private readonly LevelScore _levelScore;
         private readonly ZombieFactory _zombieFactory;
         private readonly Transform[] _zombieSpawnPoints;
         private readonly Transform _playerTransform;
+        private readonly IZombieCounterService _zombieCounterService;
 
         private Coroutine _coroutine;
         
         public ZombieSpawnerService(
             MonoBehaviourContext context, 
-            LevelProgress levelProgress, 
+            LevelScore levelScore, 
             ZombieFactory zombieFactory,
             Transform[] zombieSpawnPoints,
-            Transform playerTransform)
+            Transform playerTransform,
+            IZombieCounterService zombieCounterService)
         {
             _context = context;
-            _levelProgress = levelProgress;
+            _levelScore = levelScore;
             _zombieFactory = zombieFactory;
             _zombieSpawnPoints = zombieSpawnPoints;
             _playerTransform = playerTransform;
+            _zombieCounterService = zombieCounterService;
         }
         
         public void StartSpawning(float minSpawnDelay, float maxSpawnDelay, Player zombieTarget, int maxZombies)
@@ -49,27 +52,40 @@ namespace _Project.Gameplay
 
         private IEnumerator Spawning(float minSpawnDelay, float maxSpawnDelay, Player zombieTarget, int maxZombies)
         {
-            int currentSpawned = 0;
-            while (currentSpawned < maxZombies && zombieTarget != null)
+            while (zombieTarget != null)
             {
-                int levelProgress = _levelProgress.Progress.CurrentValue;
-
-                Zombie zombieInstance;
+                yield return new WaitUntil(() => _zombieCounterService.Count.CurrentValue < maxZombies);
+                
+                int score = _levelScore.Score.CurrentValue;
+                
                 List<Transform> zombieDistantSpawnPoints = GetDistantSpawnPoints(_playerTransform.position, _zombieSpawnPoints);
                 Vector3 zombieSpawnPosition = GetRandomSpawnPosition(zombieDistantSpawnPoints);
-                
-                if(levelProgress <= 33)
-                    zombieInstance = _zombieFactory.Create(ZombieType.Easy, zombieSpawnPosition);
-                else if(levelProgress <= 66)
-                    zombieInstance = _zombieFactory.Create(ZombieType.Medium, zombieSpawnPosition);
-                else
-                    zombieInstance = _zombieFactory.Create(ZombieType.Hard, zombieSpawnPosition);
 
-                currentSpawned++;
+                var zombieInstance = CreateRandomZombie(zombieSpawnPosition);
+                if (score > 0 && score % 50 == 0)
+                    zombieInstance = _zombieFactory.Create(ZombieType.Boss, zombieSpawnPosition);
+                
                 zombieInstance.SetTarget(zombieTarget);
                 float randomSpawnDelay = Random.Range(minSpawnDelay, maxSpawnDelay);
                 
                 yield return new WaitForSeconds(randomSpawnDelay);
+            }
+        }
+
+        private Zombie CreateRandomZombie(Vector3 zombieSpawnPosition)
+        {
+            int number = Random.Range(0, 3);
+            switch (number)
+            {
+                case 0:
+                    return _zombieFactory.Create(ZombieType.Easy, zombieSpawnPosition);
+                case 1:
+                    return _zombieFactory.Create(ZombieType.Medium, zombieSpawnPosition);
+                case 2:
+                    return _zombieFactory.Create(ZombieType.Hard, zombieSpawnPosition);
+                
+                default:
+                    throw new Exception();
             }
         }
         
@@ -93,7 +109,7 @@ namespace _Project.Gameplay
 
         private Vector3 GetRandomSpawnPosition(List<Transform> points)
         {
-            int randomIndex = Random.Range(0, points.Count - 1);
+            int randomIndex = Random.Range(0, points.Count);
             return points[randomIndex].position;
         }
     }

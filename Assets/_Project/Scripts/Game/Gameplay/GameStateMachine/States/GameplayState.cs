@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Project.Data;
 using R3;
+using UnityEngine;
 
 namespace _Project.Gameplay
 {
@@ -10,8 +11,10 @@ namespace _Project.Gameplay
         private readonly IGameStateMachine _gameStateMachine;
         private readonly Player _player;
         private readonly PlayerHealth _playerHealth;
-        private readonly LevelProgress _levelProgress;
-        private readonly IZombieSpawnerService _spawnerService;
+        private readonly LevelScore _levelScore;
+        private readonly IZombieSpawnerService _zombieSpawnerService;
+        private readonly IBoostSpawnerService _boostSpawnerService;
+        private readonly Environment _environment;
 
         private List<IDisposable> _disposables = new List<IDisposable>();
         
@@ -19,22 +22,27 @@ namespace _Project.Gameplay
             IGameStateMachine gameStateMachine,
             Player player,
             PlayerHealth playerHealth, 
-            LevelProgress levelProgress, 
-            IZombieSpawnerService spawnerService)
+            LevelScore levelScore, 
+            IZombieSpawnerService zombieSpawnerService,
+            IBoostSpawnerService boostSpawnerService,
+            Environment environment)
         {
             _gameStateMachine = gameStateMachine;
             _player = player;
             _playerHealth = playerHealth;
-            _levelProgress = levelProgress;
-            _spawnerService = spawnerService;
+            _levelScore = levelScore;
+            _zombieSpawnerService = zombieSpawnerService;
+            _boostSpawnerService = boostSpawnerService;
+            _environment = environment;
         }
         
         public void Enter()
         {
             _disposables.Add(_playerHealth.Health.Subscribe(HandlePlayerHealthChanged));
-            _disposables.Add(_levelProgress.Progress.Subscribe(HandleLevelProgressChanged));
+            _disposables.Add(_levelScore.Score.Subscribe(HandleLevelProgressChanged));
             
-            _spawnerService.StartSpawning(0.2f, 1f, _player, 50);
+            _zombieSpawnerService.StartSpawning(_environment.ZombieSpawnDelayMin, _environment.ZombieSpawnDelayMax, _player, _environment.MaxZombies);
+            _boostSpawnerService.StartSpawning(_environment.BoostSpawnDelayMin, _environment.BoostSpawnDelayMax, _environment.MaxBoosts);
         }
 
         private void HandlePlayerHealthChanged(int hp)
@@ -45,13 +53,14 @@ namespace _Project.Gameplay
         
         private void HandleLevelProgressChanged(int progress)
         {
-            if(progress == _levelProgress.MaxProgress)
+            if(progress == _levelScore.MaxProgress)
                 _gameStateMachine.EnterIn<WinState>();
         }
         
         public void Exit()
         {
-            _spawnerService.StopSpawning();
+            _zombieSpawnerService.StopSpawning();
+            _boostSpawnerService.StopSpawning();
             
             foreach (var disposable in _disposables)
                 disposable.Dispose();

@@ -1,5 +1,7 @@
-﻿using _Project.Audio;
+﻿using System;
+using _Project.Audio;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace _Project.Gameplay
 {
@@ -12,17 +14,16 @@ namespace _Project.Gameplay
         private WeaponView _currentWeaponView;
 
         public WeaponView WeaponView => _currentWeaponView;
-        
-        public PlayerWeaponHandler(WeaponConfig startWeapon, Transform playerHand, AudioPlayer audioPlayer)
+
+        public event Action<WeaponConfig> OnWeaponChanged; 
+
+        public PlayerWeaponHandler(Transform playerHand, AudioPlayer audioPlayer)
         {
-            _currentWeapon = startWeapon;
             _playerHand = playerHand;
             _audioPlayer = audioPlayer;
-
-            EquipWeapon(startWeapon);
         }
 
-        private void EquipWeapon(WeaponConfig newWeapon)
+        public void EquipWeapon(WeaponConfig newWeapon)
         {
             _currentWeapon = newWeapon;
             
@@ -31,6 +32,8 @@ namespace _Project.Gameplay
 
             _currentWeaponView = Object.Instantiate(_currentWeapon.WeaponViewPrefab);
             _currentWeaponView.Init(_currentWeapon, _audioPlayer, _playerHand);
+            
+            OnWeaponChanged?.Invoke(newWeapon);
         }
     }
 }

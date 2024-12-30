@@ -13,21 +13,24 @@ namespace _Project.Gameplay
     {
         private readonly Zombie _zombiePrefab;
         private readonly ZombieConfig[] _zombieConfigs;
-        private readonly ILevelProgressService _levelProgressService;
+        private readonly IScoreService _scoreService;
         private readonly IPauseService _pauseService;
+        private readonly IZombieCounterService _zombieCounterService;
 
-        private List<Zombie> _zombies = new List<Zombie>();
+        private readonly List<Zombie> _zombies = new List<Zombie>();
         
         public ZombieFactory(
             Zombie zombiePrefab, 
             ZombieConfig[] zombieConfigs, 
-            ILevelProgressService levelProgressService,
-            IPauseService pauseService)
+            IScoreService scoreService,
+            IPauseService pauseService,
+            IZombieCounterService zombieCounterService)
         {
             _zombiePrefab = zombiePrefab;
             _zombieConfigs = zombieConfigs;
-            _levelProgressService = levelProgressService;
+            _scoreService = scoreService;
             _pauseService = pauseService;
+            _zombieCounterService = zombieCounterService;
         }
 
         public Zombie Create(ZombieType zombieType, Vector3 spawnPosition)
@@ -35,10 +38,11 @@ namespace _Project.Gameplay
             var zombieConfig = GetZombieConfig(zombieType);
             
             var instance = Object.Instantiate(_zombiePrefab, spawnPosition, quaternion.identity);
-            instance.Init(zombieConfig, _levelProgressService, _pauseService.Unregister);
+            instance.Init(zombieConfig, _scoreService, _pauseService.Unregister, _zombieCounterService);
             
             _zombies.Add(instance);
             _pauseService.Register(instance);
+            _zombieCounterService.Add();
             
             return instance;
         }

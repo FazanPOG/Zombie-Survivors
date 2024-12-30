@@ -7,17 +7,19 @@ namespace _Project.Data
         private ReactiveProperty<int> _health = new ReactiveProperty<int>();
             
         public ReactiveProperty<int> Health => _health;
+        public int MaxHealth { get; }
         
-        public PlayerHealth(PlayerHealthData moveSpeedData)
+        public PlayerHealth(PlayerHealthData healthData)
         {
-            _health.Value = moveSpeedData.Value;
-
+            _health.Value = healthData.Value;
+            MaxHealth = healthData.Value;
+            
             _health.Subscribe(newValue =>
             {
                 if(newValue <= 0)
-                    moveSpeedData.Value = 0;
+                    healthData.Value = 0;
                 else
-                    moveSpeedData.Value = newValue;
+                    healthData.Value = newValue;
             });
         }
     }
