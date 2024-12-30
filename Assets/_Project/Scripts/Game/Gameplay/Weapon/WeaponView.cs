@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.Game;
+using _Project.Audio;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -48,7 +48,7 @@ namespace _Project.Gameplay
                 throw new ArgumentException($"Attempt to shoot a melee weapon: {gameObject}");
             
             _muzzleFlashFX.Play();
-            _audioPlayer.PlaySound(_weaponConfig.ShotSFX);
+            _audioPlayer.PlaySoundOneShot(_weaponConfig.ShotSFX);
         }
         
         private void OnValidate()

@@ -8,19 +8,16 @@ namespace _Project.UI
     {
         [SerializeField] private Button _closeButton;
         [SerializeField] private Button _resumeButton;
-        [SerializeField] private Button _restartButton;
         [SerializeField] private Button _exitButton;
 
         public event Action OnCloseButtonClicked;
         public event Action OnResumeButtonClicked;
-        public event Action OnRestartButtonClicked;
         public event Action OnExitButtonClicked;
         
         private void OnEnable()
         {
             _closeButton.onClick.AddListener(() => OnCloseButtonClicked?.Invoke());
             _resumeButton.onClick.AddListener(() => OnResumeButtonClicked?.Invoke());
-            _restartButton.onClick.AddListener(() => OnRestartButtonClicked?.Invoke());
             _exitButton.onClick.AddListener(() => OnExitButtonClicked?.Invoke());
         }
 
@@ -31,7 +28,6 @@ namespace _Project.UI
         {
             _closeButton.onClick.RemoveAllListeners();
             _resumeButton.onClick.RemoveAllListeners();
-            _restartButton.onClick.RemoveAllListeners();
             _exitButton.onClick.RemoveAllListeners();
         }
     }

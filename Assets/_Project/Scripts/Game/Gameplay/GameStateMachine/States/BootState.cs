@@ -2,7 +2,21 @@
 {
     public class BootState : IGameState
     {
-        public void Enter() { }
-        public void Exit() { }
+        private readonly IPauseService _pauseService;
+
+        public BootState(IPauseService pauseService)
+        {
+            _pauseService = pauseService;
+        }
+        
+        public void Enter()
+        {
+            _pauseService.SetPause(true);
+        }
+
+        public void Exit()
+        {
+            _pauseService.SetPause(false);
+        }
     }
 }

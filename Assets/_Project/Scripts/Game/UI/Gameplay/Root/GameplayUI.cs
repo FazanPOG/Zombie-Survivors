@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Project.Data;
 using _Project.Gameplay;
+using _Project.Root;
 using UnityEngine;
 using Zenject;
 
@@ -19,6 +20,7 @@ namespace _Project.UI
         [SerializeField] private FloatingJoystick _joystick;
         [SerializeField] private HealthBarView _healthBarViewPrefab;
         [SerializeField] private LevelProgressView _levelProgressViewPrefab;
+        [SerializeField] private PopupButtonView _pauseButtonView;
         [Header("Popups")]
         [SerializeField] private PausePopupView _pausePopupView;
 
@@ -57,6 +59,8 @@ namespace _Project.UI
             var gameStateMachine = _container.Resolve<IGameStateMachine>();
             var playerHealth = _container.Resolve<PlayerHealth>();
             var levelProgress = _container.Resolve<LevelProgress>();
+            var pauseService = _container.Resolve<IPauseService>();
+            var sceneLoader = _container.Resolve<ISceneLoaderService>();
 
             var clickToStartScreenViewPresenter = new ClickToStartScreenViewPresenter(_clickToStartViewInstance, input, gameStateMachine);
             _disposables.Add(clickToStartScreenViewPresenter);
@@ -67,7 +71,7 @@ namespace _Project.UI
             var levelProgressViewPresenter = new LevelProgressViewPresenter(levelProgress, _levelProgressViewInstance);
             _disposables.Add(levelProgressViewPresenter);
 
-            var pausePopupViewPresenter = new PausePopupViewPresenter(_pausePopupView);
+            var pausePopupViewPresenter = new PausePopupViewPresenter(_pausePopupView, _pauseButtonView, pauseService, sceneLoader);
             _disposables.Add(pausePopupViewPresenter);
         }
 

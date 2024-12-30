@@ -14,17 +14,20 @@ namespace _Project.Gameplay
         private readonly Zombie _zombiePrefab;
         private readonly ZombieConfig[] _zombieConfigs;
         private readonly ILevelProgressService _levelProgressService;
+        private readonly IPauseService _pauseService;
 
         private List<Zombie> _zombies = new List<Zombie>();
         
         public ZombieFactory(
             Zombie zombiePrefab, 
             ZombieConfig[] zombieConfigs, 
-            ILevelProgressService levelProgressService)
+            ILevelProgressService levelProgressService,
+            IPauseService pauseService)
         {
             _zombiePrefab = zombiePrefab;
             _zombieConfigs = zombieConfigs;
             _levelProgressService = levelProgressService;
+            _pauseService = pauseService;
         }
 
         public Zombie Create(ZombieType zombieType, Vector3 spawnPosition)
@@ -32,9 +35,10 @@ namespace _Project.Gameplay
             var zombieConfig = GetZombieConfig(zombieType);
             
             var instance = Object.Instantiate(_zombiePrefab, spawnPosition, quaternion.identity);
-            instance.Init(zombieConfig, _levelProgressService);
-
+            instance.Init(zombieConfig, _levelProgressService, _pauseService.Unregister);
+            
             _zombies.Add(instance);
+            _pauseService.Register(instance);
             
             return instance;
         }
@@ -43,8 +47,11 @@ namespace _Project.Gameplay
         {
             foreach (var zombie in _zombies)
             {
-                if(zombie != null)
+                if (zombie != null)
+                {
+                    _pauseService.Unregister(zombie);
                     zombie.Kill();
+                }
             }
         }
         

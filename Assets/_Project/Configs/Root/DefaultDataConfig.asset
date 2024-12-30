@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _moveSpeed: 4
-  _attackRange: 7
+  _environment: {fileID: 1687030902369259474, guid: fec6c50e59537ce4c92580b01350b5f9, type: 3}
+  _musicVolume: 0.5
+  _soundVolume: 0.5
+  _backgroundMusic: {fileID: 0}

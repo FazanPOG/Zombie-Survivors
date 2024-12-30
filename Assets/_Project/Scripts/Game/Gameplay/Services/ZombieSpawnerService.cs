@@ -50,7 +50,7 @@ namespace _Project.Gameplay
         private IEnumerator Spawning(float minSpawnDelay, float maxSpawnDelay, Player zombieTarget, int maxZombies)
         {
             int currentSpawned = 0;
-            while (currentSpawned < maxZombies)
+            while (currentSpawned < maxZombies && zombieTarget != null)
             {
                 int levelProgress = _levelProgress.Progress.CurrentValue;
 

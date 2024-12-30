@@ -15,9 +15,12 @@
             <e p="Game" t="Include">
               <e p="Audio" t="Include">
                 <e p="AudioPlayer.cs" t="Include" />
+                <e p="BackgroundMusic.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
                 <e p="DefaultDataConfig.cs" t="Include" />
+                <e p="GameData.cs" t="Include" />
+                <e p="GameDataProxy.cs" t="Include" />
                 <e p="Gameplay" t="Include">
                   <e p="LevelProgress.cs" t="Include" />
                   <e p="LevelProgressData.cs" t="Include" />
@@ -27,6 +30,10 @@
                   <e p="PlayerHealthData.cs" t="Include" />
                   <e p="PlayerMoveSpeed.cs" t="Include" />
                   <e p="PlayerMoveSpeedData.cs" t="Include" />
+                </e>
+                <e p="Provider" t="Include">
+                  <e p="IGameDataProvider.cs" t="Include" />
+                  <e p="PlayerPrefsGameDataProvider.cs" t="Include" />
                 </e>
               </e>
               <e p="Gameplay" t="Include">
@@ -72,8 +79,11 @@
                 </e>
                 <e p="Services" t="Include">
                   <e p="ILevelProgressService.cs" t="Include" />
+                  <e p="IPauseHandler.cs" t="Include" />
+                  <e p="IPauseService.cs" t="Include" />
                   <e p="IZombieSpawnerService.cs" t="Include" />
                   <e p="LevelProgressService.cs" t="Include" />
+                  <e p="PauseService.cs" t="Include" />
                   <e p="ZombieSpawnerService.cs" t="Include" />
                 </e>
                 <e p="Weapon" t="Include">
@@ -123,6 +133,8 @@
                     <e p="HUD" t="Include">
                       <e p="HealthBarView.cs" t="Include" />
                       <e p="LevelProgressView.cs" t="Include" />
+                      <e p="PopupButtonTextView.cs" t="Include" />
+                      <e p="PopupButtonView.cs" t="Include" />
                     </e>
                     <e p="Popups" t="Include">
                       <e p="PausePopupView.cs" t="Include" />
@@ -137,6 +149,9 @@
                     <e p="HUD" t="Include">
                       <e p="PlayButtonViewPresenter.cs" t="Include" />
                     </e>
+                    <e p="Popups" t="Include">
+                      <e p="SettingsPopupViewPresenter.cs" t="Include" />
+                    </e>
                   </e>
                   <e p="Root" t="Include">
                     <e p="MainMenuUI.cs" t="Include" />
@@ -144,6 +159,9 @@
                   <e p="Views" t="Include">
                     <e p="HUD" t="Include">
                       <e p="PlayButtonView.cs" t="Include" />
+                    </e>
+                    <e p="Popups" t="Include">
+                      <e p="SettingsPopupView.cs" t="Include" />
                     </e>
                   </e>
                 </e>

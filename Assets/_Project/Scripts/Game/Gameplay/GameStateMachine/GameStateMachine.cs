@@ -12,11 +12,16 @@ namespace _Project.Gameplay
 
         public ReadOnlyReactiveProperty<IGameState> GameState => _currentState;
 
-        public GameStateMachine(Player player, PlayerHealth playerHealth, LevelProgress levelProgress, IZombieSpawnerService spawnerService)
+        public GameStateMachine(
+            Player player, 
+            PlayerHealth playerHealth, 
+            LevelProgress levelProgress, 
+            IZombieSpawnerService spawnerService,
+            IPauseService pauseService)
         {
             _gameStates = new Dictionary<Type, IGameState>()
             {
-                [typeof(BootState)] = new BootState(),
+                [typeof(BootState)] = new BootState(pauseService),
                 [typeof(GameplayState)] = new GameplayState(this, player, playerHealth, levelProgress, spawnerService),
                 [typeof(WinState)] = new WinState(),
                 [typeof(LoseState)] = new LoseState(),

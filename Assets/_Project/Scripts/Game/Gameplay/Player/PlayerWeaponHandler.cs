@@ -1,4 +1,4 @@
-﻿using _Project.Game;
+﻿using _Project.Audio;
 using UnityEngine;
 
 namespace _Project.Gameplay

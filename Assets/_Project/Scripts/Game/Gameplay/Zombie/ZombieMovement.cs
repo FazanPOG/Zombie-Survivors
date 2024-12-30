@@ -18,6 +18,7 @@ namespace _Project.Gameplay
 
         public void SetMoveTarget(Transform target) => _moveTarget = target;
         
+        public void StartMove() => _navMeshAgent.isStopped = false;
         public void StopMove() => _navMeshAgent.isStopped = true;
 
         public void Update()

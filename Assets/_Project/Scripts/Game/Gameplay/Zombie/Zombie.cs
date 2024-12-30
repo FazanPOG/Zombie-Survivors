@@ -8,7 +8,7 @@ namespace _Project.Gameplay
 {
     [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(NavMeshAgent))]
-    public class Zombie : MonoBehaviour, IDamageable
+    public class Zombie : MonoBehaviour, IDamageable, IPauseHandler
     {
         [SerializeField] private ParticleSystem _bloodFX;
 
@@ -21,6 +21,7 @@ namespace _Project.Gameplay
         private ZombieAttacker _attacker;
         private ZombieView _view;
         private ILevelProgressService _levelProgressService;
+        private Action<IPauseHandler> _unregisterAction;
 
         public bool CanTakeDamage { get; private set; }
 
@@ -30,8 +31,9 @@ namespace _Project.Gameplay
             _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
-        public void Init(ZombieConfig config, ILevelProgressService levelProgressService)
+        public void Init(ZombieConfig config, ILevelProgressService levelProgressService, Action<IPauseHandler> unregisterAction)
         {
+            _unregisterAction = unregisterAction;
             _zombieType = config.ZombieType;
             _levelProgressService = levelProgressService;
             _currentHealth.Value = config.Health;
@@ -42,6 +44,8 @@ namespace _Project.Gameplay
             ZombieView randomViewPrefab = config.ViewPrefabs[Random.Range(0, config.ViewPrefabs.Length - 1)];
             _view = Instantiate(randomViewPrefab, transform);
             _view.Init(DestroySelf, config.MoveSpeed, _currentHealth, _bloodFX);
+            
+            EnableZombieLogic();
         }
 
         private void Update()
@@ -73,6 +77,7 @@ namespace _Project.Gameplay
         public void Kill()
         {
             _levelProgressService.ZombieKilled(_zombieType);
+            _unregisterAction?.Invoke(this);
             DisableZombieLogic();
             _view.PlayDiedAnimation();
         }
@@ -83,12 +88,28 @@ namespace _Project.Gameplay
             Destroy(gameObject);
         }
 
+        public void HandlePause(bool isPaused)
+        {
+            if(isPaused)
+                DisableZombieLogic();
+            else
+                EnableZombieLogic();
+        }
+
         private void DisableZombieLogic()
         {
             _movement.StopMove();
             _attacker.StopAttack();
             CanTakeDamage = false;
             _collider.enabled = false;
+        }
+        
+        private void EnableZombieLogic()
+        {
+            _movement.StartMove();
+            _attacker.StartAttack();
+            CanTakeDamage = true;
+            _collider.enabled = true;
         }
     }
 }

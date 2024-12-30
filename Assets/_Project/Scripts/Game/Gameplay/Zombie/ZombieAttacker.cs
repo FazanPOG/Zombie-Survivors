@@ -14,11 +14,10 @@ namespace _Project.Gameplay
         {
             _zombieTransform = zombieTransform;
             _damage = damage;
-            
-            _canAttack = true;
         }
 
         public void StopAttack() => _canAttack = false;
+        public void StartAttack() => _canAttack = true;
 
         public void SetAttackTarget(Player player) => _player = player;
         

@@ -1,4 +1,5 @@
-using _Project.Game;
+using _Project.Audio;
+using _Project.Data;
 using _Project.Scripts.Game.Data;
 using _Project.UI;
 using _Project.Utility;
@@ -27,6 +28,11 @@ namespace _Project.Root
         private void BindData()
         {
             Container.Bind<DefaultDataConfig>().FromInstance(_defaultData).AsSingle().NonLazy();
+            
+            var gameDataProvider = new PlayerPrefsGameDataProvider(_defaultData);
+            gameDataProvider.LoadGameData();
+            
+            Container.Bind<IGameDataProvider>().To<PlayerPrefsGameDataProvider>().FromInstance(gameDataProvider).AsSingle().NonLazy();
         }
 
         private void BindUtility()
@@ -49,10 +55,22 @@ namespace _Project.Root
 
         private void BindAudio()
         {
-            var audioSource = new GameObject("[Audio]").AddComponent<AudioSource>();
-            DontDestroyOnLoad(audioSource.gameObject);
-            AudioPlayer audioPlayer = new AudioPlayer(audioSource);
-            Container.Bind<AudioPlayer>().FromInstance(audioPlayer).AsSingle().NonLazy();
+            var gameDataProvider = Container.Resolve<IGameDataProvider>();
+            
+            var soundAudioSource = new GameObject("[Sound]").AddComponent<AudioSource>();
+            var backgroundMusicAudioSource = new GameObject("[Music]").AddComponent<AudioSource>();
+            
+            DontDestroyOnLoad(soundAudioSource.gameObject);
+            DontDestroyOnLoad(backgroundMusicAudioSource.gameObject);
+            
+            AudioPlayer soundAudioPlayer = new AudioPlayer(soundAudioSource, gameDataProvider);
+            BackgroundMusic backgroundMusic = new BackgroundMusic(backgroundMusicAudioSource, gameDataProvider);
+            
+            if(_defaultData.BackgroundMusic != null)
+                backgroundMusic.PlayMusic(_defaultData.BackgroundMusic);
+            
+            Container.Bind<AudioPlayer>().FromInstance(soundAudioPlayer).AsSingle().NonLazy();
+            Container.Bind<BackgroundMusic>().FromInstance(backgroundMusic).AsSingle().NonLazy();
         }
 
         private void StartGame()
