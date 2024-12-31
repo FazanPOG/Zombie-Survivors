@@ -27,8 +27,6 @@ namespace _Project.Root
 
         private void BindData()
         {
-            Container.Bind<DefaultDataConfig>().FromInstance(_defaultData).AsSingle().NonLazy();
-            
             var gameDataProvider = new PlayerPrefsGameDataProvider(_defaultData);
             gameDataProvider.LoadGameData();
             

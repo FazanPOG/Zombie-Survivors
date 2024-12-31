@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.Audio;
+using _Project.Data;
 using R3;
 using UnityEngine;
 
@@ -16,26 +18,54 @@ namespace _Project.Gameplay
         private const string IS_RIFLE_KEY = "IsRifle";
         private const string DIED_KEY = "Died";
 
+        [SerializeField] private AudioClip _takeDamageSFX;
+        [SerializeField] private AudioClip _deathSFX;
+
         private readonly List<IDisposable> _disposables = new List<IDisposable>();
         
         private Animator _animator;
         private PlayerMovement _playerMovement;
         private PlayerWeaponHandler _weaponHandler;
         private Zombie _lookTarget;
+        private int _previousHealth;
+        private bool _died;
 
         public bool IsLookingToTarget { get; private set; }
         
         private void Awake() => _animator = GetComponent<Animator>();
 
-        public void Init(PlayerMovement playerMovement, PlayerWeaponHandler weaponHandler, ReadOnlyReactiveProperty<int> health, ReadOnlyReactiveProperty<Zombie> lookTarget)
+        public void Init(
+            PlayerMovement playerMovement, 
+            PlayerWeaponHandler weaponHandler, 
+            PlayerHealth health, 
+            ReadOnlyReactiveProperty<Zombie> lookTarget,
+            AudioPlayer audioPlayer)
         {
             _playerMovement = playerMovement;
             _weaponHandler = weaponHandler;
+            _previousHealth = health.Health.CurrentValue;
             
-            _disposables.Add(health.Subscribe(value =>
+            _disposables.Add(health.Health.Subscribe(value =>
             {
+                if (value < _previousHealth)
+                {
+                    audioPlayer.PlaySoundOneShot(_takeDamageSFX);
+                }
+
                 if (value <= 0)
-                    _animator.SetTrigger(DIED_KEY);
+                {
+                    _died = true;
+                    audioPlayer.PlaySoundOneShot(_deathSFX);
+                    _animator.SetBool(DIED_KEY, _died);
+                }
+
+                if (health.Health.CurrentValue == health.MaxHealth)
+                {
+                    _died = false;
+                    _animator.SetBool(DIED_KEY, _died);
+                }
+                
+                _previousHealth = value;
             }));
 
             _lookTarget = lookTarget.CurrentValue;
@@ -72,6 +102,12 @@ namespace _Project.Gameplay
         {
             _animator.SetFloat(MOVE_SPEED_KEY, _playerMovement.Speed);
 
+            if(_died == false)
+                Rotate();
+        }
+
+        private void Rotate()
+        {
             if (_lookTarget != null)
             {
                 IsLookingToTarget = LookAt(_lookTarget.transform.position - transform.position, ROTATION_SPEED_TO_TARGET);
@@ -83,7 +119,7 @@ namespace _Project.Gameplay
             
             IsLookingToTarget = false;
         }
-
+        
         private bool LookAt(Vector3 direction, float rotationSpeed, float angleOffset = 8f)
         {
             direction.y = 0;

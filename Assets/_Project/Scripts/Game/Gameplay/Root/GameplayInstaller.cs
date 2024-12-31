@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using _Project.Audio;
 using _Project.Data;
 using _Project.Scripts.Game.Data;
@@ -21,6 +23,7 @@ namespace _Project.Gameplay
         [SerializeField] private WeaponBoost _weaponBoostPrefab;
         [SerializeField] private WeaponConfig[] _weaponBoostConfigs;
         [SerializeField] private WeaponConfig _testWeapon;
+        [SerializeField] private Environment[] _environments;
 
         private Player _playerInstance;
         private CameraSystem _cameraSystemInstance;
@@ -44,10 +47,11 @@ namespace _Project.Gameplay
 
         private void BindData()
         {
-            var config = Container.Resolve<DefaultDataConfig>();
-            PlayerHealth playerHealth = new PlayerHealth(new PlayerHealthData(config.Health));
-            PlayerMoveSpeed moveSpeed = new PlayerMoveSpeed(new PlayerMoveSpeedData(config.PlayerMoveSpeed));
-            LevelScore levelScore = new LevelScore(new LevelScoreData(0, 100));
+            var gameData = Container.Resolve<IGameDataProvider>().GameDataProxy;
+
+            PlayerHealth playerHealth = new PlayerHealth(new PlayerHealthData(gameData.PlayerHealth.Value));
+            PlayerMoveSpeed moveSpeed = new PlayerMoveSpeed(new PlayerMoveSpeedData(gameData.PlayerMoveSpeed.Value));
+            LevelScore levelScore = new LevelScore(new LevelScoreData(0));
             
             Container.Bind<PlayerHealth>().FromInstance(playerHealth).AsSingle().NonLazy();
             Container.Bind<PlayerMoveSpeed>().FromInstance(moveSpeed).AsSingle().NonLazy();
@@ -65,9 +69,20 @@ namespace _Project.Gameplay
 
         private void BindEnvironment()
         {
-            var config = Container.Resolve<DefaultDataConfig>();
+            var gameData = Container.Resolve<IGameDataProvider>().GameDataProxy;
+
+            string id = gameData.GameplayEnterParams.Value.EnvironmentID;
             
-            var environment = Container.InstantiatePrefabForComponent<Environment>(config.Environment);
+            if (String.IsNullOrEmpty(id))
+                throw new MissingReferenceException($"Missing default environment in {nameof(DefaultDataConfig)}");
+            
+            var firstNeededEnv = _environments.FirstOrDefault(x => x.Config.ID == id);
+            
+            if(firstNeededEnv == null)
+                throw new MissingComponentException($"Missing environment with ID: {id}");
+            
+            var environment = Container.InstantiatePrefabForComponent<Environment>(firstNeededEnv);
+            
             Container.Bind<Environment>().FromInstance(environment).AsSingle().NonLazy();
         }
 
@@ -90,12 +105,15 @@ namespace _Project.Gameplay
         
         private void InitPlayer()
         {
+            var spawnPoints = Container.Resolve<Environment>().PlayerSpawnPoints;
+            var randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length - 1)];
+            
             var input = Container.Resolve<IInput>();
             var playerHealth = Container.Resolve<PlayerHealth>();
             var playerMoveSpeed = Container.Resolve<PlayerMoveSpeed>();
             var audioPlayer = Container.Resolve<AudioPlayer>();
             
-            _playerInstance.Init(input, playerHealth, playerMoveSpeed, _testWeapon, audioPlayer);
+            _playerInstance.Init(input, playerHealth, playerMoveSpeed, _testWeapon, audioPlayer, randomSpawnPoint);
             _cameraSystemInstance.Init(_playerInstance.transform);
         }
 
@@ -171,13 +189,12 @@ namespace _Project.Gameplay
         {
             var player = Container.Resolve<Player>();
             var playerHealth = Container.Resolve<PlayerHealth>();
-            var levelProgress = Container.Resolve<LevelScore>();
             var zombieSpawnerService = Container.Resolve<IZombieSpawnerService>();
             var boostSpawnerService = Container.Resolve<IBoostSpawnerService>();
             var pauseService = Container.Resolve<IPauseService>();
             var environment = Container.Resolve<Environment>();
 
-            _gameStateMachine = new GameStateMachine(player, playerHealth, levelProgress, zombieSpawnerService, boostSpawnerService, pauseService, environment);
+            _gameStateMachine = new GameStateMachine(player, playerHealth, zombieSpawnerService, boostSpawnerService, pauseService, environment.Config);
 
             Container.Bind<IGameStateMachine>().To<GameStateMachine>().FromInstance(_gameStateMachine).AsCached().NonLazy();
             Container.Bind<IGameStateProvider>().To<GameStateMachine>().FromInstance(_gameStateMachine).AsCached().NonLazy();

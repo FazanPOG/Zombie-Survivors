@@ -82,5 +82,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91eadee198ec4b7da118ee8f2fa408c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: 31dbbf00ae82cff4eaabe790a96f00a7, type: 3}
   _weaponViewParent: {fileID: 1080036833917666125}

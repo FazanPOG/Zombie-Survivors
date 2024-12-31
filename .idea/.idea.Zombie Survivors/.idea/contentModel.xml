@@ -18,14 +18,16 @@
                 <e p="BackgroundMusic.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
-                <e p="DefaultDataConfig.cs" t="Include" />
-                <e p="GameData.cs" t="Include" />
-                <e p="GameDataProxy.cs" t="Include" />
                 <e p="Gameplay" t="Include">
+                  <e p="GameplayEnterParams.cs" t="Include" />
                   <e p="LevelScore.cs" t="Include" />
                   <e p="LevelScoreData.cs" t="Include" />
                 </e>
+                <e p="MainMenu" t="Include">
+                  <e p="UpgradeShopItemData.cs" t="Include" />
+                </e>
                 <e p="Player" t="Include">
+                  <e p="CurrencyType.cs" t="Include" />
                   <e p="PlayerHealth.cs" t="Include" />
                   <e p="PlayerHealthData.cs" t="Include" />
                   <e p="PlayerMoveSpeed.cs" t="Include" />
@@ -34,6 +36,11 @@
                 <e p="Provider" t="Include">
                   <e p="IGameDataProvider.cs" t="Include" />
                   <e p="PlayerPrefsGameDataProvider.cs" t="Include" />
+                </e>
+                <e p="Root" t="Include">
+                  <e p="DefaultDataConfig.cs" t="Include" />
+                  <e p="GameData.cs" t="Include" />
+                  <e p="GameDataProxy.cs" t="Include" />
                 </e>
               </e>
               <e p="Gameplay" t="Include">
@@ -48,6 +55,7 @@
                 </e>
                 <e p="Environment" t="Include">
                   <e p="Environment.cs" t="Include" />
+                  <e p="EnvironmentConfig.cs" t="Include" />
                 </e>
                 <e p="Factories" t="Include">
                   <e p="BoostFactory.cs" t="Include" />
@@ -117,6 +125,10 @@
                 <e p="Root" t="Include">
                   <e p="MainMenuInstaller.cs" t="Include" />
                 </e>
+                <e p="UpgradeShop" t="Include">
+                  <e p="UpgradeItemConfig.cs" t="Include" />
+                  <e p="UpgradeType.cs" t="Include" />
+                </e>
               </e>
               <e p="Root" t="Include">
                 <e p="ProjectInstaller.cs" t="Include" />
@@ -167,6 +179,10 @@
                     <e p="Popups" t="Include">
                       <e p="SettingsPopupViewPresenter.cs" t="Include" />
                     </e>
+                    <e p="UpgradeShop" t="Include">
+                      <e p="UpgradeShopItemViewPresenter.cs" t="Include" />
+                      <e p="UpgradeShopViewPresenter.cs" t="Include" />
+                    </e>
                   </e>
                   <e p="Root" t="Include">
                     <e p="MainMenuUI.cs" t="Include" />
@@ -177,6 +193,10 @@
                     </e>
                     <e p="Popups" t="Include">
                       <e p="SettingsPopupView.cs" t="Include" />
+                    </e>
+                    <e p="UpgradeShop" t="Include">
+                      <e p="UpgradeShopItemView.cs" t="Include" />
+                      <e p="UpgradeShopView.cs" t="Include" />
                     </e>
                   </e>
                 </e>

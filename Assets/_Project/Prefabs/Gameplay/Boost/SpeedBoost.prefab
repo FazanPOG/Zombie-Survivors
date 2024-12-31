@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb091ebeef1045109b2953863c249851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: 2d772afdec5e3634dafe3e1a881fe876, type: 3}
   _speedBoost: 0
 --- !u!1001 &455123456985128458
 PrefabInstance:

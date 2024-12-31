@@ -63,6 +63,7 @@ namespace _Project.UI
             var levelProgress = _container.Resolve<LevelScore>();
             var pauseService = _container.Resolve<IPauseService>();
             var sceneLoader = _container.Resolve<ISceneLoaderService>();
+            var player = _container.Resolve<Player>();
 
             new ClickToStartScreenViewPresenter(_clickToStartViewInstance, input, gameStateMachine);
             
@@ -75,7 +76,7 @@ namespace _Project.UI
             var pausePopupViewPresenter = new PausePopupViewPresenter(_pausePopupView, _pauseButtonView, pauseService, sceneLoader);
             _disposables.Add(pausePopupViewPresenter);
 
-            new LoseScreenViewPresenter(_loseScreenView, gameStateProvider, sceneLoader);
+            new LoseScreenViewPresenter(_loseScreenView, gameStateProvider, sceneLoader, player, gameStateMachine);
         }
 
         private void OnDestroy()

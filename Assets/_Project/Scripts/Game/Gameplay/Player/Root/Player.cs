@@ -22,6 +22,7 @@ namespace _Project.Gameplay
         private PlayerMovement _movement;
         private PlayerAttacker _playerAttacker;
         private PlayerWeaponHandler _playerWeaponHandler;
+        private Transform _spawnPoint;
 
         public bool CanTakeDamage { get; private set; }
 
@@ -30,10 +31,12 @@ namespace _Project.Gameplay
             PlayerHealth playerHealth, 
             PlayerMoveSpeed playerMoveSpeed,
             WeaponConfig startWeapon,
-            AudioPlayer audioPlayer)
+            AudioPlayer audioPlayer,
+            Transform spawnPoint)
         {
             _playerMoveSpeed = playerMoveSpeed;
             _playerHealth = playerHealth;
+            _spawnPoint = spawnPoint;
             _currentWeapon.Value = startWeapon;
             _attackRange.Value = startWeapon.AttackRange;
             CanTakeDamage = true;
@@ -43,8 +46,10 @@ namespace _Project.Gameplay
             _playerAttacker = new PlayerAttacker(this, _currentWeapon, _collisionHandler, _playerWeaponHandler, _view);
 
             _collisionHandler.Init(_attackRange);
-            _view.Init(_movement, _playerWeaponHandler, _playerHealth.Health, _collisionHandler.ClosestEnemy);
+            _view.Init(_movement, _playerWeaponHandler, _playerHealth, _collisionHandler.ClosestEnemy, audioPlayer);
+            
             _movement.EnableMovement();
+            _playerAttacker.EnableAttack();
             _playerWeaponHandler.EquipWeapon(startWeapon);
             
             _currentWeapon.Skip(1).Subscribe(newWeapon => _attackRange.Value = newWeapon.AttackRange);
@@ -59,8 +64,10 @@ namespace _Project.Gameplay
 
             if (_playerHealth.Health.Value <= 0)
             {
+                _playerHealth.Health.Value = 0;
                 CanTakeDamage = false;
                 _movement.DisableMovement();
+                _playerAttacker.DisableAttack();
             }
             else
             {
@@ -68,6 +75,15 @@ namespace _Project.Gameplay
             }
         }
 
+        public void Revive()
+        {
+            Heal(_playerHealth.MaxHealth);
+            CanTakeDamage = true;
+            _movement.EnableMovement();
+            _playerAttacker.EnableAttack();
+            transform.position = _spawnPoint.transform.position;
+        }
+        
         private void Heal(int heal)
         {
             if (heal < 0)
@@ -115,8 +131,10 @@ namespace _Project.Gameplay
         private void UpdateDebugString()
         {
             DEBUG_STRING = String.Empty;
-            DEBUG_STRING += $"Is Movement Enabled: {_movement.IsEnabled} \n" +
-                            $"Move speed: {_movement.Speed}";
+            DEBUG_STRING += $"Health: {_playerHealth?.Health?.CurrentValue} \n" +
+                            $"Is Movement Enabled: {_movement.IsEnabled} \n" +
+                            $"Move speed: {_movement.Speed} \n " +
+                            $"Can attack: {_playerAttacker.CanAttack}";
         }
     }
 }

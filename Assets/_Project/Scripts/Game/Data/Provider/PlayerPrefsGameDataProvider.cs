@@ -1,4 +1,7 @@
-﻿using _Project.Scripts.Game.Data;
+﻿using System;
+using System.Collections.Generic;
+using _Project.MainMenu;
+using _Project.Scripts.Game.Data;
 using UnityEngine;
 
 namespace _Project.Data
@@ -30,6 +33,8 @@ namespace _Project.Data
                 var json = PlayerPrefs.GetString(GAME_DATA_KEY);
                 _originData = JsonUtility.FromJson<GameData>(json);
                 GameDataProxy = new GameDataProxy(_originData);
+                
+                Debug.Log($"LOAD DATA: {json}");
             }
             
             return GameDataProxy;
@@ -40,14 +45,27 @@ namespace _Project.Data
             var json = JsonUtility.ToJson(_originData, true);
             PlayerPrefs.SetString(GAME_DATA_KEY, json);
             PlayerPrefs.Save();
+            
+            Debug.Log($"SAVE DATA: {json}");
         }
 
         private GameDataProxy CreateGameDataFromSettings()
         {
+            GameplayEnterParams defaultGameplayEnterParams = new GameplayEnterParams()
+            {
+                EnvironmentID = _defaultDataConfig.Environment.Config.ID,
+            };
+            
             _originData = new GameData()
             {
                 MusicVolume = _defaultDataConfig.MusicVolume,
-                SoundVolume = _defaultDataConfig.SoundVolume
+                SoundVolume = _defaultDataConfig.SoundVolume,
+                GameplayEnterParams = defaultGameplayEnterParams,
+                ShopItemDatas = new List<UpgradeShopItemData>(),
+                SoftCurrency = 0,
+                HardCurrency = 0,
+                PlayerHealth = _defaultDataConfig.PlayerHealth,
+                PlayerMoveSpeed = _defaultDataConfig.PlayerMoveSpeed,
             };
             
             return new GameDataProxy(_originData);

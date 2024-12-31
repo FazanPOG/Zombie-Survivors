@@ -51,7 +51,6 @@ MonoBehaviour:
   _collisionHandler: {fileID: 5038954545887339800}
   _view: {fileID: 8380442117538417679}
   _hand: {fileID: 666747519403552865}
-  _testWeapon: {fileID: 11400000, guid: 8f6400b509de5474ba0c38e808161fa6, type: 2}
   DEBUG_STRING: 
 --- !u!114 &5038954545887339800
 MonoBehaviour:
@@ -261,6 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3429f70c87274ae69d3c61f6eab1f789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _takeDamageSFX: {fileID: 8300000, guid: 6e2287cf20f819a40b45dd5e892b793e, type: 3}
+  _deathSFX: {fileID: 8300000, guid: b226a3825a4208749a74a5311e78521d, type: 3}
 --- !u!4 &3565335015767316634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000983385670848, guid: 5f12d3436f23d6e4a8e79bba8ca88303, type: 3}

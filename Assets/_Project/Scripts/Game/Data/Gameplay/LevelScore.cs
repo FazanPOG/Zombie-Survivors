@@ -9,22 +9,16 @@ namespace _Project.Data
 
         public ReactiveProperty<int> Score => _levelScore;
 
-        public int MaxProgress { get; }
-
         public LevelScore(LevelScoreData levelScoreData)
         {
-            _levelScore.Value = levelScoreData.Progress;
-            MaxProgress = levelScoreData.MaxProgress;
+            _levelScore.Value = levelScoreData.Value;
             
             _levelScore.Subscribe(newValue =>
             {
                 if(newValue < 0)
                     throw new ArgumentOutOfRangeException();
                 
-                if(newValue >= MaxProgress)
-                    levelScoreData.Progress = MaxProgress;
-                else
-                    levelScoreData.Progress = newValue;
+                levelScoreData.Value = newValue;
             });
         }
     }

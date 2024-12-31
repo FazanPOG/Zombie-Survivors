@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac86f8efed1e4e68a09962aab29c891f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: 2d1dfdaa158b6d349910d24fa3548b7b, type: 3}
   _healAmount: 15

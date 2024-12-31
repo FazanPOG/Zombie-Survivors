@@ -9,14 +9,14 @@ namespace _Project.Scripts.Game.Data
         [Header("Player Data")]
         [SerializeField, Min(1)] private int _health = 1;
         [SerializeField, Range(0.1f, 20f)] private float _moveSpeed = 1f;
-        [Header("Default Environment")]
+        [Header("Default Environments")]
         [SerializeField] private Environment _environment;
         [Header("Audio")]
         [SerializeField, Range(0f, 1f)] private float _musicVolume;
         [SerializeField, Range(0f, 1f)] private float _soundVolume;
         [SerializeField] private AudioClip _backgroundMusic;
         
-        public int Health => _health;
+        public int PlayerHealth => _health;
         public float PlayerMoveSpeed => _moveSpeed;
 
         public Environment Environment => _environment;

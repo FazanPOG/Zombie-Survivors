@@ -13,7 +13,10 @@ namespace _Project.Gameplay
         private int _damage;
         private IDamageable _enemy;
         private bool _canAttack;
-        
+        private bool _onCooldown;
+
+        public bool CanAttack => _canAttack;
+
         public PlayerAttacker(
             MonoBehaviour context, 
             ReadOnlyReactiveProperty<WeaponConfig> weapon, 
@@ -24,7 +27,6 @@ namespace _Project.Gameplay
             _context = context;
             _playerWeaponHandler = playerWeaponHandler;
             _playerView = playerView;
-            _canAttack = true;
             
             weapon.Subscribe(newWeapon =>
             {
@@ -44,12 +46,15 @@ namespace _Project.Gameplay
             });
         }
 
+        public void EnableAttack() => _canAttack = true;
+        public void DisableAttack() => _canAttack = false;
+
         public void Update()
         {
-            if(_enemy == null)
+            if(_enemy == null || _canAttack == false)
                 return;
             
-            if (_enemy.CanTakeDamage && _canAttack && _playerView.IsLookingToTarget)
+            if (_enemy.CanTakeDamage && _onCooldown == false && _playerView.IsLookingToTarget)
             {
                 _enemy.TakeDamage(_damage);
                 _playerWeaponHandler.WeaponView.Shoot();
@@ -59,9 +64,9 @@ namespace _Project.Gameplay
 
         private IEnumerator AttackCooldown()
         {
-            _canAttack = false;
+            _onCooldown = true;
             yield return new WaitForSeconds(_attackDelay);
-            _canAttack = true;
+            _onCooldown = false;
         }
     }
 }

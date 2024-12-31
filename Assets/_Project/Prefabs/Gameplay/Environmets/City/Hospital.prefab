@@ -1616,6 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e6176d7ad94e04999d28a453de1a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 9559f793b313f384a9db38db79948d6f, type: 2}
   _playerSpawnPoints:
   - {fileID: 7570541740140212411}
   - {fileID: 7334887047245586946}
@@ -1664,12 +1665,6 @@ MonoBehaviour:
   - {fileID: 4092250241886472050}
   - {fileID: 8687546017483065508}
   - {fileID: 3150692703802034857}
-  _zombieSpawnDelayMin: 0.2
-  _zombieSpawnDelayMax: 1
-  _maxZombies: 35
-  _boostSpawnDelayMin: 10
-  _boostSpawnDelayMax: 20
-  _maxBoosts: 3
 --- !u!1 &4124367583726397378
 GameObject:
   m_ObjectHideFlags: 0

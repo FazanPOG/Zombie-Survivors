@@ -224,6 +224,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cfb49950ae2aa6848b8ad2800ba471a7, type: 2}
   - {fileID: 11400000, guid: 56973a56dce04d24eb08dde40d7bb6cd, type: 2}
   _testWeapon: {fileID: 11400000, guid: 8f6400b509de5474ba0c38e808161fa6, type: 2}
+  _environments:
+  - {fileID: 1687030902369259474, guid: fec6c50e59537ce4c92580b01350b5f9, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

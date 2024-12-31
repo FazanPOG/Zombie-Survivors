@@ -2,13 +2,11 @@
 {
     public class LevelScoreData
     {
-        public int Progress;
-        public int MaxProgress;
+        public int Value;
 
-        public LevelScoreData(int initProgress, int maxProgress)
+        public LevelScoreData(int defaultValue)
         {
-            Progress = initProgress;
-            MaxProgress = maxProgress;
+            Value = defaultValue;
         }
     }
 }
