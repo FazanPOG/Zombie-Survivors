@@ -66,15 +66,15 @@ namespace _Project.UI
 
         private void UpdateGameData()
         {
-            var dataToRemove = _gameDataProvider.GameDataProxy.ShopItemDatas.First(x => x.ID == _itemConfig.ID);
-            _gameDataProvider.GameDataProxy.ShopItemDatas.Remove(dataToRemove);
+            var dataToRemove = _gameDataProvider.GameDataProxy.UpgradeItemDatas.First(x => x.ID == _itemConfig.ID);
+            _gameDataProvider.GameDataProxy.UpgradeItemDatas.Remove(dataToRemove);
             _data.CurrentLevel++;
-            _gameDataProvider.GameDataProxy.ShopItemDatas.Add(_data);
+            _gameDataProvider.GameDataProxy.UpgradeItemDatas.Add(_data);
         }
         
         private void InitData()
         {
-            var shopItemDatas = _gameDataProvider.GameDataProxy.ShopItemDatas;
+            var shopItemDatas = _gameDataProvider.GameDataProxy.UpgradeItemDatas;
             var data = shopItemDatas.FirstOrDefault(x => x.ID == _itemConfig.ID);
 
             if (data == null)

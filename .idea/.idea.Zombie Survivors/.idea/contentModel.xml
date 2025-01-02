@@ -24,6 +24,7 @@
                   <e p="LevelScoreData.cs" t="Include" />
                 </e>
                 <e p="MainMenu" t="Include">
+                  <e p="BulletShopItemData.cs" t="Include" />
                   <e p="UpgradeShopItemData.cs" t="Include" />
                 </e>
                 <e p="Player" t="Include">
@@ -125,7 +126,9 @@
                 <e p="Root" t="Include">
                   <e p="MainMenuInstaller.cs" t="Include" />
                 </e>
-                <e p="UpgradeShop" t="Include">
+                <e p="Shop" t="Include">
+                  <e p="BulletItemConfig.cs" t="Include" />
+                  <e p="BulletItemPriceType.cs" t="Include" />
                   <e p="UpgradeItemConfig.cs" t="Include" />
                   <e p="UpgradeType.cs" t="Include" />
                 </e>
@@ -179,9 +182,10 @@
                     <e p="Popups" t="Include">
                       <e p="SettingsPopupViewPresenter.cs" t="Include" />
                     </e>
-                    <e p="UpgradeShop" t="Include">
+                    <e p="Shop" t="Include">
+                      <e p="BulletShopItemViewPresenter.cs" t="Include" />
+                      <e p="ShopViewPresenter.cs" t="Include" />
                       <e p="UpgradeShopItemViewPresenter.cs" t="Include" />
-                      <e p="UpgradeShopViewPresenter.cs" t="Include" />
                     </e>
                   </e>
                   <e p="Root" t="Include">
@@ -194,9 +198,10 @@
                     <e p="Popups" t="Include">
                       <e p="SettingsPopupView.cs" t="Include" />
                     </e>
-                    <e p="UpgradeShop" t="Include">
+                    <e p="Shop" t="Include">
+                      <e p="BulletShopItemView.cs" t="Include" />
+                      <e p="ShopView.cs" t="Include" />
                       <e p="UpgradeShopItemView.cs" t="Include" />
-                      <e p="UpgradeShopView.cs" t="Include" />
                     </e>
                   </e>
                 </e>

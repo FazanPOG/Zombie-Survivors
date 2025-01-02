@@ -13,13 +13,16 @@ namespace _Project.UI
         [SerializeField] private PopupButtonView _settingsButtonView;
         [SerializeField] private PopupButtonView _upgradeShopButtonView;
         [Header("Screens")]
-        [SerializeField] private UpgradeShopView _upgradeShopView;
+        [SerializeField] private ShopView shopView;
         [Header("Popups")]
         [SerializeField] private SettingsPopupView _settingsPopupView;
-        [Header("UpgradeShop")]
-        [SerializeField] private UpgradeItemConfig[] _shopItemConfigs;
-        [SerializeField] private UpgradeShopItemView _shopItemViewPrefab;
+        [Header("Shop")]
+        [SerializeField] private UpgradeItemConfig[] _upgradeItemConfigs;
+        [SerializeField] private UpgradeShopItemView _upgradeItemViewPrefab;
+        [SerializeField] private BulletItemConfig[] _bulletItemConfigs;
+        [SerializeField] private BulletShopItemView _bulletItemViewPrefab;
         [SerializeField] private Transform _shopItemsContainer;
+        [SerializeField] private Transform _bulletItemsContainer;
         
         private DiContainer _container;
         
@@ -37,7 +40,16 @@ namespace _Project.UI
             
             new PlayButtonViewPresenter(_playButtonView, sceneLoader);
             new SettingsPopupViewPresenter(_settingsButtonView, _settingsPopupView, gameDataProvider);
-            new UpgradeShopViewPresenter(_upgradeShopView, _upgradeShopButtonView, _shopItemConfigs, _shopItemViewPrefab, _shopItemsContainer, gameDataProvider);
+            new ShopViewPresenter(
+                shopView, 
+                _upgradeShopButtonView, 
+                _upgradeItemConfigs, 
+                _upgradeItemViewPrefab, 
+                _bulletItemConfigs,
+                _bulletItemViewPrefab,
+                _shopItemsContainer, 
+                _bulletItemsContainer,
+                gameDataProvider);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace _Project.Data
         public float PlayerMoveSpeed;
         public int SoftCurrency;
         public int HardCurrency;
-        public List<UpgradeShopItemData> ShopItemDatas;
+        public List<UpgradeShopItemData> UpgradeItemDatas;
+        public List<BulletShopItemData> BulletItemDatas;
     }
 }
