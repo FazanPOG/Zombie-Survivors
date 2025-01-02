@@ -24,4 +24,4 @@ This game was developed using advanced tools and design patterns to ensure smoot
 - Factory  
 
 📸 **Screenshots**  
-[*Screenshot 1*](https://imgur.com/a/k7mx3ii)
+![Screenshot 1](https://imgur.com/a/k7mx3ii.png)
