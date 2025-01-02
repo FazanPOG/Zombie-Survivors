@@ -7,6 +7,7 @@ namespace _Project.Data
     [Serializable]
     public class GameData
     {
+        public int BestScore;
         public float MusicVolume;
         public float SoundVolume;
         public GameplayEnterParams GameplayEnterParams;

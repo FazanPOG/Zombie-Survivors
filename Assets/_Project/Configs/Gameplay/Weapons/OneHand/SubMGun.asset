@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 2
   _damage: 10
-  _attackRange: 4
-  _fireRate: 2
+  _attackRange: 6
+  _fireRate: 8
   _weaponViewPrefab: {fileID: -5038238627416182238, guid: e22ad038422a02c49b86a09ff69dedfc, type: 3}
   _shotSFX: {fileID: 8300000, guid: 2208dc19409a97c4989609f354644508, type: 3}

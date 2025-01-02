@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 199093372247426798}
   - component: {fileID: 8206557646907777769}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,9 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Zombie
-
-    Survivors'
+  m_text: Zombie Survivors
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a45ed483403b4050a137cf4553f9af1, type: 2}
   m_sharedMaterial: {fileID: 8088079628875772496, guid: 8a45ed483403b4050a137cf4553f9af1, type: 2}
@@ -349,7 +347,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 211.75
-  m_fontSizeBase: 36
+  m_fontSizeBase: 175
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 16.62
@@ -364,7 +362,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1447,6 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c5bff8e44e44bd8efc96d52e9f6a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameTitleText: {fileID: 8206557646907777769}
 --- !u!1 &8183039345973374363
 GameObject:
   m_ObjectHideFlags: 0

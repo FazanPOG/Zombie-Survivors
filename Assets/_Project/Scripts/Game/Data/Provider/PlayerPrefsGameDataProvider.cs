@@ -58,6 +58,7 @@ namespace _Project.Data
             
             _originData = new GameData()
             {
+                BestScore = 0,
                 MusicVolume = _defaultDataConfig.MusicVolume,
                 SoundVolume = _defaultDataConfig.SoundVolume,
                 GameplayEnterParams = defaultGameplayEnterParams,

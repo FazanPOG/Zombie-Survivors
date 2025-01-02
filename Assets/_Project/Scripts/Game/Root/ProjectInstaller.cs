@@ -1,10 +1,10 @@
+using _Project.API;
 using _Project.Audio;
 using _Project.Data;
 using _Project.Scripts.Game.Data;
 using _Project.UI;
 using _Project.Utility;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace _Project.Root
@@ -13,16 +13,24 @@ namespace _Project.Root
     {
         [SerializeField] private UIRoot _uiRootPrefab;
         [SerializeField] private DefaultDataConfig _defaultData;
+        [SerializeField] private CommonAudioClipsConfig _commonAudio;
         
         public override void InstallBindings()
         {
             BindData();
+            BindAPI();
             BindUtility();
             BindUIRoot();
             BindServices();
             BindAudio();
-            
+
             StartGame();
+        }
+
+        private void BindAPI()
+        {
+            var apiBinder = new APIBinder(Container);
+            apiBinder.Bind();
         }
 
         private void BindData()
@@ -31,6 +39,7 @@ namespace _Project.Root
             gameDataProvider.LoadGameData();
             
             Container.Bind<IGameDataProvider>().To<PlayerPrefsGameDataProvider>().FromInstance(gameDataProvider).AsSingle().NonLazy();
+            Container.Bind<CommonAudioClipsConfig>().FromInstance(_commonAudio).AsSingle().NonLazy();
         }
 
         private void BindUtility()
@@ -54,6 +63,7 @@ namespace _Project.Root
         private void BindAudio()
         {
             var gameDataProvider = Container.Resolve<IGameDataProvider>();
+            var commonAudioClipsConfig = Container.Resolve<CommonAudioClipsConfig>();
             
             var soundAudioSource = new GameObject("[Sound]").AddComponent<AudioSource>();
             var backgroundMusicAudioSource = new GameObject("[Music]").AddComponent<AudioSource>();
@@ -61,7 +71,7 @@ namespace _Project.Root
             DontDestroyOnLoad(soundAudioSource.gameObject);
             DontDestroyOnLoad(backgroundMusicAudioSource.gameObject);
             
-            AudioPlayer soundAudioPlayer = new AudioPlayer(soundAudioSource, gameDataProvider);
+            AudioPlayer soundAudioPlayer = new AudioPlayer(soundAudioSource, gameDataProvider, commonAudioClipsConfig);
             BackgroundMusic backgroundMusic = new BackgroundMusic(backgroundMusicAudioSource, gameDataProvider);
             
             if(_defaultData.BackgroundMusic != null)
@@ -73,24 +83,13 @@ namespace _Project.Root
 
         private void StartGame()
         {
-            var sceneLoader = Container.Resolve<ISceneLoaderService>();
-
-            var currentScene = SceneManager.GetActiveScene().name;
+            var context = Container.Resolve<MonoBehaviourContext>();
+            var sceneLoaderService = Container.Resolve<ISceneLoaderService>();
+            var apiEnvironmentService = Container.Resolve<IAPIEnvironmentService>();
+            var localizationProvider = Container.Resolve<ILocalizationProvider>();
+            var uiRoot = Container.Resolve<UIRoot>();
             
-            switch (currentScene)
-            {
-                case Scenes.Boot:
-                    sceneLoader.LoadSceneAsync(Scenes.MainMenu);
-                    break;
-                
-                case Scenes.MainMenu:
-                    sceneLoader.LoadSceneAsync(Scenes.MainMenu);
-                    break;
-                
-                case Scenes.Gameplay:
-                    sceneLoader.LoadSceneAsync(Scenes.Gameplay);
-                    break;
-            }
+            new Boot(context, sceneLoaderService, apiEnvironmentService, localizationProvider, uiRoot);
         }
     }
 }

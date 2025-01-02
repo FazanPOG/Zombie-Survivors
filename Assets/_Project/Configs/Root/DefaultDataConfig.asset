@@ -17,4 +17,4 @@ MonoBehaviour:
   _environment: {fileID: 1687030902369259474, guid: fec6c50e59537ce4c92580b01350b5f9, type: 3}
   _musicVolume: 0.5
   _soundVolume: 0.5
-  _backgroundMusic: {fileID: 0}
+  _backgroundMusic: {fileID: 8300000, guid: 354c778dd54a0294f8d56cfa2fdd9803, type: 3}

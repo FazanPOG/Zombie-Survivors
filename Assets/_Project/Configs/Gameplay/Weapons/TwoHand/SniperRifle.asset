@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SniperRifle
   m_EditorClassIdentifier: 
   _weaponType: 3
-  _damage: 15
-  _attackRange: 5
-  _fireRate: 4
+  _damage: 50
+  _attackRange: 12
+  _fireRate: 1.5
   _weaponViewPrefab: {fileID: -6061739772509888544, guid: 3027fd935d242c541a7114d06d974130, type: 3}
   _shotSFX: {fileID: 8300000, guid: 3a13621f8d5858e4f8171f8a2d239ac9, type: 3}

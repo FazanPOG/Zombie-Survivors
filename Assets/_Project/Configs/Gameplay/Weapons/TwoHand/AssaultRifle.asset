@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
   _weaponType: 3
-  _damage: 15
-  _attackRange: 5
-  _fireRate: 4
+  _damage: 25
+  _attackRange: 10
+  _fireRate: 3
   _weaponViewPrefab: {fileID: 7941094768373312740, guid: ad49a19d2c4adc94b838606a5d459f85, type: 3}
   _shotSFX: {fileID: 8300000, guid: 9ae682b3bd7108b498e8518edcdc316b, type: 3}

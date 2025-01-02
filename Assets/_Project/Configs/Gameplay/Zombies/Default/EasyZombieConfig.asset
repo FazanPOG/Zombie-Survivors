@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: EasyZombieConfig
   m_EditorClassIdentifier: 
   _type: 1
-  _health: 1
-  _moveSpeed: 1
-  _damage: 5
+  _health: 10
+  _moveSpeed: 5.5
+  _damage: 8
   _viewPrefabs:
   - {fileID: -6598846645077832229, guid: d6d9d31ece8da534098c0e9337b9708a, type: 3}
   - {fileID: 4142575244368747360, guid: 46e3fad9d63edad4e95366d675950f78, type: 3}

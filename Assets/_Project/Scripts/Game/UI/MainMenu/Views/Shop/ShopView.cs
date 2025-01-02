@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,9 @@ namespace _Project.UI
 {
     public class ShopView : MonoBehaviour
     {
+        [SerializeField] private TextMeshProUGUI _shopTitleText;
+        [SerializeField] private TextMeshProUGUI[] _bulletButtonTexts;
+        [SerializeField] private TextMeshProUGUI[] _upgradeButtonTexts;
         [SerializeField] private Button _closeButton;
         [SerializeField] private Button _bulletButton;
         [SerializeField] private Button _upgradeButton;
@@ -29,7 +33,21 @@ namespace _Project.UI
 
         public void Show() => gameObject.SetActive(true);
         public void Hide() => gameObject.SetActive(false);
-        
+
+        public void SetShopTitleText(string text) => _shopTitleText.text = text;
+
+        public void SetBulletButtonTexts(string text)
+        {
+            foreach (var bulletButtonText in _bulletButtonTexts)
+                bulletButtonText.text = text;
+        }
+
+        public void SetUpgradeButtonTexts(string text)
+        {
+            foreach (var upgradeButtonText in _upgradeButtonTexts)
+                upgradeButtonText.text = text;
+        }
+
         public void SetBulletPanelActiveState(bool activeState)
         {
             _bulletButtonFocusView.SetActive(activeState);

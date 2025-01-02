@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HardZombieConfig
   m_EditorClassIdentifier: 
   _type: 3
-  _health: 50
-  _moveSpeed: 3
-  _damage: 15
+  _health: 70
+  _moveSpeed: 2.5
+  _damage: 20
   _viewPrefabs:
   - {fileID: -4295076257035013837, guid: cecba8cbb65991c42a1e7219f8210b9a, type: 3}
   - {fileID: 3033668805320600755, guid: 5de68a7f859a40a47bf17802c25007c3, type: 3}

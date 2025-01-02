@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.API;
 using _Project.Data;
 using R3;
 
@@ -18,14 +19,16 @@ namespace _Project.Gameplay
             IZombieSpawnerService spawnerService,
             IBoostSpawnerService boostSpawnerService,
             IPauseService pauseService,
-            EnvironmentConfig environmentConfig)
+            EnvironmentConfig environmentConfig,
+            LevelScore levelScore,
+            ILeaderBoardService leaderBoardService,
+            IGameDataProvider gameDataProvider)
         {
             _gameStates = new Dictionary<Type, IGameState>()
             {
                 [typeof(BootState)] = new BootState(pauseService),
                 [typeof(GameplayState)] = new GameplayState(this, player, playerHealth, spawnerService, boostSpawnerService, environmentConfig),
-                [typeof(WinState)] = new WinState(),
-                [typeof(LoseState)] = new LoseState(),
+                [typeof(LoseState)] = new LoseState(levelScore, leaderBoardService, gameDataProvider),
             };
         }
         

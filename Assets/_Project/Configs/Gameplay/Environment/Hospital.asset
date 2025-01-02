@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Hospital
   m_EditorClassIdentifier: 
   _id: Hospital
-  _zombieSpawnDelayMin: 0.2
-  _zombieSpawnDelayMax: 1
-  _maxZombies: 35
-  _boostSpawnDelayMin: 10
-  _boostSpawnDelayMax: 20
+  _zombieSpawnDelayMin: 0.5
+  _zombieSpawnDelayMax: 3
+  _maxZombies: 20
+  _boostSpawnDelayMin: 30
+  _boostSpawnDelayMax: 45
   _maxBoosts: 3

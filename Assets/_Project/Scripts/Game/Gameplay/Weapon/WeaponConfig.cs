@@ -6,9 +6,9 @@ namespace _Project.Gameplay
     public class WeaponConfig : ScriptableObject
     {
         [SerializeField] private WeaponType _weaponType;
-        [SerializeField, Range(1, 50)] private int _damage = 1;
-        [SerializeField, Range(0.1f, 50f)] private float _attackRange = 1f;
-        [SerializeField, Range(0.1f, 50f)] private float _fireRate = 1f;
+        [SerializeField, Range(1, 200)] private int _damage = 1;
+        [SerializeField, Range(0.1f, 100f)] private float _attackRange = 1f;
+        [SerializeField, Range(0.1f, 100f)] private float _fireRate = 1f;
         [SerializeField] private WeaponView _weaponViewPrefab;
         [SerializeField] private AudioClip _shotSFX;
 

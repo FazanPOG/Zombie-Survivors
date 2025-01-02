@@ -1,4 +1,6 @@
-﻿using _Project.Data;
+﻿using _Project.API;
+using _Project.Audio;
+using _Project.Data;
 
 namespace _Project.UI
 {
@@ -6,11 +8,18 @@ namespace _Project.UI
     {
         private readonly SettingsPopupView _settingsPopupView;
         private readonly IGameDataProvider _gameDataProvider;
+        private readonly AudioPlayer _audioPlayer;
 
-        public SettingsPopupViewPresenter(PopupButtonView settingsButtonView, SettingsPopupView settingsPopupView, IGameDataProvider gameDataProvider)
+        public SettingsPopupViewPresenter(
+            PopupButtonView settingsButtonView, 
+            SettingsPopupView settingsPopupView, 
+            IGameDataProvider gameDataProvider,
+            ILocalizationProvider localizationProvider,
+            AudioPlayer audioPlayer)
         {
             _settingsPopupView = settingsPopupView;
             _gameDataProvider = gameDataProvider;
+            _audioPlayer = audioPlayer;
 
             settingsButtonView.OnButtonClicked += ShowPopup;
             _settingsPopupView.OnCloseButtonClicked += HidePopup;
@@ -19,7 +28,12 @@ namespace _Project.UI
             
             _settingsPopupView.SetMusicSliderValue(_gameDataProvider.GameDataProxy.MusicVolume.CurrentValue);
             _settingsPopupView.SetSoundSliderValue(_gameDataProvider.GameDataProxy.SoundVolume.CurrentValue);
-            HidePopup();
+            
+            _settingsPopupView.SetSettingsText(localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.SETTINGS_KEY));
+            _settingsPopupView.SetMusicText(localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.MUSIC_KEY));
+            _settingsPopupView.SetSoundText(localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.SOUND_KEY));
+            
+            _settingsPopupView.Hide();
         }
 
         private void ChangeMusicVolume(float value)
@@ -36,11 +50,13 @@ namespace _Project.UI
 
         private void ShowPopup()
         {
+            _audioPlayer.PlayButtonClickSound();
             _settingsPopupView.Show();
         }
 
         private void HidePopup()
         {
+            _audioPlayer.PlayButtonClickSound();
             _settingsPopupView.Hide();
         }
     }

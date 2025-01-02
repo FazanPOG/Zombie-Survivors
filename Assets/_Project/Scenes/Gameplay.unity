@@ -213,17 +213,17 @@ MonoBehaviour:
   - {fileID: 2573791435259495, guid: 1c3d07989f5d6b440b1026c0c388b8c2, type: 3}
   _weaponBoostPrefab: {fileID: 7984472712752359440, guid: f08a75080b921264585283c68a48bca2, type: 3}
   _weaponBoostConfigs:
-  - {fileID: 11400000, guid: f06af193d9bd64349bd3676b8661c4d7, type: 2}
+  - {fileID: 11400000, guid: b2c76dce20f9d1d40bbf9b608c5ae6b8, type: 2}
   - {fileID: 11400000, guid: 6d01742e40c4b314a8b5abb4748be4df, type: 2}
   - {fileID: 11400000, guid: 8f6400b509de5474ba0c38e808161fa6, type: 2}
+  - {fileID: 11400000, guid: 56973a56dce04d24eb08dde40d7bb6cd, type: 2}
+  - {fileID: 11400000, guid: 5a5cfabacd5e712438f4b2334ff8e2b5, type: 2}
   - {fileID: 11400000, guid: 44a668c3d57ace14a86efe6a353f9db2, type: 2}
   - {fileID: 11400000, guid: c83835a11595fec48aa781e6b42e9684, type: 2}
   - {fileID: 11400000, guid: 6dc7df15ede7fc04fa97eb9d0628aacf, type: 2}
-  - {fileID: 11400000, guid: c7278c6484911f542b7733b852266957, type: 2}
-  - {fileID: 11400000, guid: 5a5cfabacd5e712438f4b2334ff8e2b5, type: 2}
   - {fileID: 11400000, guid: cfb49950ae2aa6848b8ad2800ba471a7, type: 2}
-  - {fileID: 11400000, guid: 56973a56dce04d24eb08dde40d7bb6cd, type: 2}
-  _testWeapon: {fileID: 11400000, guid: 8f6400b509de5474ba0c38e808161fa6, type: 2}
+  - {fileID: 11400000, guid: c7278c6484911f542b7733b852266957, type: 2}
+  _testWeapon: {fileID: 11400000, guid: f06af193d9bd64349bd3676b8661c4d7, type: 2}
   _environments:
   - {fileID: 1687030902369259474, guid: fec6c50e59537ce4c92580b01350b5f9, type: 3}
 --- !u!1 &705507993

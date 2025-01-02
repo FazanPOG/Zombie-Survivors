@@ -11,11 +11,51 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Project" t="Include">
+          <e p="Graphic" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="Noto_Sans" t="Include">
+                <e p="OFL.txt" t="Include" />
+                <e p="ReadMe.txt" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Scripts" t="Include">
+            <e p="API" t="Include">
+              <e p="Localization" t="Include">
+                <e p="Assets" t="Include">
+                  <e p="EnglishLocalizationAsset.cs" t="Include" />
+                  <e p="ILocalizationAsset.cs" t="Include" />
+                  <e p="LocalizationKeys.cs" t="Include" />
+                  <e p="RussianLocalizationAsset.cs" t="Include" />
+                </e>
+                <e p="Provider" t="Include">
+                  <e p="ILocalizationProvider.cs" t="Include" />
+                  <e p="YandexGamesLocalizationProvider.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Providers" t="Include">
+                <e p="DeviceType.cs" t="Include" />
+                <e p="IDeviceProvider.cs" t="Include" />
+                <e p="YandexGamesDeviceProvider.cs" t="Include" />
+              </e>
+              <e p="Root" t="Include">
+                <e p="APIBinder.cs" t="Include" />
+                <e p="Language.cs" t="Include" />
+              </e>
+              <e p="Services" t="Include">
+                <e p="IADService.cs" t="Include" />
+                <e p="IAPIEnvironmentService.cs" t="Include" />
+                <e p="ILeaderBoardService.cs" t="Include" />
+                <e p="YandexGamesADService.cs" t="Include" />
+                <e p="YandexGamesEnvironmentService.cs" t="Include" />
+                <e p="YandexGamesLeaderBoardService.cs" t="Include" />
+              </e>
+            </e>
             <e p="Game" t="Include">
               <e p="Audio" t="Include">
                 <e p="AudioPlayer.cs" t="Include" />
                 <e p="BackgroundMusic.cs" t="Include" />
+                <e p="CommonAudioClipsConfig.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
                 <e p="Gameplay" t="Include">
@@ -71,7 +111,6 @@
                     <e p="GameplayState.cs" t="Include" />
                     <e p="IGameState.cs" t="Include" />
                     <e p="LoseState.cs" t="Include" />
-                    <e p="WinState.cs" t="Include" />
                   </e>
                 </e>
                 <e p="Input" t="Include">
@@ -134,6 +173,7 @@
                 </e>
               </e>
               <e p="Root" t="Include">
+                <e p="Boot.cs" t="Include" />
                 <e p="ProjectInstaller.cs" t="Include" />
                 <e p="Services" t="Include">
                   <e p="ISceneLoaderService.cs" t="Include" />
@@ -177,6 +217,7 @@
                 <e p="MainMenu" t="Include">
                   <e p="Presenters" t="Include">
                     <e p="HUD" t="Include">
+                      <e p="CurrencyViewPresenter.cs" t="Include" />
                       <e p="PlayButtonViewPresenter.cs" t="Include" />
                     </e>
                     <e p="Popups" t="Include">
@@ -193,6 +234,7 @@
                   </e>
                   <e p="Views" t="Include">
                     <e p="HUD" t="Include">
+                      <e p="CurrencyView.cs" t="Include" />
                       <e p="PlayButtonView.cs" t="Include" />
                     </e>
                     <e p="Popups" t="Include">
@@ -1506,6 +1548,7 @@
                 <e p="ModifyIndexFile" t="Include">
                   <e p="AdWhenLoadingGame.cs" t="Include" />
                   <e p="BackgroundFormat.cs" t="Include" />
+                  <e p="BuildLogYG.txt" t="Include" />
                   <e p="LogoFormat.cs" t="Include" />
                   <e p="MetricaCounterID.cs" t="Include" />
                   <e p="ModifyBuildManager.cs" t="Include" />

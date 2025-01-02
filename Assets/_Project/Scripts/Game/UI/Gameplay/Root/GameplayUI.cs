@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.API;
+using _Project.Audio;
 using _Project.Data;
 using _Project.Gameplay;
 using _Project.Root;
 using UnityEngine;
+using YG;
 using Zenject;
 
 namespace _Project.UI
@@ -63,20 +66,34 @@ namespace _Project.UI
             var levelProgress = _container.Resolve<LevelScore>();
             var pauseService = _container.Resolve<IPauseService>();
             var sceneLoader = _container.Resolve<ISceneLoaderService>();
+            var localizationProvider = _container.Resolve<ILocalizationProvider>();
+            var gameDataProvider = _container.Resolve<IGameDataProvider>();
             var player = _container.Resolve<Player>();
+            var adService = _container.Resolve<IADService>();
+            var audioPlayer = _container.Resolve<AudioPlayer>();
 
-            new ClickToStartScreenViewPresenter(_clickToStartViewInstance, input, gameStateMachine);
+            new ClickToStartScreenViewPresenter(_clickToStartViewInstance, input, gameStateMachine, localizationProvider);
             
             var healthBarPresenter = new HealthBarViewPresenter(_healthBarViewInstance, playerHealth);
             _disposables.Add(healthBarPresenter);
             
-            var levelProgressViewPresenter = new LevelScoreViewPresenter(levelProgress, _levelScoreViewInstance);
+            var levelProgressViewPresenter = new LevelScoreViewPresenter(levelProgress, _levelScoreViewInstance, localizationProvider);
             _disposables.Add(levelProgressViewPresenter);
 
-            var pausePopupViewPresenter = new PausePopupViewPresenter(_pausePopupView, _pauseButtonView, pauseService, sceneLoader);
+            var pausePopupViewPresenter = new PausePopupViewPresenter(_pausePopupView, _pauseButtonView, pauseService, sceneLoader, localizationProvider);
             _disposables.Add(pausePopupViewPresenter);
 
-            new LoseScreenViewPresenter(_loseScreenView, gameStateProvider, sceneLoader, player, gameStateMachine);
+            new LoseScreenViewPresenter(
+                _loseScreenView, 
+                gameStateProvider, 
+                sceneLoader, 
+                player, 
+                gameStateMachine, 
+                localizationProvider,
+                gameDataProvider,
+                levelProgress,
+                adService,
+                audioPlayer);
         }
 
         private void OnDestroy()

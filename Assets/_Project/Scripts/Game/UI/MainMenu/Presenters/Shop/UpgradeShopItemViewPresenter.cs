@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using _Project.API;
+using _Project.Audio;
 using _Project.Data;
 using _Project.MainMenu;
 
@@ -10,6 +12,8 @@ namespace _Project.UI
         private readonly UpgradeShopItemView _view;
         private readonly UpgradeItemConfig _itemConfig;
         private readonly IGameDataProvider _gameDataProvider;
+        private readonly ILocalizationProvider _localizationProvider;
+        private readonly AudioPlayer _audioPlayer;
 
         private UpgradeShopItemData _data;
         private int _defaultPlayerHealth;
@@ -18,12 +22,16 @@ namespace _Project.UI
         public UpgradeShopItemViewPresenter(
             UpgradeShopItemView view, 
             UpgradeItemConfig itemConfig, 
-            IGameDataProvider gameDataProvider)
+            IGameDataProvider gameDataProvider,
+            ILocalizationProvider localizationProvider,
+            AudioPlayer audioPlayer)
         {
             _view = view;
             _itemConfig = itemConfig;
             _gameDataProvider = gameDataProvider;
-            
+            _localizationProvider = localizationProvider;
+            _audioPlayer = audioPlayer;
+
             InitData();
             InitView();
             UpdateInfoTexts();
@@ -33,12 +41,18 @@ namespace _Project.UI
 
         private void OnUpgradeButtonClicked()
         {
-            if(CanBuy())
+            if (CanBuy())
+            {
                 Buy();
+                _audioPlayer.PlayButtonClickSound();
+            }
         }
 
         private bool CanBuy()
         {
+            if (IsMaxLevel())
+                return false;
+            
             int price = CalculatePrice(_data.CurrentLevel);
             int softCurrencyAmount = _gameDataProvider.GameDataProxy.SoftCurrency.Value;
             int hardCurrencyAmount = _gameDataProvider.GameDataProxy.HardCurrency.Value;
@@ -58,6 +72,22 @@ namespace _Project.UI
 
         private void Buy()
         {
+            int price = CalculatePrice(_data.CurrentLevel);
+            
+            switch (_itemConfig.CurrencyType)
+            {
+                case CurrencyType.SoftCurrency:
+                    _gameDataProvider.GameDataProxy.SoftCurrency.Value -= price;
+                    break;
+                
+                case CurrencyType.HardCurrency:
+                    _gameDataProvider.GameDataProxy.HardCurrency.Value -= price;
+                    break;
+                
+                default:
+                    throw new Exception();
+            }
+            
             UpdateGameData();
             ApplyUpgrade();
             _gameDataProvider.SaveGameData();
@@ -96,10 +126,19 @@ namespace _Project.UI
         {
             _view.SetIcon(_itemConfig.ItemIcon);
             _view.SetIconBackground(_itemConfig.ItemIconBackgroundSprite);
-            _view.SetNameText(_itemConfig.ItemNameText);
+
+            switch (_itemConfig.UpgradeType)
+            {
+                case UpgradeType.PlayerHealth:
+                    _view.SetNameText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.HP_KEY));
+                    break;
+                
+                case UpgradeType.PlayerMoveSpeed:
+                    _view.SetNameText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.MOVE_SPEED_KEY));
+                    break;
+            }
         }
 
-        //TODO: localize
         private void UpdateInfoTexts()
         {
             bool isMaxLevel = IsMaxLevel();
@@ -115,12 +154,14 @@ namespace _Project.UI
                 
                 if (isMaxLevel)
                 {
-                    _view.SetCurrentLevelTexts($"MAX");
+                    string text = _localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.MAX_KEY);
+                    _view.SetCurrentLevelTexts(text);
                 }
                 else
                 {
-                    _view.SetCurrentLevelTexts($"LV.{_data.CurrentLevel}");
-                    _view.SetNextLevelText($"LV.{_data.CurrentLevel + 1}");
+                    string levelText = _localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.LEVEL_SHORT_KEY);
+                    _view.SetCurrentLevelTexts($"{levelText}.{_data.CurrentLevel}");
+                    _view.SetNextLevelText($"{levelText}.{_data.CurrentLevel + 1}");
                 }
             }
             
@@ -148,11 +189,11 @@ namespace _Project.UI
                     switch (_itemConfig.UpgradeType)
                     {
                         case UpgradeType.PlayerHealth:
-                            firstPartValueText = "HP";
+                            firstPartValueText = _localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.HP_KEY);;
                             break;
                         
                         case UpgradeType.PlayerMoveSpeed:
-                            firstPartValueText = "Move Speed";
+                            firstPartValueText = _localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.MOVE_SPEED_KEY);;
                             break;
                     }
                     
@@ -167,7 +208,8 @@ namespace _Project.UI
                 
                 if (isMaxLevel)
                 {
-                    _view.SetPriceText("Sold out");
+                    string text = _localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.SOLD_OUT_KEY);;
+                    _view.SetPriceText(text);
                 }
                 else
                 {

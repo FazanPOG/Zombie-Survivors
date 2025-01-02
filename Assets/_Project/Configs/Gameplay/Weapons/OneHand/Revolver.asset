@@ -15,6 +15,6 @@ MonoBehaviour:
   _weaponType: 2
   _damage: 10
   _attackRange: 4
-  _fireRate: 2
+  _fireRate: 1
   _weaponViewPrefab: {fileID: 8641100365575147896, guid: 151fe3144103e1440900697f4b29c68e, type: 3}
   _shotSFX: {fileID: 8300000, guid: 6db882360db3f7f4caec0eead4441c70, type: 3}

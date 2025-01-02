@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MediumZombieConfig
   m_EditorClassIdentifier: 
   _type: 2
-  _health: 10
-  _moveSpeed: 2
-  _damage: 10
+  _health: 30
+  _moveSpeed: 3
+  _damage: 12
   _viewPrefabs:
   - {fileID: -5371593822764617872, guid: 478b9cfcbcdb7284bbea515d7f42ea18, type: 3}
   - {fileID: -5163003902897148580, guid: ea757c1578e17134b85ac65be02c4b19, type: 3}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HuntingRifle
   m_EditorClassIdentifier: 
   _weaponType: 3
-  _damage: 15
-  _attackRange: 5
-  _fireRate: 4
+  _damage: 80
+  _attackRange: 25
+  _fireRate: 0.8
   _weaponViewPrefab: {fileID: -4399292033588367354, guid: 339cc5e61566f63428dc7728c5c3c5a0, type: 3}
   _shotSFX: {fileID: 8300000, guid: 157c4bbc534f3ef4396da77f6e35ef44, type: 3}

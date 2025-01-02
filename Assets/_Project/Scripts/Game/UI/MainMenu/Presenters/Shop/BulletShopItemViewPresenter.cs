@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using _Project.API;
 using _Project.Data;
 using _Project.MainMenu;
 
@@ -10,28 +11,49 @@ namespace _Project.UI
         private readonly BulletItemConfig _config;
         private readonly BulletShopItemView _view;
         private readonly IGameDataProvider _gameDataProvider;
+        private readonly IADService _adService;
 
         private BulletShopItemData _data;
         
         public BulletShopItemViewPresenter(
             BulletItemConfig config, 
             BulletShopItemView view,
-            IGameDataProvider gameDataProvider)
+            IGameDataProvider gameDataProvider,
+            IADService adService)
         {
             _config = config;
             _view = view;
             _gameDataProvider = gameDataProvider;
+            _adService = adService;
 
             InitData();
             InitView();
             
+            _adService.OnRewardedReward += OnRewardedReward;
             _view.OnBuyButtonClicked += OnBuyButtonClicked;
+        }
+
+        private void OnRewardedReward(string key)
+        {
+            if (key == _config.ID)
+                Buy();
         }
 
         private void OnBuyButtonClicked()
         {
-            if(CanBuy())
-                Buy();
+            if(CanBuy() == false)
+                return;
+
+            switch (_config.PriceType)
+            {
+                case BulletItemPriceType.AD:
+                    _adService.ShowRewarded(_config.ID);
+                    break;
+                
+                case BulletItemPriceType.SoftCurrency:
+                    Buy();
+                    break;
+            }
         }
 
         private void Buy()
@@ -50,7 +72,7 @@ namespace _Project.UI
             switch (_config.PriceType)
             {
                 case BulletItemPriceType.AD:
-                    return true;
+                    return _adService.IsRewardedAvailable;
                 
                 case BulletItemPriceType.SoftCurrency:
                     return price <= softCurrencyAmount;

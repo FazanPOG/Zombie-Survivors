@@ -1,6 +1,5 @@
-using System;
+using _Project.API;
 using UnityEngine;
-using VFolders.Libs;
 
 namespace _Project.UI
 {
@@ -13,8 +12,9 @@ namespace _Project.UI
 
         public void HideLoadingScreen() => _loadingScreen.Hide();
 
-        private void Start()
+        public void Init(ILocalizationProvider localizationProvider)
         {
+            _loadingScreen.SetGameTitleText(localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.GAME_NAME_KEY));
             _loadingScreen.Hide();
         }
 
@@ -26,9 +26,10 @@ namespace _Project.UI
 
         private void ClearSceneRoot()
         {
-            var children = _uiSceneRoot.GetChildren();
-            foreach (var child in children)
-                Destroy(child.gameObject);
+            for (int i = _uiSceneRoot.childCount - 1; i >= 0; i--)
+            {
+                Destroy(_uiSceneRoot.GetChild(i).gameObject);
+            }
         }
     }
 }

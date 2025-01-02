@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.API;
 using UnityEngine;
 
 namespace _Project.Gameplay
 {
     public class PauseService : IPauseService
     {
+        private readonly IAPIEnvironmentService _apiEnvironmentService;
         private readonly List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
+
+        public PauseService(IAPIEnvironmentService apiEnvironmentService)
+        {
+            _apiEnvironmentService = apiEnvironmentService;
+        }
         
         public void SetPause(bool isPaused)
         {
+            _apiEnvironmentService.SetPaused(isPaused);
+            
             foreach (var pauseHandler in _pauseHandlers)
                 pauseHandler?.HandlePause(isPaused);
 

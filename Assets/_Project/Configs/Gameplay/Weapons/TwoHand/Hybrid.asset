@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Hybrid
   m_EditorClassIdentifier: 
   _weaponType: 3
-  _damage: 15
-  _attackRange: 5
-  _fireRate: 4
+  _damage: 40
+  _attackRange: 4
+  _fireRate: 1
   _weaponViewPrefab: {fileID: 5531186995718231454, guid: 6e2b4b3768b35104ca1726c44266e483, type: 3}
   _shotSFX: {fileID: 8300000, guid: a2c83d1259657dd4ab25778ac1f6d32e, type: 3}

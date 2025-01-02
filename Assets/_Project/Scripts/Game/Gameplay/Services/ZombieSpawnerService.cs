@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using _Project.Data;
 using _Project.Utility;
 using ModestTree;
+using R3;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -19,6 +20,7 @@ namespace _Project.Gameplay
         private readonly IZombieCounterService _zombieCounterService;
 
         private Coroutine _coroutine;
+        private int _maxZombies;
         
         public ZombieSpawnerService(
             MonoBehaviourContext context, 
@@ -34,11 +36,22 @@ namespace _Project.Gameplay
             _zombieSpawnPoints = zombieSpawnPoints;
             _playerTransform = playerTransform;
             _zombieCounterService = zombieCounterService;
+
+            _levelScore.Score.Skip(1).Subscribe(UpdateMaxZombies);
+        }
+
+        private void UpdateMaxZombies(int score)
+        {
+            if(_maxZombies == 0)
+                return;
+
+            _maxZombies += (score / 2);
         }
         
         public void StartSpawning(float minSpawnDelay, float maxSpawnDelay, Player zombieTarget, int maxZombies)
         {
-            _coroutine = _context.StartCoroutine(Spawning(minSpawnDelay, maxSpawnDelay, zombieTarget, maxZombies));
+            _maxZombies = maxZombies;
+            _coroutine = _context.StartCoroutine(Spawning(minSpawnDelay, maxSpawnDelay, zombieTarget));
         }
 
         public void StopSpawning()
@@ -50,11 +63,11 @@ namespace _Project.Gameplay
             _coroutine = null;
         }
 
-        private IEnumerator Spawning(float minSpawnDelay, float maxSpawnDelay, Player zombieTarget, int maxZombies)
+        private IEnumerator Spawning(float minSpawnDelay, float maxSpawnDelay, Player zombieTarget)
         {
             while (zombieTarget != null)
             {
-                yield return new WaitUntil(() => _zombieCounterService.Count.CurrentValue < maxZombies);
+                yield return new WaitUntil(() => _zombieCounterService.Count.CurrentValue < _maxZombies);
                 
                 int score = _levelScore.Score.CurrentValue;
                 

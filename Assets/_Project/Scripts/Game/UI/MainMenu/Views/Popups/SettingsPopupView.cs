@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ namespace _Project.UI
         [SerializeField] private Button _closeButton;
         [SerializeField] private Slider _musicSlider;
         [SerializeField] private Slider _soundSlider;
+        [SerializeField] private TextMeshProUGUI _settingsText;
+        [SerializeField] private TextMeshProUGUI _musicText;
+        [SerializeField] private TextMeshProUGUI _sound;
 
         public event Action OnCloseButtonClicked;
         public event Action<float> OnMusicSliderChanged;
@@ -26,6 +30,10 @@ namespace _Project.UI
 
         public void SetMusicSliderValue(float value) => _musicSlider.value = value;
         public void SetSoundSliderValue(float value) => _soundSlider.value = value;
+
+        public void SetSettingsText(string text) => _settingsText.text = text;
+        public void SetMusicText(string text) => _musicText.text = text;
+        public void SetSoundText(string text) => _sound.text = text;
         
         private void OnDisable()
         {

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: HEALTH_UPGRADE
   _upgradeType: 1
-  _currencyType: 1
-  _defaultPrice: 15
-  _increasePriceCoefficient: 2
-  _increaseUpgradeValueCoefficient: 2
-  _maxUpgradeLevel: 3
+  _currencyType: 2
+  _defaultPrice: 50
+  _increasePriceCoefficient: 1.4
+  _increaseUpgradeValueCoefficient: 1.25
+  _maxUpgradeLevel: 10
   _itemIcon: {fileID: 21300000, guid: 7cbdd501007ce449189b7c62574b33ab, type: 3}
   _itemIconBackgroundImage: {fileID: 21300000, guid: ad41eba0e725744c5b0c0655492cc9f3, type: 3}
   _itemNameText: HP

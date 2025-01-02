@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Minigun
   m_EditorClassIdentifier: 
   _weaponType: 3
-  _damage: 15
-  _attackRange: 5
-  _fireRate: 4
+  _damage: 20
+  _attackRange: 10
+  _fireRate: 12
   _weaponViewPrefab: {fileID: -4386463873949416445, guid: a2670dd89e8f6534aa5e4457957a84c8, type: 3}
   _shotSFX: {fileID: 8300000, guid: 7351991cfc3a7cb478d7dcb58555ddba, type: 3}

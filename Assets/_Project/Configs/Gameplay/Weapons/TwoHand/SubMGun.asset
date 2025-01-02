@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SubMGun
   m_EditorClassIdentifier: 
   _weaponType: 3
-  _damage: 15
-  _attackRange: 5
-  _fireRate: 4
+  _damage: 11
+  _attackRange: 7
+  _fireRate: 7
   _weaponViewPrefab: {fileID: -3588776594049051467, guid: e465d39263959404582f9fdf69f40c53, type: 3}
   _shotSFX: {fileID: 8300000, guid: db3c9ee32e356454da9989c4f72725de, type: 3}

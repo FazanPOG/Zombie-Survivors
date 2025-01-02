@@ -76,3 +76,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiRootPrefab: {fileID: 6258296539752852543, guid: 373b642b85632c347a0f315425e4794c, type: 3}
   _defaultData: {fileID: 11400000, guid: e28ef988062f0834794c9042b36af6d9, type: 2}
+  _commonAudio: {fileID: 11400000, guid: 06667ea9e20437f46bf0f9be9e5fcc20, type: 2}

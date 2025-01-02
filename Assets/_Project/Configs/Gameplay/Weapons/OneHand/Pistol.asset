@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   _weaponType: 2
-  _damage: 10
-  _attackRange: 4
+  _damage: 12
+  _attackRange: 5
   _fireRate: 2
   _weaponViewPrefab: {fileID: -6381821766188730556, guid: a1608518da2a041418e8a5351d223d94, type: 3}
   _shotSFX: {fileID: 8300000, guid: db3c9ee32e356454da9989c4f72725de, type: 3}

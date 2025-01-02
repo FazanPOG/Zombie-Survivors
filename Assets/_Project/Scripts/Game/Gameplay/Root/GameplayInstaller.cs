@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using _Project.API;
 using _Project.Audio;
 using _Project.Data;
 using _Project.Scripts.Game.Data;
@@ -193,8 +194,11 @@ namespace _Project.Gameplay
             var boostSpawnerService = Container.Resolve<IBoostSpawnerService>();
             var pauseService = Container.Resolve<IPauseService>();
             var environment = Container.Resolve<Environment>();
+            var levelScore = Container.Resolve<LevelScore>();
+            var leaderBoardService = Container.Resolve<ILeaderBoardService>();
+            var gameDataProvider = Container.Resolve<IGameDataProvider>();
 
-            _gameStateMachine = new GameStateMachine(player, playerHealth, zombieSpawnerService, boostSpawnerService, pauseService, environment.Config);
+            _gameStateMachine = new GameStateMachine(player, playerHealth, zombieSpawnerService, boostSpawnerService, pauseService, environment.Config, levelScore, leaderBoardService, gameDataProvider);
 
             Container.Bind<IGameStateMachine>().To<GameStateMachine>().FromInstance(_gameStateMachine).AsCached().NonLazy();
             Container.Bind<IGameStateProvider>().To<GameStateMachine>().FromInstance(_gameStateMachine).AsCached().NonLazy();

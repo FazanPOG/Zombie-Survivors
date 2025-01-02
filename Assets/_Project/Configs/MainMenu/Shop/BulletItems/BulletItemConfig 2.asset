@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: BulletItemConfig 2
   _priceType: 1
-  _bulletAmount: 500
-  _adAmount: 10
+  _bulletAmount: 150
+  _adAmount: 3
   _softCurrencyPrice: 0
   _iconSprite: {fileID: 21300000, guid: 26b00263056364a92a4c660f23c56422, type: 3}

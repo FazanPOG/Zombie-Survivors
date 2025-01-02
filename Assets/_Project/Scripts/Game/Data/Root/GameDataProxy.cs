@@ -8,6 +8,7 @@ namespace _Project.Data
 {
     public class GameDataProxy
     {
+        public readonly ReactiveProperty<int> BestScore = new ReactiveProperty<int>();
         public readonly ReactiveProperty<float> MusicVolume = new ReactiveProperty<float>();
         public readonly ReactiveProperty<float> SoundVolume = new ReactiveProperty<float>();
         public readonly ReactiveProperty<GameplayEnterParams> GameplayEnterParams = new ReactiveProperty<GameplayEnterParams>();
@@ -20,6 +21,7 @@ namespace _Project.Data
 
         public GameDataProxy(GameData data)
         {
+            BestScore.Value = data.BestScore;
             MusicVolume.Value = data.MusicVolume;
             SoundVolume.Value = data.SoundVolume;
             GameplayEnterParams.Value = data.GameplayEnterParams;
@@ -34,6 +36,7 @@ namespace _Project.Data
             foreach (var bulletItemData in data.BulletItemDatas)
                 BulletItemDatas.Add(bulletItemData);
             
+            BestScore.Subscribe(value => data.BestScore = value);
             MusicVolume.Subscribe(value => data.MusicVolume = value);
             SoundVolume.Subscribe(value => data.SoundVolume = value);
             GameplayEnterParams.Subscribe(value => data.GameplayEnterParams = value);

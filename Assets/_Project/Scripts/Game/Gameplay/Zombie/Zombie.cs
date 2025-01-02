@@ -87,7 +87,6 @@ namespace _Project.Gameplay
         
         private void DestroySelf()
         {
-            //TODO: pool.Release
             Destroy(gameObject);
         }
 
