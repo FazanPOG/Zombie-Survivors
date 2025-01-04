@@ -101,7 +101,6 @@ namespace _Project.UI
         private void OnHomeButtonClicked()
         {
             _audioPlayer.PlayButtonClickSound();
-            _gameDataProvider.GameDataProxy.SoftCurrency.Value += _levelScore.Score.CurrentValue;
             _sceneLoaderService.LoadSceneAsync(Scenes.MainMenu);
         }
     }

@@ -25,8 +25,11 @@ namespace _Project.Gameplay
             {
                 _leaderBoardService.SetNewScore(currentScore);
                 _gameDataProvider.GameDataProxy.BestScore.Value = currentScore;
-                _gameDataProvider.SaveGameData();
             }
+            
+            _gameDataProvider.GameDataProxy.SoftCurrency.Value += currentScore;
+            
+            _gameDataProvider.SaveGameData();
         }
 
         public void Exit()
