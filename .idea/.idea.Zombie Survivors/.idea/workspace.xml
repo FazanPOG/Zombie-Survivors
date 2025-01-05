@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e679098d-e8d5-4d2d-8d7b-21bcaba81721" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zombie Survivors/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/LoseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/LoseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Screens/LoseScreenViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Screens/LoseScreenViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/ScriptsYG/Editor/PostProcessBuild/ModifyIndexFile/BuildLogYG.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/ScriptsYG/Editor/PostProcessBuild/ModifyIndexFile/BuildLogYG.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/ShopViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/ShopViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/UpgradeShopItemViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/UpgradeShopItemViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Root/MainMenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Root/MainMenuUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,11 +85,7 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Audio/CommonAudioConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Audio/CommonAudioClipsConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Audio/AudioPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/ShopViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/UpgradeShopItemViewPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Popups/SettingsPopupViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Root/MainMenuUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Root/GameplayUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/Boot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/UIRoot.cs" />
@@ -97,6 +96,10 @@
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/API/Localization/Assets/RussianLocalizationAsset.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Gameplay/Presenters/Screens/LoseScreenViewPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/GameStateMachine/States/LoseState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/ShopViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Root/MainMenuUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Root/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/MainMenu/Presenters/Shop/UpgradeShopItemViewPresenter.cs" />
       </list>
     </option>
   </component>
@@ -151,7 +154,7 @@
       <workItem from="1735460246013" duration="23062000" />
       <workItem from="1735544773389" duration="29087000" />
       <workItem from="1735635041704" duration="48120000" />
-      <workItem from="1735978218308" duration="258000" />
+      <workItem from="1735978218308" duration="1821000" />
     </task>
     <servers />
   </component>
@@ -192,10 +195,10 @@
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
     <state x="588" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735494054723" />
-    <state x="547" y="273" width="798" height="534" key="find.popup" timestamp="1735826969989">
+    <state x="547" y="273" width="798" height="534" key="find.popup" timestamp="1735978415520">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state x="547" y="273" width="798" height="534" key="find.popup/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735826969989" />
+    <state x="547" y="273" width="798" height="534" key="find.popup/3840.148.1366.722/1920.0.1920.1040/0.0.1920.1034@0.0.1920.1034" timestamp="1735978415520" />
     <state x="643" y="318" key="run.anything.popup" timestamp="1735369101852">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>

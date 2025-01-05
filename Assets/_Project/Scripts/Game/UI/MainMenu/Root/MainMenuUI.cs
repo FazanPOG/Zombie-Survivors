@@ -4,6 +4,7 @@ using _Project.Audio;
 using _Project.Data;
 using _Project.MainMenu;
 using _Project.Root;
+using _Project.Scripts.Game.Data;
 using UnityEngine;
 using Zenject;
 
@@ -47,6 +48,7 @@ namespace _Project.UI
             var localizationProvider = _container.Resolve<ILocalizationProvider>();
             var adService = _container.Resolve<IADService>();
             var audioPlayer = _container.Resolve<AudioPlayer>();
+            var defaultDataConfig = _container.Resolve<DefaultDataConfig>();
 
             foreach (var softCurrencyView in _softCurrencyViews)
                 new CurrencyViewPresenter(CurrencyType.SoftCurrency, softCurrencyView, gameDataProvider);
@@ -69,7 +71,8 @@ namespace _Project.UI
                 gameDataProvider,
                 localizationProvider,
                 adService,
-                audioPlayer);
+                audioPlayer,
+                defaultDataConfig);
         }
     }
 }

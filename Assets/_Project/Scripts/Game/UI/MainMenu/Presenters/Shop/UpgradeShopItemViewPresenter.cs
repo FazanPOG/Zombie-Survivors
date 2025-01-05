@@ -4,6 +4,7 @@ using _Project.API;
 using _Project.Audio;
 using _Project.Data;
 using _Project.MainMenu;
+using _Project.Scripts.Game.Data;
 
 namespace _Project.UI
 {
@@ -14,6 +15,7 @@ namespace _Project.UI
         private readonly IGameDataProvider _gameDataProvider;
         private readonly ILocalizationProvider _localizationProvider;
         private readonly AudioPlayer _audioPlayer;
+        private readonly DefaultDataConfig _defaultDataConfig;
 
         private UpgradeShopItemData _data;
         private int _defaultPlayerHealth;
@@ -24,13 +26,15 @@ namespace _Project.UI
             UpgradeItemConfig itemConfig, 
             IGameDataProvider gameDataProvider,
             ILocalizationProvider localizationProvider,
-            AudioPlayer audioPlayer)
+            AudioPlayer audioPlayer,
+            DefaultDataConfig defaultDataConfig)
         {
             _view = view;
             _itemConfig = itemConfig;
             _gameDataProvider = gameDataProvider;
             _localizationProvider = localizationProvider;
             _audioPlayer = audioPlayer;
+            _defaultDataConfig = defaultDataConfig;
 
             InitData();
             InitView();
@@ -118,8 +122,8 @@ namespace _Project.UI
                 _data = data;
             }
 
-            _defaultPlayerHealth = _gameDataProvider.GameDataProxy.PlayerHealth.Value / _data.CurrentLevel;
-            _defaultPlayerMoveSpeed = _gameDataProvider.GameDataProxy.PlayerMoveSpeed.Value / _data.CurrentLevel;
+            _defaultPlayerHealth = _defaultDataConfig.PlayerHealth;
+            _defaultPlayerMoveSpeed = _defaultDataConfig.PlayerMoveSpeed;
         }
 
         private void InitView()
@@ -190,15 +194,16 @@ namespace _Project.UI
                     {
                         case UpgradeType.PlayerHealth:
                             firstPartValueText = _localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.HP_KEY);;
+                            _view.SetCurrentValueText($"{firstPartValueText} +{(int)CalculateUpgradeValue(_data.CurrentLevel)}");
+                            _view.SetNextValueText($"+{(int)CalculateUpgradeValue(_data.CurrentLevel + 1)}");
                             break;
                         
                         case UpgradeType.PlayerMoveSpeed:
                             firstPartValueText = _localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.MOVE_SPEED_KEY);;
+                            _view.SetCurrentValueText($"{firstPartValueText} +{CalculateUpgradeValue(_data.CurrentLevel)}");
+                            _view.SetNextValueText($"+{CalculateUpgradeValue(_data.CurrentLevel + 1)}");
                             break;
                     }
-                    
-                    _view.SetCurrentValueText($"{firstPartValueText} +{CalculateUpgradeValue(_data.CurrentLevel)}");
-                    _view.SetNextValueText($"+{CalculateUpgradeValue(_data.CurrentLevel + 1)}");
                 }
             }
 
@@ -226,7 +231,7 @@ namespace _Project.UI
             return _data.CurrentLevel == _itemConfig.MaxUpgradeLevel;
         }
 
-        private int CalculateUpgradeValue(int level)
+        private float CalculateUpgradeValue(int level)
         {
             float result;
             
@@ -247,7 +252,7 @@ namespace _Project.UI
             for (int i = 1; i < level; i++)
                 result *= _itemConfig.IncreaseUpgradeValueCoefficient;
 
-            return (int)result;
+            return result;
         }
 
         private int CalculatePrice(int level)
@@ -265,7 +270,7 @@ namespace _Project.UI
             switch (_itemConfig.UpgradeType)
             {
                 case UpgradeType.PlayerHealth:
-                    _gameDataProvider.GameDataProxy.PlayerHealth.Value = CalculateUpgradeValue(_data.CurrentLevel);
+                    _gameDataProvider.GameDataProxy.PlayerHealth.Value = (int)CalculateUpgradeValue(_data.CurrentLevel);
                     break;
                 
                 case UpgradeType.PlayerMoveSpeed:

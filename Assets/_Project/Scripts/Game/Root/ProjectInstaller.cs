@@ -37,7 +37,8 @@ namespace _Project.Root
         {
             var gameDataProvider = new PlayerPrefsGameDataProvider(_defaultData);
             gameDataProvider.LoadGameData();
-            
+
+            Container.Bind<DefaultDataConfig>().FromInstance(_defaultData).AsSingle().NonLazy();
             Container.Bind<IGameDataProvider>().To<PlayerPrefsGameDataProvider>().FromInstance(gameDataProvider).AsSingle().NonLazy();
             Container.Bind<CommonAudioClipsConfig>().FromInstance(_commonAudio).AsSingle().NonLazy();
         }

@@ -2,6 +2,7 @@
 using _Project.Audio;
 using _Project.Data;
 using _Project.MainMenu;
+using _Project.Scripts.Game.Data;
 using UnityEngine;
 
 namespace _Project.UI
@@ -20,6 +21,7 @@ namespace _Project.UI
         private readonly ILocalizationProvider _localizationProvider;
         private readonly IADService _adService;
         private readonly AudioPlayer _audioPlayer;
+        private readonly DefaultDataConfig _defaultDataConfig;
 
         public ShopViewPresenter(
             ShopView view, 
@@ -33,7 +35,8 @@ namespace _Project.UI
             IGameDataProvider gameDataProvider,
             ILocalizationProvider localizationProvider,
             IADService adService,
-            AudioPlayer audioPlayer)
+            AudioPlayer audioPlayer,
+            DefaultDataConfig defaultDataConfig)
         {
             _view = view;
             _popupButtonView = popupButtonView;
@@ -47,6 +50,7 @@ namespace _Project.UI
             _localizationProvider = localizationProvider;
             _adService = adService;
             _audioPlayer = audioPlayer;
+            _defaultDataConfig = defaultDataConfig;
 
             _popupButtonView.SetText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.SHOP_KEY));
             _view.SetShopTitleText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.SHOP_KEY));
@@ -82,7 +86,7 @@ namespace _Project.UI
             foreach (var config in _upgradeItemConfigs)
             {
                 var view = Object.Instantiate(_upgradeShopItemPrefab, _upgradeItemsViewContainer);
-                new UpgradeShopItemViewPresenter(view, config, _gameDataProvider, _localizationProvider, _audioPlayer);
+                new UpgradeShopItemViewPresenter(view, config, _gameDataProvider, _localizationProvider, _audioPlayer, _defaultDataConfig);
             }
 
             foreach (var config in _bulletItemConfigs)
