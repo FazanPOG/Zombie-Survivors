@@ -3,7 +3,7 @@ Welcome to **Zombie Survivors 3D**, an endless survival third-person shooter whe
 
 🎮 **Game Overview**  
 **Genre**: Endless Survival Third-Person Zombie Shooter  
-**Platform**: Yandex Games (on moderation)  
+**Platform**: Yandex Games (https://yandex.ru/games/app/400484?utm_source=app_page)  
 
 🛠️ **Technology Stack**  
 This game was developed using advanced tools and design patterns to ensure smooth gameplay and maintainability:
